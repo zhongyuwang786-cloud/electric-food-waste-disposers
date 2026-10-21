@@ -1,0 +1,8 @@
+name = "electric-food-waste-disposers"
+compatibility_date = "2026-10-20"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "electric-food-waste-inquiries"
+database_id = "REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID"
