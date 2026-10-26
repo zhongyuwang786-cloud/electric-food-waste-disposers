@@ -4,5 +4,5 @@ pages_build_output_dir = "public"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "electric-food-waste-inquiries"
-database_id = "REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID"
+database_name = "foodwaste-db"
+database_id = "395b2462-30bf-4711-bdc8-35567ed3f0b6"
