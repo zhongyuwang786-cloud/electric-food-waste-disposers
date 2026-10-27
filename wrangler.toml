@@ -5,4 +5,4 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "foodwaste-db"
-database_id = "395b2462-30bf-4711-bdc8-35567ed3f0b6"
+database_id = "395b2462-30bf-4171-bdc8-35567ed3f06b"
