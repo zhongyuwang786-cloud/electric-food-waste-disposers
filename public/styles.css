@@ -64,3 +64,36 @@
 @keyframes waMobileHeartbeat{0%,100%{transform:scale(1);box-shadow:0 7px 20px rgba(15,125,65,.28)}12%{transform:scale(1.09);box-shadow:0 9px 27px rgba(15,125,65,.55)}24%{transform:scale(1);box-shadow:0 7px 20px rgba(15,125,65,.28)}36%{transform:scale(1.06)}50%{transform:scale(1)}}
 @keyframes waMobileRing{0%{transform:scale(.85);opacity:.8}80%,100%{transform:scale(1.35);opacity:0}}
 @media(prefers-reduced-motion:reduce){.whatsapp-float,.whatsapp-float::before{animation:none!important}}
+/* Mobile UI refresh: compact hamburger, working slide-out drawer, floating email icon */
+.mobile-menu-toggle{display:none!important}
+.mobile-menu-shade,.mobile-menu-drawer{display:none}
+.floating-email{display:none}
+@media(max-width:900px){
+ .topbar{position:sticky!important;top:0;z-index:1000!important;display:flex;align-items:center;gap:8px;overflow:visible!important}
+ .topbar .desktop-nav{display:none!important}
+ .mobile-menu-toggle{display:flex!important;align-items:center;justify-content:center;margin-left:auto;width:44px;height:42px;min-width:44px;padding:0;border:1px solid #d8e1d9;border-radius:11px;background:#f5f8f4;color:#183b32;box-shadow:0 2px 8px rgba(22,55,42,.08);cursor:pointer}
+ .menu-lines{display:flex;flex-direction:column;gap:5px;width:19px}
+ .menu-lines i{display:block;height:2px;width:19px;border-radius:3px;background:#183b32}
+ .mobile-menu-shade{display:block;position:fixed;inset:0;z-index:100000;background:rgba(8,24,18,.48);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
+ .mobile-menu-shade.is-open{opacity:1;visibility:visible}
+ .mobile-menu-drawer{display:flex;position:fixed;top:0;right:0;bottom:0;z-index:100001;width:min(82vw,340px);padding:24px 22px;flex-direction:column;gap:0;background:#fff;box-shadow:-16px 0 42px rgba(0,0,0,.18);transform:translateX(105%);visibility:hidden;transition:transform .25s ease,visibility .25s ease}
+ .mobile-menu-drawer.is-open{transform:translateX(0);visibility:visible}
+ .mobile-drawer-top{display:flex;align-items:center;justify-content:space-between;padding:4px 0 22px;margin-bottom:8px;border-bottom:1px solid #e6ece6;color:#173c32;font-size:1.1rem}
+ .mobile-drawer-close{width:38px;height:38px;border:0;border-radius:50%;background:#f0f4ef;color:#173c32;font-size:27px;line-height:1;cursor:pointer}
+ .mobile-menu-drawer>a{display:block;padding:17px 4px;border-bottom:1px solid #edf1ed;color:#203b32!important;text-decoration:none!important;font-size:1rem;font-weight:700}
+ .mobile-menu-drawer>a:active{color:#e76a27!important}
+ body.mobile-menu-active{overflow:hidden}
+}
+@media(max-width:760px){
+ body{padding-bottom:24px!important}
+ .mobile-email-cta{display:none!important}
+ .floating-email{position:fixed;display:flex;align-items:center;justify-content:center;left:16px;bottom:20px;z-index:99998;width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,#ff9b32,#ed5b28);color:#fff!important;text-decoration:none!important;box-shadow:0 7px 22px rgba(203,83,34,.34);border:2px solid rgba(255,255,255,.92);transition:transform .18s ease,box-shadow .18s ease}
+ .floating-email svg{display:block;width:25px;height:25px;fill:currentColor}
+ .floating-email span{position:absolute;left:66px;bottom:8px;white-space:nowrap;padding:7px 11px;border-radius:7px;background:#fff;color:#9b451f;font-size:12px;font-weight:800;box-shadow:0 3px 13px rgba(0,0,0,.12);opacity:0;transform:translateX(-5px);pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+ .floating-email:focus span,.floating-email:active span{opacity:1;transform:translateX(0)}
+ .whatsapp-float{right:16px!important;bottom:20px!important;left:auto!important;width:56px!important;min-width:56px!important;height:56px!important;padding:0!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;animation:waMobileHeartbeat 1.65s ease-in-out infinite!important}
+ .whatsapp-float span{display:none!important}
+ .whatsapp-float svg{width:28px!important;height:28px!important;min-width:28px!important;max-width:28px!important;min-height:28px!important;max-height:28px!important;flex:0 0 28px!important}
+ .whatsapp-float::before{inset:-7px!important;border-radius:50%!important;border:2px solid rgba(24,184,90,.62)!important;animation:waMobileRing 1.65s ease-out infinite!important}
+}
+@media(prefers-reduced-motion:reduce){.mobile-menu-drawer,.mobile-menu-shade,.floating-email{transition:none!important}.whatsapp-float,.whatsapp-float::before{animation:none!important}}
