@@ -1,40 +1,52 @@
 (function(){
-  var path=location.pathname;
-  var locale=(path.split("/")[1]||"en").toLowerCase();
+  var parts=location.pathname.split("/").filter(Boolean);
+  var locale=(parts.length?parts[0]:"en").toLowerCase();
   var labels={
-    en:{menu:"Menu",close:"Close",inquiry:"Email inquiry"},
-    ja:{menu:"メニュー",close:"閉じる",inquiry:"メールで問い合わせ"},
-    ko:{menu:"메뉴",close:"닫기",inquiry:"이메일 문의"},
-    es:{menu:"Menú",close:"Cerrar",inquiry:"Consulta por email"},
-    pt:{menu:"Menu",close:"Fechar",inquiry:"Consulta por e-mail"},
-    de:{menu:"Menü",close:"Schließen",inquiry:"E-Mail-Anfrage"},
-    ru:{menu:"Меню",close:"Закрыть",inquiry:"Запрос по email"},
-    ar:{menu:"القائمة",close:"إغلاق",inquiry:"استفسار بالبريد"},
-    "zh-cn":{menu:"菜单",close:"关闭",inquiry:"邮件咨询"},
-    "zh-tw":{menu:"選單",close:"關閉",inquiry:"電子郵件諮詢"}
+    en:{menu:"Menu",close:"Close",products:"Products",oem:"OEM / ODM",factory:"Factory",home:"Home",email:"Email inquiry"},
+    ja:{menu:"メニュー",close:"閉じる",products:"製品",oem:"OEM / ODM",factory:"工場",home:"ホーム",email:"メールで問い合わせ"},
+    ko:{menu:"메뉴",close:"닫기",products:"제품",oem:"OEM / ODM",factory:"공장",home:"홈",email:"이메일 문의"},
+    es:{menu:"Menú",close:"Cerrar",products:"Productos",oem:"OEM / ODM",factory:"Fábrica",home:"Inicio",email:"Consulta por email"},
+    pt:{menu:"Menu",close:"Fechar",products:"Produtos",oem:"OEM / ODM",factory:"Fábrica",home:"Início",email:"Consulta por e-mail"},
+    de:{menu:"Menü",close:"Schließen",products:"Produkte",oem:"OEM / ODM",factory:"Fabrik",home:"Startseite",email:"E-Mail-Anfrage"},
+    ru:{menu:"Меню",close:"Закрыть",products:"Продукты",oem:"OEM / ODM",factory:"Фабрика",home:"Главная",email:"Запрос по email"},
+    ar:{menu:"القائمة",close:"إغلاق",products:"المنتجات",oem:"OEM / ODM",factory:"المصنع",home:"الرئيسية",email:"استفسار بالبريد"},
+    "zh-cn":{menu:"菜单",close:"关闭",products:"产品",oem:"OEM / ODM",factory:"工厂",home:"首页",email:"邮件咨询"},
+    "zh-tw":{menu:"選單",close:"關閉",products:"產品",oem:"OEM / ODM",factory:"工廠",home:"首頁",email:"電子郵件諮詢"}
   };
   var t=labels[locale]||labels.en;
   var header=document.querySelector(".topbar");
+  var old=document.querySelector(".mobile-menu-toggle");
+  if(old)old.remove();
   var nav=header&&header.querySelector(".desktop-nav");
   if(header&&nav){
     var toggle=document.createElement("button");
     toggle.type="button";toggle.className="mobile-menu-toggle";
-    toggle.setAttribute("aria-expanded","false");
-    toggle.textContent=t.menu;
-    toggle.addEventListener("click",function(){
-      var open=nav.classList.toggle("mobile-nav-open");
-      toggle.setAttribute("aria-expanded",String(open));
-      toggle.textContent=open?t.close:t.menu;
-    });
-    header.insertBefore(toggle,nav);
-    nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){
-      nav.classList.remove("mobile-nav-open");toggle.setAttribute("aria-expanded","false");toggle.textContent=t.menu;
-    });});
+    toggle.setAttribute("aria-label",t.menu);toggle.setAttribute("aria-expanded","false");
+    toggle.innerHTML='<span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>';
+    var shade=document.createElement("div");shade.className="mobile-menu-shade";
+    var drawer=document.createElement("nav");drawer.className="mobile-menu-drawer";drawer.setAttribute("aria-label",t.menu);
+    var top=document.createElement("div");top.className="mobile-drawer-top";
+    var heading=document.createElement("strong");heading.textContent=t.menu;
+    var close=document.createElement("button");close.type="button";close.className="mobile-drawer-close";close.setAttribute("aria-label",t.close);close.textContent="×";
+    top.append(heading,close);drawer.appendChild(top);
+    var links=[
+      [t.home,"/"+locale+"/"],
+      [t.products,"/"+locale+"/products/"],
+      [t.oem,"/"+locale+"/oem-odm/"],
+      [t.factory,"/"+locale+"/factory/"]
+    ];
+    links.forEach(function(item){var a=document.createElement("a");a.href=item[1];a.textContent=item[0];drawer.appendChild(a);});
+    function setOpen(open){drawer.classList.toggle("is-open",open);shade.classList.toggle("is-open",open);toggle.setAttribute("aria-expanded",String(open));document.body.classList.toggle("mobile-menu-active",open);}
+    toggle.addEventListener("click",function(){setOpen(!drawer.classList.contains("is-open"));});
+    close.addEventListener("click",function(){setOpen(false);});
+    shade.addEventListener("click",function(){setOpen(false);});
+    drawer.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){setOpen(false);});});
+    header.appendChild(toggle);document.body.append(shade,drawer);
   }
-  var cta=document.createElement("a");
-  cta.className="mobile-email-cta";
-  cta.href=path.match(/\/(products|factory|oem-odm)\//)?"/"+locale+"/#contact":"#contact";
-  cta.textContent=t.inquiry;
-  cta.setAttribute("aria-label",t.inquiry);
-  document.body.appendChild(cta);
+  var email=document.createElement("a");
+  email.className="floating-email";
+  email.href=location.pathname.indexOf("/products/")>=0||location.pathname.indexOf("/factory/")>=0||location.pathname.indexOf("/oem-odm/")>=0?"/"+locale+"/#contact":"#contact";
+  email.setAttribute("aria-label",t.email);email.setAttribute("title",t.email);
+  email.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 8.1L3.4 7.2v9.7h17.2V7.2L12 13.1Zm0-2.4L19.5 7h-15L12 10.7Z"/></svg><span>'+t.email+'</span>';
+  document.body.appendChild(email);
 })();
