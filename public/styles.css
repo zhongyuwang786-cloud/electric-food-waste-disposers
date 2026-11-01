@@ -12,3 +12,10 @@
 .image-watermark::after{content:"electricfoodwaste.com";position:absolute;right:10px;bottom:9px;z-index:2;color:rgba(255,255,255,.62);font:600 10px/1.2 Arial,sans-serif;letter-spacing:.08em;text-shadow:0 1px 3px rgba(0,0,0,.55);pointer-events:none;white-space:nowrap}
 .factory-gallery .image-watermark{height:220px;border-radius:9px;border:1px solid #dce2dc}
 @media(max-width:760px){.factory-gallery .image-watermark{height:160px}}
+
+/* Floating WhatsApp contact button */
+.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:9999;display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:999px;background:#20b968;color:#fff;text-decoration:none;font:700 14px/1.2 Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .2s ease,box-shadow .2s ease}
+.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 11px 28px rgba(0,0,0,.25)}
+.whatsapp-float svg{width:23px;height:23px;fill:currentColor;flex:none}
+.whatsapp-float:focus-visible{outline:3px solid #173d30;outline-offset:3px}
+@media(max-width:560px){.whatsapp-float{right:14px;bottom:14px;padding:12px 15px;font-size:13px}.whatsapp-float svg{width:21px;height:21px}}
