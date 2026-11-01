@@ -37,3 +37,6 @@
 .contact-form button[type="submit"]:focus-visible{outline:3px solid #a83a18!important;outline-offset:3px}
 @media(max-width:560px){.whatsapp-float{right:14px!important;bottom:14px!important;min-width:150px!important;height:52px!important;padding:0 16px!important}.whatsapp-float svg{width:23px!important;height:23px!important;min-width:23px!important;max-width:23px!important;min-height:23px!important;max-height:23px!important;flex-basis:23px!important}.whatsapp-float span{font-size:14px!important}}
 @media(prefers-reduced-motion:reduce){.whatsapp-float,.whatsapp-float::before{animation:none!important;transition:none!important}}
+/* Root landing page: English-first while country detection selects a supported locale. */
+.root-landing{min-height:100vh;display:grid;place-items:center;padding:24px}.root-landing-content{width:min(100%,680px)}.root-landing-content h1{font-size:clamp(2.4rem,7vw,4rem);line-height:1.05;letter-spacing:-.05em;margin:0 0 18px}.root-landing-content>p:not(.eyebrow){color:var(--muted);margin:0 0 24px}.root-language-note{font-size:.78rem!important;line-height:1.9;margin-top:26px!important}.root-language-note a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:560px){.whatsapp-float{animation:waFloatPulse 1.9s ease-in-out infinite!important}.whatsapp-float::before{animation:waRingPulse 1.9s ease-out infinite!important}}
