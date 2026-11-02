@@ -560,7 +560,40 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://electricfoodwaste.com/ar/factory/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/factory/"/>
   </url>
-  <url><loc>https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/</loc></url>
-  <url><loc>https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/</loc></url>
-  <url><loc>https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/</loc></url>
+  <url>
+    <loc>https://electricfoodwaste.com/ja/resources/how-food-waste-dryer-works/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://electricfoodwaste.com/ja/resources/how-food-waste-dryer-works/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/"/>
+  </url>
+  <url>
+    <loc>https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://electricfoodwaste.com/ja/resources/how-food-waste-dryer-works/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/"/>
+  </url>
+  <url>
+    <loc>https://electricfoodwaste.com/ja/resources/food-waste-dryer-vs-grinder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://electricfoodwaste.com/ja/resources/food-waste-dryer-vs-grinder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/"/>
+  </url>
+  <url>
+    <loc>https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://electricfoodwaste.com/ja/resources/food-waste-dryer-vs-grinder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/"/>
+  </url>
+  <url>
+    <loc>https://electricfoodwaste.com/ja/resources/oem-odm-food-waste-dryer-buyers-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://electricfoodwaste.com/ja/resources/oem-odm-food-waste-dryer-buyers-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/"/>
+  </url>
+  <url>
+    <loc>https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://electricfoodwaste.com/ja/resources/oem-odm-food-waste-dryer-buyers-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/"/>
+  </url>
 </urlset>
