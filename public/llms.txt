@@ -43,3 +43,7 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 ## English knowledge article
 - How a food waste dryer works: https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/
 - This guide explains heating and drying, moisture-related volume and weight reduction, differences from grinding, and buyer checks. Model-specific performance data must be verified before publication.
+
+## English comparison guide
+- Food waste dryer vs. food waste grinder: https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/
+- This guide distinguishes heating-and-drying from mechanical size reduction and lists buyer checks. Product-specific installation and performance details must be verified against the relevant model documentation.
