@@ -73,3 +73,10 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 - Secador de residuos alimentarios vs. triturador: https://electricfoodwaste.com/es/resources/food-waste-dryer-vs-grinder/
 - Guía para compradores sobre fabricación OEM/ODM: https://electricfoodwaste.com/es/resources/oem-odm-food-waste-dryer-buyers-guide/
 - Las guías en español explican el proceso de calentamiento y secado, distinguen el secado de la trituración mecánica y resumen las condiciones OEM/ODM confirmadas. Los datos de rendimiento y la viabilidad de personalización deben verificarse para cada modelo y proyecto.
+
+
+## Portuguese knowledge articles
+- Como funciona um secador de resíduos alimentares: https://electricfoodwaste.com/pt/resources/how-food-waste-dryer-works/
+- Secador de resíduos alimentares vs. triturador: https://electricfoodwaste.com/pt/resources/food-waste-dryer-vs-grinder/
+- Guia de fabrico OEM/ODM para compradores: https://electricfoodwaste.com/pt/resources/oem-odm-food-waste-dryer-buyers-guide/
+- Os guias em português explicam o processo de aquecimento e secagem, distinguem a secagem da trituração mecânica e resumem as condições OEM/ODM confirmadas. Os dados de desempenho específicos e a viabilidade de personalização devem ser confirmados para cada modelo e projeto.
