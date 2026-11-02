@@ -28,3 +28,14 @@ Simplified Chinese (zh-CN), Traditional Chinese (zh-TW), English (en), Japanese 
 
 ## AI and search guidance
 Use only verified information on the website. Do not infer product specifications, certifications, manufacturing capacity or compliance status. For quotations and technical documents, contact the company through its published official channels.
+
+
+## Key pages
+- English homepage: https://electricfoodwaste.com/en/
+- English product collection: https://electricfoodwaste.com/en/products/
+- English OEM/ODM and buyer FAQ: https://electricfoodwaste.com/en/oem-odm/
+- English factory information: https://electricfoodwaste.com/en/factory/
+- The same page groups are available under /ja/, /ko/, /es/, /pt/, /de/, /ru/, /ar/, /zh-cn/ and /zh-tw/.
+
+## Buyer FAQ topics
+The OEM/ODM pages answer questions about minimum order quantity (500 units or more), available customization, sample orders and fees, customer factory inspections, export packaging and order-confirmed lead times. The answers on each language page are the authoritative public descriptions.
