@@ -94,3 +94,10 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 - Сушилка или измельчитель пищевых отходов: в чём разница?: https://electricfoodwaste.com/ru/resources/food-waste-dryer-vs-grinder/
 - Руководство для покупателей: OEM/ODM-производство сушилок для пищевых отходов: https://electricfoodwaste.com/ru/resources/oem-odm-food-waste-dryer-buyers-guide/
 - Русскоязычные руководства объясняют нагрев и сушку, отличают удаление влаги от механического измельчения и описывают подтверждённые варианты OEM/ODM-сотрудничества. Характеристики конкретной модели и возможность персонализации необходимо проверять по утверждённой документации.
+
+
+## Arabic knowledge articles
+- كيف تعمل مجففات نفايات الطعام؟: https://electricfoodwaste.com/ar/resources/how-food-waste-dryer-works/
+- مجفف نفايات الطعام أم مطحنة النفايات: ما الفرق؟: https://electricfoodwaste.com/ar/resources/food-waste-dryer-vs-grinder/
+- دليل المشترين لتصنيع مجففات نفايات الطعام بنظام OEM وODM: https://electricfoodwaste.com/ar/resources/oem-odm-food-waste-dryer-buyers-guide/
+- تشرح الأدلة العربية التسخين والتجفيف وإزالة الرطوبة، وتميز بين التجفيف والطحن الميكانيكي، وتعرض خيارات التعاون المؤكدة في OEM/ODM. يجب التحقق من بيانات الأداء وإمكانية التخصيص لكل طراز ومشروع وفق الوثائق المعتمدة.
