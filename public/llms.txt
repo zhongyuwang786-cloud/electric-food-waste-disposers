@@ -47,3 +47,8 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 ## English comparison guide
 - Food waste dryer vs. food waste grinder: https://electricfoodwaste.com/en/resources/food-waste-dryer-vs-grinder/
 - This guide distinguishes heating-and-drying from mechanical size reduction and lists buyer checks. Product-specific installation and performance details must be verified against the relevant model documentation.
+
+
+## English OEM/ODM buyer guide
+- OEM/ODM food waste dryer manufacturing buyer guide: https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/
+- This guide explains OEM vs. ODM, confirmed customization options, MOQ of 500 units or more, sample orders and project-specific sample fees, customer factory inspections, export packaging and order-confirmed lead times. Confirm product feasibility and commercial details for each project.

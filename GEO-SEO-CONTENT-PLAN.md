@@ -31,3 +31,11 @@
 
 ## GEO 内容建议
 每篇文章明确作者/审核者、发布日期、适用型号、可验证数据、限制条件、常见问题与官方联系入口。回答采购商真实问题，避免关键词堆砌和未证实的环保、节能或认证声明。
+
+
+## 已发布的英文 GEO 内容
+- How Does a Food Waste Dryer Work? — `/en/resources/how-food-waste-dryer-works/`
+- Food Waste Dryer vs. Food Waste Grinder — `/en/resources/food-waste-dryer-vs-grinder/`
+- OEM/ODM Food Waste Dryer Manufacturing: A Buyer’s Guide — `/en/resources/oem-odm-food-waste-dryer-buyers-guide/`
+
+每篇文章均需在上线后核对线上页面、canonical、Article/FAQ 结构化数据、首页入口、sitemap 与 llms.txt；英文文章上线不代表已完成其他九种语言翻译。
