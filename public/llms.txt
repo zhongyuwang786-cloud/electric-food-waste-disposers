@@ -107,3 +107,10 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 - 厨余垃圾干燥机与粉碎机有什么区别？：https://electricfoodwaste.com/zh-cn/resources/food-waste-dryer-vs-grinder/
 - 厨余垃圾干燥机 OEM / ODM 采购指南：https://electricfoodwaste.com/zh-cn/resources/oem-odm-food-waste-dryer-buyers-guide/
 - 中文指南说明加热干燥如何减少厨余中的水分，区分干燥与机械粉碎，并总结已确认的 OEM / ODM 合作范围。具体型号性能、定制可行性、样品费用、交货周期和付款安排应按项目及已确认资料核实。
+
+
+## Traditional Chinese knowledge articles
+- 廚餘垃圾乾燥機如何運作？加熱與乾燥處理原理：https://electricfoodwaste.com/zh-tw/resources/how-food-waste-dryer-works/
+- 廚餘垃圾乾燥機與粉碎機有什麼差異？：https://electricfoodwaste.com/zh-tw/resources/food-waste-dryer-vs-grinder/
+- 廚餘垃圾乾燥機 OEM / ODM 採購指南：https://electricfoodwaste.com/zh-tw/resources/oem-odm-food-waste-dryer-buyers-guide/
+- 繁體中文指南說明加熱乾燥如何減少廚餘中的水分，區分乾燥與機械粉碎，並整理已確認的 OEM / ODM 合作範圍。具體型號性能、客製可行性、樣品費用、交貨期與付款安排應依專案及已確認資料核實。
