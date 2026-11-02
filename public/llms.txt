@@ -39,3 +39,7 @@ Use only verified information on the website. Do not infer product specification
 
 ## Buyer FAQ topics
 The OEM/ODM pages answer questions about minimum order quantity (500 units or more), available customization, sample orders and fees, customer factory inspections, export packaging and order-confirmed lead times. The answers on each language page are the authoritative public descriptions.
+
+## English knowledge article
+- How a food waste dryer works: https://electricfoodwaste.com/en/resources/how-food-waste-dryer-works/
+- This guide explains heating and drying, moisture-related volume and weight reduction, differences from grinding, and buyer checks. Model-specific performance data must be verified before publication.
