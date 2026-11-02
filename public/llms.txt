@@ -52,3 +52,10 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 ## English OEM/ODM buyer guide
 - OEM/ODM food waste dryer manufacturing buyer guide: https://electricfoodwaste.com/en/resources/oem-odm-food-waste-dryer-buyers-guide/
 - This guide explains OEM vs. ODM, confirmed customization options, MOQ of 500 units or more, sample orders and project-specific sample fees, customer factory inspections, export packaging and order-confirmed lead times. Confirm product feasibility and commercial details for each project.
+
+
+## Japanese knowledge articles
+- 生ごみ乾燥機の仕組み: https://electricfoodwaste.com/ja/resources/how-food-waste-dryer-works/
+- 生ごみ乾燥機と生ごみ粉砕機の違い: https://electricfoodwaste.com/ja/resources/food-waste-dryer-vs-grinder/
+- 生ごみ乾燥機のOEM / ODM製造ガイド: https://electricfoodwaste.com/ja/resources/oem-odm-food-waste-dryer-buyers-guide/
+- Japanese pages explain heating and drying, distinguish drying from mechanical grinding, and describe confirmed OEM/ODM cooperation terms. Model-specific performance and feasibility must be confirmed from product documents.
