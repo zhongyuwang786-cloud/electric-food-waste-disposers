@@ -159,3 +159,39 @@
   .series-art > .image-watermark img.series-photo {padding:16px}
   .factory-visual {height:300px}
 }
+
+
+/* Factory image hard fallback: render the verified factory asset behind the photo element. */
+.factory-visual {
+  position:relative !important;
+  min-height:360px;
+  height:360px;
+  overflow:hidden;
+  background:#dce5d8 url("/assets/images/factory_05_factory_wide.jpg") center/cover no-repeat !important;
+}
+.factory-visual > .image-watermark {
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  z-index:1;
+}
+.factory-visual img.factory-photo {
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+.factory-visual .factory-overlay {
+  z-index:5 !important;
+}
+@media(max-width:760px) {
+  .factory-visual {height:280px;min-height:280px}
+}
