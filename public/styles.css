@@ -323,3 +323,7 @@
 .hero-gallery-grid .image-watermark::after{right:8px;bottom:7px;color:rgba(35,43,46,.36);font-size:8px;text-shadow:none}
 @media(max-width:900px){.hero-gallery{height:380px;padding:18px}}
 @media(max-width:560px){.hero-gallery{height:330px;padding:12px;border-radius:14px}.hero-gallery-grid{gap:8px}.hero-gallery-grid .image-watermark{border-radius:8px}.hero-gallery-grid .image-watermark img{padding:6px}.hero-gallery-grid .image-watermark::after{right:5px;bottom:5px;font-size:6px}}
+
+/* Keep appliance photography fully visible instead of cropping product silhouettes. */
+.hero-gallery-grid>.image-watermark,.product-art>.image-watermark,.series-art>.image-watermark{width:100%;height:100%;}
+.hero-gallery-grid>.image-watermark img,.product-art>.image-watermark img,.series-art>.image-watermark img{width:100%;height:100%;object-fit:contain;padding:12px;}
