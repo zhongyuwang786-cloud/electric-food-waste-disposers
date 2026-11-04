@@ -10,8 +10,15 @@ export async function onRequestPost({ request, env }) {
   // Enforce same-origin browser submissions when SITE_ORIGIN is configured.
   const origin = request.headers.get("Origin");
   if (env.SITE_ORIGIN && origin && origin !== env.SITE_ORIGIN) return json(403, { ok: false, error: "Origin not allowed" });
+  // Limit payload size before parsing to reduce oversized-body abuse.
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (declaredLength > 16_384) return json(413, { ok: false, error: "Request body is too large" });
+  let raw;
+  try { raw = await request.text(); } catch { return json(400, { ok: false, error: "Invalid request body" }); }
+  if (new TextEncoder().encode(raw).byteLength > 16_384) return json(413, { ok: false, error: "Request body is too large" });
   let d;
-  try { d = await request.json(); } catch { return json(400, { ok: false, error: "Invalid JSON" }); }
+  try { d = JSON.parse(raw); } catch { return json(400, { ok: false, error: "Invalid JSON" }); }
+  if (!d || typeof d !== "object" || Array.isArray(d)) return json(400, { ok: false, error: "Invalid inquiry data" });
   // Honeypot field: bots often fill hidden fields. Silently reject without storing.
   if (clean(d.website, 200)) return json(200, { ok: true });
   const name = clean(d.name, 120);
@@ -51,7 +58,7 @@ export async function onRequestPost({ request, env }) {
         from: env.INQUIRY_FROM_EMAIL,
         to: [env.INQUIRY_TO_EMAIL],
         reply_to: email,
-        subject: `Website B2B inquiry${company ? ` — ${company}` : ""}`,
+        subject: `Website B2B inquiry${company ? ` — ${company.replace(/[\\r\\n]+/g, " ")}` : ""}`,
         text: textBody,
         html: htmlBody
       })
