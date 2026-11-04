@@ -62,7 +62,7 @@ export async function onRequestPost({ request, env }) {
         from: env.INQUIRY_FROM_EMAIL,
         to: [env.INQUIRY_TO_EMAIL],
         reply_to: email,
-        subject: `Website B2B inquiry${company ? ` — ${company.replace(/[\\r\\n]+/g, " ")}` : ""}`,
+        subject: `Website B2B inquiry${company ? ` — ${company.replace(/[\r\n]+/g, " ")}` : ""}`,
         text: textBody,
         html: htmlBody
       })
