@@ -313,3 +313,13 @@
     min-height:280px;
   }
 }
+
+
+/* Shared six-SKU homepage hero: genuine product photos, no AI-redrawn appliance shapes */
+.hero-gallery{height:430px;min-height:0;padding:22px;border-radius:18px;background:linear-gradient(135deg,#171b1e 0%,#42494d 48%,#e9eceb 100%);box-shadow:0 24px 55px rgba(12,20,24,.16)}
+.hero-gallery-grid{position:relative;z-index:1;width:100%;height:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px}
+.hero-gallery-grid .image-watermark{min-width:0;min-height:0;height:100%;border-radius:12px;background:linear-gradient(145deg,#fff 0%,#eef1f1 100%);box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.hero-gallery-grid .image-watermark img{width:100%;height:100%;padding:10px;object-fit:contain}
+.hero-gallery-grid .image-watermark::after{right:8px;bottom:7px;color:rgba(35,43,46,.36);font-size:8px;text-shadow:none}
+@media(max-width:900px){.hero-gallery{height:380px;padding:18px}}
+@media(max-width:560px){.hero-gallery{height:330px;padding:12px;border-radius:14px}.hero-gallery-grid{gap:8px}.hero-gallery-grid .image-watermark{border-radius:8px}.hero-gallery-grid .image-watermark img{padding:6px}.hero-gallery-grid .image-watermark::after{right:5px;bottom:5px;font-size:6px}}
