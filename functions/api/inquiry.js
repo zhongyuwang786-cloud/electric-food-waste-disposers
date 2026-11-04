@@ -23,7 +23,7 @@ export async function onRequestPost({ request, env }) {
   if (clean(d.website, 200)) return json(200, { ok: true });
   const name = clean(d.name, 120);
   const company = clean(d.company, 180);
-  const email = clean(d.email, 254);
+  const email = clean(d.email, 254).toLowerCase();
   const market = clean(d.market, 100);
   const message = clean(d.message, 5000);
   const requestedLanguage = clean(d.language || "en", 10).toLowerCase();
@@ -34,6 +34,18 @@ export async function onRequestPost({ request, env }) {
   if (!name || !company || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json(400, { ok: false, error: "Please provide valid name, company, business email and project requirements" });
   }
+  // Avoid accidental double-clicks and rapid repeat submissions from the same email.
+  // This is a lightweight duplicate guard, not a substitute for Cloudflare edge rate limiting.
+  try {
+    const recent = await env.DB.prepare(
+      "SELECT id FROM inquiries WHERE lower(email) = ? AND created_at >= datetime('now', '-60 seconds') LIMIT 1"
+    ).bind(email).first();
+    if (recent) return json(429, { ok: false, error: "A recent inquiry from this email was already received. Please wait a moment before submitting again." });
+  } catch (e) {
+    console.error("Inquiry duplicate check failed");
+    return json(503, { ok: false, error: "Could not verify recent submissions. Please try again shortly." });
+  }
+
   let inquiryId;
   try {
     const saved = await env.DB.prepare("INSERT INTO inquiries (name, company, email, market, message, language) VALUES (?, ?, ?, ?, ?, ?)")
