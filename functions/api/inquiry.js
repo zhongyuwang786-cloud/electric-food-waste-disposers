@@ -26,7 +26,11 @@ export async function onRequestPost({ request, env }) {
   const email = clean(d.email, 254);
   const market = clean(d.market, 100);
   const message = clean(d.message, 5000);
-  const language = clean(d.language || "en", 10);
+  const requestedLanguage = clean(d.language || "en", 10).toLowerCase();
+  const supportedLanguages = new Set(["en", "ja", "ko", "es", "pt", "de", "ru", "ar", "zh-cn", "zh-tw"]);
+  const language = supportedLanguages.has(requestedLanguage) ? requestedLanguage : "en";
+  const supportedMarkets = new Set(["", "north-america", "europe", "japan-korea", "south-america", "middle-east", "other"]);
+  if (!supportedMarkets.has(market)) return json(400, { ok: false, error: "Please select a valid target market" });
   if (!name || !company || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json(400, { ok: false, error: "Please provide valid name, company, business email and project requirements" });
   }
