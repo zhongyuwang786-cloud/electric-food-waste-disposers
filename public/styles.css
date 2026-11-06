@@ -358,13 +358,9 @@
 @media(prefers-reduced-motion:reduce){.homepage-carousel-track{transition:none}}
 
 
-/* Robust homepage carousel visibility and motion */
+/* Carousel sizing: preserve the original first hero slide layout */
 .homepage-carousel{position:relative;width:100%;overflow:hidden}
-.homepage-carousel-track{display:flex!important;flex-wrap:nowrap!important;width:100%;transform:translate3d(0,0,0);transition:transform .7s ease}
-.homepage-carousel-track>[data-slide]{display:block!important;flex:0 0 100%!important;width:100%!important;min-width:100%!important;max-width:100%!important}
+.homepage-carousel-track{display:flex!important;flex-wrap:nowrap!important;width:100%;transition:transform .7s ease}
+.homepage-carousel-track>[data-slide]{flex:0 0 100%!important;width:100%!important;min-width:100%!important;max-width:100%!important}
 .homepage-carousel-track>[data-slide]:not(.is-active){pointer-events:none}
-.homepage-carousel-track .hero{min-height:570px}
-.homepage-carousel-track .homepage-promo-banner{min-height:570px}
 .homepage-carousel-controls{display:flex!important}
-@media(max-width:900px){.homepage-carousel-track .hero{min-height:0}.homepage-carousel-track .homepage-promo-banner{min-height:380px}}
-@media(max-width:560px){.homepage-carousel-track .homepage-promo-banner{min-height:300px}}
