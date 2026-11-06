@@ -8,7 +8,7 @@
 - 仓库：https://github.com/zhongyuwang786-cloud/electric-food-waste-disposers
 - 基准分支：main
 - 基准提交（Commit）：`1c3f7818a794693426cdbbdfce22527d312433dc`
-- 基准树（Tree）：`1c3f7818a794693426cdbbdfce22527d312433dc`
+- 基准树（Tree）：`939bdd64b346c41cbbfc85b984ffeff28a415a8a`
 - 建立日期：2026-11-06
 - 基准原则：今后任何 SEO、GEO、AI 搜索、标题、描述、页面结构、索引、链接或结构化数据修改，先对照此基准，再实施修改并在 `SEO_CHANGELOG.md` 追加记录。
 - 历史可还原性：本次基准提交保留在 Git 历史中；以下文件 SHA 用于核对基准版本。
