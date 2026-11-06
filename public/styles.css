@@ -356,3 +356,15 @@
 @media(max-width:900px){.homepage-carousel .homepage-promo-banner{min-height:380px;padding:38px 5%}}
 @media(max-width:560px){.homepage-carousel .homepage-promo-banner{min-height:300px;padding:22px 4%}.homepage-carousel-controls{bottom:10px;gap:12px;padding:5px 9px}.carousel-arrow{width:29px;height:29px;font-size:22px}}
 @media(prefers-reduced-motion:reduce){.homepage-carousel-track{transition:none}}
+
+
+/* Robust homepage carousel visibility and motion */
+.homepage-carousel{position:relative;width:100%;overflow:hidden}
+.homepage-carousel-track{display:flex!important;flex-wrap:nowrap!important;width:100%;transform:translate3d(0,0,0);transition:transform .7s ease}
+.homepage-carousel-track>[data-slide]{display:block!important;flex:0 0 100%!important;width:100%!important;min-width:100%!important;max-width:100%!important}
+.homepage-carousel-track>[data-slide]:not(.is-active){pointer-events:none}
+.homepage-carousel-track .hero{min-height:570px}
+.homepage-carousel-track .homepage-promo-banner{min-height:570px}
+.homepage-carousel-controls{display:flex!important}
+@media(max-width:900px){.homepage-carousel-track .hero{min-height:0}.homepage-carousel-track .homepage-promo-banner{min-height:380px}}
+@media(max-width:560px){.homepage-carousel-track .homepage-promo-banner{min-height:300px}}
