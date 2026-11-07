@@ -47,3 +47,18 @@
 - 验证方式与结果：已读取 main 分支基准树并记录 SEO 相关文件路径及 Blob SHA；未进行页面 SEO 内容修改。
 - 部署状态：不涉及网站部署；文件提交至 GitHub 后生效于版本库。
 - 备注：基准提交 `1c3f7818a794693426cdbbdfce22527d312433dc`。
+
+
+## 2026-11-07 — Add two new product detail page groups (working branch)
+
+- Scope: two product detail pages for the newly supplied white top-opening design and digital-display design, each localized under all 10 existing language directories.
+- New page URL patterns: `/{locale}/products/white-top-opening/` and `/{locale}/products/digital-display/` for en, ja, ko, es, pt, de, ru, ar, zh-cn and zh-tw (20 URLs total).
+- Page title changes: each of the 20 new pages has its own localized title; the title names the design rather than exposing an unconfirmed factory model number.
+- Meta description changes: each of the 20 new pages has its own localized description and states that technical specifications are supplied after confirmation.
+- Page structure changes: added product overview, verified heating/drying and volume-reduction process, design highlights, a technical-information table with unconfirmed values marked “To be confirmed”, OEM/ODM customization information, and inquiry CTA.
+- Structured data: added Product JSON-LD with no invented capacity, power, voltage, frequency, processing volume, certification, price or availability values.
+- Product collection structure: added two localized product cards to each of the 10 existing product collection pages; collection-page titles and meta descriptions were not changed in this batch.
+- Sitemap: added 20 localized detail-page URLs with reciprocal hreflang alternates and x-default links.
+- Image paths referenced: `/assets/images/shl-23c-white-kitchen.webp` and `/assets/images/shl-25-digital-display.webp`. These image binaries still need to be committed to the repository before deployment; do not publish/deploy this branch until both assets are present and verified.
+- Backups: original product collection HTML pages were copied to `SEO-BACKUPS/2026-11-07/pre-two-product-pages/`; original sitemap copied to `SEO-BACKUPS/2026-11-07/sitemap.xml.before-two-product-pages`.
+- Status: implementation is on branch `add-two-product-detail-pages`; not merged to main and not deployed.
