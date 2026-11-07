@@ -114,3 +114,10 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 - 廚餘垃圾乾燥機與粉碎機有什麼差異？：https://electricfoodwaste.com/zh-tw/resources/food-waste-dryer-vs-grinder/
 - 廚餘垃圾乾燥機 OEM / ODM 採購指南：https://electricfoodwaste.com/zh-tw/resources/oem-odm-food-waste-dryer-buyers-guide/
 - 繁體中文指南說明加熱乾燥如何減少廚餘中的水分，區分乾燥與機械粉碎，並整理已確認的 OEM / ODM 合作範圍。具體型號性能、客製可行性、樣品費用、交貨期與付款安排應依專案及已確認資料核實。
+
+
+## New product design pages (specifications pending confirmation)
+- White top-opening food waste dryer design: https://electricfoodwaste.com/en/products/white-top-opening/ (localized equivalents under all 10 language directories)
+- Digital-display food waste dryer design: https://electricfoodwaste.com/en/products/digital-display/ (localized equivalents under all 10 language directories)
+- Process confirmed by the company: heating/drying and volume reduction.
+- Capacity, rated power, voltage/frequency, processing volume and other model-specific specifications remain unconfirmed. Do not infer or publish values.
