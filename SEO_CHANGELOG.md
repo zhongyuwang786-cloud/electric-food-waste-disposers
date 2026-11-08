@@ -586,3 +586,426 @@
 - Source validation: all 30 pages contain the visible localized FAQ section, a parseable FAQPage JSON-LD block, the email inquiry CTA, and the MOQ statement.
 - Page title and meta descriptions: unchanged in this batch.
 - Deployment: GitHub main contains the changes. No successful Cloudflare Pages deployment record was available through the connected repository workflow checks; live rollout is therefore not independently confirmed by this check. User should verify the updated FAQ section on the live product pages.
+
+
+## 2026-11-08 — Related-product internal navigation
+
+### SEO-0034 — Add related product links
+- Date: 2026-11-08
+- Page/language: /en/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/en/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/en-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0035 — Add related product links
+- Date: 2026-11-08
+- Page/language: /en/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/en/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/en-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0036 — Add related product links
+- Date: 2026-11-08
+- Page/language: /en/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/en/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/en-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0037 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ja/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ja/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ja-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0038 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ja/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ja/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ja-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0039 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ja/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ja/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ja-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0040 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ko/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ko/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ko-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0041 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ko/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ko/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ko-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0042 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ko/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ko/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ko-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0043 — Add related product links
+- Date: 2026-11-08
+- Page/language: /es/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/es/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/es-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0044 — Add related product links
+- Date: 2026-11-08
+- Page/language: /es/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/es/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/es-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0045 — Add related product links
+- Date: 2026-11-08
+- Page/language: /es/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/es/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/es-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0046 — Add related product links
+- Date: 2026-11-08
+- Page/language: /pt/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/pt/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/pt-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0047 — Add related product links
+- Date: 2026-11-08
+- Page/language: /pt/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/pt/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/pt-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0048 — Add related product links
+- Date: 2026-11-08
+- Page/language: /pt/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/pt/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/pt-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0049 — Add related product links
+- Date: 2026-11-08
+- Page/language: /de/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/de/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/de-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0050 — Add related product links
+- Date: 2026-11-08
+- Page/language: /de/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/de/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/de-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0051 — Add related product links
+- Date: 2026-11-08
+- Page/language: /de/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/de/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/de-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0052 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ru/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ru/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ru-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0053 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ru/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ru/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ru-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0054 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ru/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ru/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ru-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0055 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ar/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ar/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ar-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0056 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ar/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ar/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ar-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0057 — Add related product links
+- Date: 2026-11-08
+- Page/language: /ar/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/ar/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/ar-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0058 — Add related product links
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/zh-cn/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-cn-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0059 — Add related product links
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/zh-cn/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-cn-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0060 — Add related product links
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/zh-cn/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-cn-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0061 — Add related product links
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-top-opening/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/zh-tw/products/white-top-opening/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-tw-white-top-opening.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0062 — Add related product links
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/digital-display/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/zh-tw/products/digital-display/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-tw-digital-display.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+### SEO-0063 — Add related product links
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-front-control/
+- Change type: Internal linking and page-structure addition.
+- Before: Product detail page linked to the collection page and contact route; it did not provide a dedicated related-design navigation block.
+- After: Added a localized “related product designs” section linking to the other two product detail pages and back to the localized product collection. Existing contact, email and WhatsApp inquiry CTAs were retained.
+- Title/meta description: Not changed.
+- Target intent: food waste dryer product comparison, countertop food waste processor designs, OEM/ODM product selection.
+- Reason: Help B2B buyers compare available exterior designs and continue to a relevant product or inquiry.
+- Files: public/zh-tw/products/white-front-control/index.html.
+- Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-tw-white-front-control.html.
+- Validation: Source changes committed; cross-page URL checks pending.
+- Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
