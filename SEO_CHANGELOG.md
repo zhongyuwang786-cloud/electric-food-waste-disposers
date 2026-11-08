@@ -1018,3 +1018,366 @@
 - Responsive layout: related cards use a two-column desktop grid and a single-column layout at the existing 760px mobile breakpoint.
 - Title/meta description: unchanged.
 - Deployment: GitHub main updated. Cloudflare Pages deployment and live rendering remain unconfirmed; the live site could not be fetched through the available verification route.
+
+
+## 2026-11-08 — Product-specific email and WhatsApp inquiry links
+
+### SEO-0064 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /en/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/en-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0065 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /en/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/en-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0066 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /en/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/en-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0067 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ja/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ja-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0068 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ja/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ja-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0069 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ja/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ja-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0070 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ko/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ko-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0071 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ko/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ko-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0072 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ko/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ko-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0073 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /es/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/es-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0074 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /es/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/es-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0075 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /es/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/es-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0076 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /pt/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/pt-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0077 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /pt/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/pt-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0078 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /pt/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/pt-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0079 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /de/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/de-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0080 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /de/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/de-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0081 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /de/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/de-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0082 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ru/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ru-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0083 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ru/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ru-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0084 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ru/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ru-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0085 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ar/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ar-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0086 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ar/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ar-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0087 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /ar/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/ar-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0088 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-cn-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0089 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-cn-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0090 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-cn-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0091 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-top-opening/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-tw-white-top-opening.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0092 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/digital-display/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-tw-digital-display.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+### SEO-0093 — Product-specific inquiry CTA
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-front-control/
+- Change type: Conversion CTA destination and prefilled inquiry content; no title/meta or heading changes.
+- Before: Email and WhatsApp links used generic inquiry wording and did not identify the product being viewed.
+- After: Email subject and body identify the product and page URL. WhatsApp opens with the product name, exact localized product URL, and prompts for target market, estimated order quantity, and customization requirements.
+- Title/meta description: Not changed.
+- SEO impact: No indexable copy or URL changes; improves product attribution in inbound B2B inquiries.
+- Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-tw-white-front-control.html.
+- Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
+- Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
