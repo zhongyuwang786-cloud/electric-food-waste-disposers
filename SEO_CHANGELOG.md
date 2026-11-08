@@ -62,3 +62,126 @@
 - Image paths referenced: `/assets/images/shl-23c-white-kitchen.webp` and `/assets/images/shl-25-digital-display.webp`. These image binaries still need to be committed to the repository before deployment; do not publish/deploy this branch until both assets are present and verified.
 - Backups: original product collection HTML pages were copied to `SEO-BACKUPS/2026-11-07/pre-two-product-pages/`; original sitemap copied to `SEO-BACKUPS/2026-11-07/sitemap.xml.before-two-product-pages`.
 - Status: implementation is on branch `add-two-product-detail-pages`; not merged to main and not deployed.
+
+
+## 2026-11-08 — Third product: white front-control design (working branch)
+
+### SEO-THIRD-EN — New localized product page
+- Date: 2026-11-08
+- Page/language: /en/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/en/products/white-front-control/index.html; public/en/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-JA — New localized product page
+- Date: 2026-11-08
+- Page/language: /ja/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/ja/products/white-front-control/index.html; public/ja/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-KO — New localized product page
+- Date: 2026-11-08
+- Page/language: /ko/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/ko/products/white-front-control/index.html; public/ko/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-ES — New localized product page
+- Date: 2026-11-08
+- Page/language: /es/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/es/products/white-front-control/index.html; public/es/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-PT — New localized product page
+- Date: 2026-11-08
+- Page/language: /pt/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/pt/products/white-front-control/index.html; public/pt/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-DE — New localized product page
+- Date: 2026-11-08
+- Page/language: /de/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/de/products/white-front-control/index.html; public/de/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-RU — New localized product page
+- Date: 2026-11-08
+- Page/language: /ru/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/ru/products/white-front-control/index.html; public/ru/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-AR — New localized product page
+- Date: 2026-11-08
+- Page/language: /ar/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/ar/products/white-front-control/index.html; public/ar/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-ZH-CN — New localized product page
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/zh-cn/products/white-front-control/index.html; public/zh-cn/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
+
+### SEO-THIRD-ZH-TW — New localized product page
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-front-control/
+- Change type: New page; localized title and meta description; canonical URL; hreflang alternates; Product JSON-LD; page structure and product collection link.
+- Before: No dedicated detail page for this design.
+- After: Added a localized detail page and a product card on the localized product collection page. Unconfirmed technical specifications remain marked “To be confirmed”.
+- Search intent: countertop food waste dryer, front digital control panel, B2B product sourcing and OEM/ODM.
+- Reason: Present the newly supplied white countertop design with circular top opening and front digital control panel.
+- Files: public/zh-tw/products/white-front-control/index.html; public/zh-tw/products/index.html; public/sitemap.xml.
+- Verification: Source structure and links pending final automated validation. Exact supplied image file must still be added to repository assets.
+- Deployment: Working branch only; not merged and not deployed.
