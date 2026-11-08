@@ -1009,3 +1009,12 @@
 - Pre-change backup: SEO-BACKUPS/2026-11-08/pre-related-links/zh-tw-white-front-control.html.
 - Validation: Source changes committed; cross-page URL checks pending.
 - Deployment: GitHub main updated; Cloudflare Pages deployment not yet confirmed.
+
+
+### Validation update — 2026-11-08 related-product navigation
+- Scope: all 30 product detail pages (3 designs × 10 languages).
+- Backups: 30 pre-change HTML copies confirmed under `SEO-BACKUPS/2026-11-08/pre-related-links/`.
+- Source validation: all 30 pages contain the related-products section, links to both sibling product pages in the same language, and a link back to that language's product collection page.
+- Responsive layout: related cards use a two-column desktop grid and a single-column layout at the existing 760px mobile breakpoint.
+- Title/meta description: unchanged.
+- Deployment: GitHub main updated. Cloudflare Pages deployment and live rendering remain unconfirmed; the live site could not be fetched through the available verification route.
