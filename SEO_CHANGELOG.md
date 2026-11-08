@@ -1381,3 +1381,496 @@
 - Backup: SEO-BACKUPS/2026-11-08/pre-product-inquiry-cta/zh-tw-white-front-control.html.
 - Validation: All 30 pages checked for product-specific email and WhatsApp parameters; old generic CTA links are absent.
 - Deployment: GitHub main updated; Cloudflare live deployment remains to be confirmed.
+
+
+### SEO-0094 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /en/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/en-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0095 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ja/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ja-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0096 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ko/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ko-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0097 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /es/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/es-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0098 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /pt/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/pt-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0099 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /de/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/de-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0100 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ru/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ru-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0101 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ar/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ar-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0102 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-cn/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-cn-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0103 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-tw/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: The inquiry form collected contact details, target market and free-text requirements, but had no dedicated product or estimated quantity fields.
+- After: Added localized product-of-interest selection and optional estimated order quantity fields.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-tw-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0104 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /en/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/en-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0105 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /en/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/en-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0106 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /en/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/en-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0107 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ja/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ja-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0108 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ja/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ja-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0109 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ja/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ja-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0110 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ko/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ko-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0111 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ko/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ko-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0112 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ko/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ko-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0113 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /es/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/es-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0114 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /es/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/es-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0115 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /es/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/es-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0116 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /pt/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/pt-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0117 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /pt/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/pt-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0118 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /pt/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/pt-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0119 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /de/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/de-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0120 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /de/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/de-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0121 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /de/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/de-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0122 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ru/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ru-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0123 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ru/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ru-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0124 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ru/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ru-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0125 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ar/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ar-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0126 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ar/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ar-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0127 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /ar/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/ar-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0128 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-cn-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0129 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-cn-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0130 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-cn/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-cn-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0131 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-top-opening/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-tw-products-white-top-opening-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0132 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/digital-display/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-tw-products-digital-display-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0133 — Product inquiry form qualification
+- Date: 2026-11-08
+- Page/language: /zh-tw/products/white-front-control/
+- Change type: Page structure and B2B conversion form; title and meta description unchanged.
+- Before: Product-page contact CTAs linked to the locale homepage contact section without passing the selected product into the form.
+- After: Contact CTAs now pass the current product slug to the localized homepage form so the product can be preselected.
+- Title/meta description: Not changed.
+- SEO impact: Improves product attribution and completeness of B2B inquiries; no URL, title, description or indexable product claims changed.
+- Backup: SEO-BACKUPS/2026-11-08/pre-b2b-inquiry-form/zh-tw-products-white-front-control-index.html.html.
+- Validation: Form/CTA source checked; product selection uses one of the three product slugs.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+
+### SEO-0134 — Inquiry payload enrichment
+- Date: 2026-11-08
+- Scope: /api/inquiry and shared form script.
+- Change type: Inquiry data handling; no public page title, meta description or indexable page structure changes.
+- Before: The API stored project requirements as free text and notification emails did not have dedicated product and quantity fields.
+- After: The API accepts a validated product slug and estimated quantity, includes both in the stored inquiry message and sales notification, and the shared script preselects the product from the page URL.
+- Title/meta description: Not changed.
+- SEO impact: Supports attribution from product detail pages and more useful B2B lead context.
+- Backup: Existing backend and shared script retained in Git history before this commit.
+- Validation: Existing D1 schema is unchanged; product and quantity are appended to the existing message field to avoid a database migration.
+- Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.

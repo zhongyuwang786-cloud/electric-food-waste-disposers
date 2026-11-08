@@ -26,6 +26,23 @@ export async function onRequestPost({ request, env }) {
   const email = clean(d.email, 254).toLowerCase();
   const market = clean(d.market, 100);
   const message = clean(d.message, 5000);
+  const product = clean(d.product, 64);
+  const quantity = clean(d.quantity, 80);
+  const productNames = new Map([
+    ["", "Not specified"],
+    ["white-top-opening", "White Top-Opening Food Waste Dryer"],
+    ["digital-display", "Digital Display Food Waste Dryer"],
+    ["white-front-control", "White Front-Control Food Waste Dryer"]
+  ]);
+  if (!productNames.has(product)) return json(400, { ok: false, error: "Please select a valid product" });
+  const productName = productNames.get(product);
+  const storedMessage = [
+    "Product of interest: " + productName,
+    "Estimated order quantity: " + (quantity || "Not specified"),
+    "",
+    "Project requirements:",
+    message
+  ].join("\n");
   const requestedLanguage = clean(d.language || "en", 10).toLowerCase();
   const supportedLanguages = new Set(["en", "ja", "ko", "es", "pt", "de", "ru", "ar", "zh-cn", "zh-tw"]);
   const language = supportedLanguages.has(requestedLanguage) ? requestedLanguage : "en";
@@ -49,7 +66,7 @@ export async function onRequestPost({ request, env }) {
   let inquiryId;
   try {
     const saved = await env.DB.prepare("INSERT INTO inquiries (name, company, email, market, message, language) VALUES (?, ?, ?, ?, ?, ?)")
-      .bind(name, company, email, market, message, language).run();
+      .bind(name, company, email, market, storedMessage, language).run();
     inquiryId = saved.meta?.last_row_id ?? null;
   } catch (e) {
     return json(500, { ok: false, error: "Could not save inquiry" });
@@ -63,9 +80,9 @@ export async function onRequestPost({ request, env }) {
   const textBody = [
     "New B2B website inquiry", `Inquiry ID: ${inquiryId ?? "unknown"}`, "",
     `Name: ${name}`, `Company: ${company}`, `Email: ${email}`,
-    `Target market: ${market}`, `Language: ${language}`, "", "Requirements:", message
+    `Target market: ${market}`, `Product: ${productName}`, `Estimated order quantity: ${quantity || "Not specified"}`, `Language: ${language}`, "", "Requirements:", message
   ].join("\n");
-  const htmlBody = `<h2>New B2B website inquiry</h2><p><b>Inquiry ID:</b> ${escapeHtml(inquiryId ?? "unknown")}</p><p><b>Name:</b> ${escapeHtml(name)}<br><b>Company:</b> ${escapeHtml(company)}<br><b>Email:</b> ${escapeHtml(email)}<br><b>Target market:</b> ${escapeHtml(market)}<br><b>Language:</b> ${escapeHtml(language)}</p><h3>Requirements</h3><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
+  const htmlBody = `<h2>New B2B website inquiry</h2><p><b>Inquiry ID:</b> ${escapeHtml(inquiryId ?? "unknown")}</p><p><b>Name:</b> ${escapeHtml(name)}<br><b>Company:</b> ${escapeHtml(company)}<br><b>Email:</b> ${escapeHtml(email)}<br><b>Target market:</b> ${escapeHtml(market)}<br><b>Product:</b> ${escapeHtml(productName)}<br><b>Estimated order quantity:</b> ${escapeHtml(quantity || "Not specified")}<br><b>Language:</b> ${escapeHtml(language)}</p><h3>Requirements</h3><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
   try {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
