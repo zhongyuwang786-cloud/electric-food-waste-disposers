@@ -17,6 +17,11 @@ const formMessages={
 };
 const form=document.getElementById('inquiryForm');
 if(form){
+  const productField=form.querySelector('[name="product"]');
+  const requestedProduct=new URLSearchParams(window.location.search).get("product");
+  if(productField && requestedProduct && Array.from(productField.options).some(option=>option.value===requestedProduct)){
+    productField.value=requestedProduct;
+  }
   const locale=(document.documentElement.lang||"en").toLowerCase();
   const messages=formMessages[locale]||formMessages.en;
   const submit=form.querySelector('button[type="submit"]');
