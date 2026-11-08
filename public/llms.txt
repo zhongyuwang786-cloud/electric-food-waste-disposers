@@ -121,3 +121,10 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 - Digital-display food waste dryer design: https://electricfoodwaste.com/en/products/digital-display/ (localized equivalents under all 10 language directories)
 - Process confirmed by the company: heating/drying and volume reduction.
 - Capacity, rated power, voltage/frequency, processing volume and other model-specific specifications remain unconfirmed. Do not infer or publish values.
+
+
+## Third product design (technical specifications pending confirmation)
+- White front-control food waste dryer design: https://electricfoodwaste.com/en/products/white-front-control/ (localized equivalents under all 10 language directories)
+- Visual description: white countertop housing, circular top opening and slanted front digital control panel.
+- Verified process: heating/drying and volume reduction.
+- Capacity, rated power, voltage/frequency and processing volume remain unconfirmed. Do not infer values.
