@@ -578,3 +578,11 @@
 - Files: public/zh-tw/products/white-front-control/index.html; backup: SEO-BACKUPS/2026-11-08/pre-oem-faq/zh-tw-white-front-control.html.
 - Validation: Content and structured data added; final automated checks pending.
 - Deployment: Committed directly to main; live deployment status pending Cloudflare confirmation.
+
+
+### Validation update — 2026-11-08 OEM/ODM FAQ batch
+- Scope: all 30 product detail pages (3 designs × 10 languages).
+- Backups: confirmed 30 pre-change HTML backups under `SEO-BACKUPS/2026-11-08/pre-oem-faq/`.
+- Source validation: all 30 pages contain the visible localized FAQ section, a parseable FAQPage JSON-LD block, the email inquiry CTA, and the MOQ statement.
+- Page title and meta descriptions: unchanged in this batch.
+- Deployment: GitHub main contains the changes. No successful Cloudflare Pages deployment record was available through the connected repository workflow checks; live rollout is therefore not independently confirmed by this check. User should verify the updated FAQ section on the live product pages.
