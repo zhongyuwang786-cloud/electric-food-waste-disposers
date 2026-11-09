@@ -52,5 +52,24 @@
   $("prev").addEventListener("click",()=>{if(state.page>1){state.page--;load();}});
   $("next").addEventListener("click",()=>{if(state.page*state.limit<state.total){state.page++;load();}});
   $("export").addEventListener("click",()=>{const p=params();p.set("format","csv");window.location.href="/api/admin/inquiries?"+p.toString();});
+  $("translateButton").addEventListener("click",async()=>{
+    const button=$("translateButton"), input=$("translateInput"), target=$("translateTarget");
+    const text=input.value.trim();
+    if(!text){$("translateNotice").textContent="请先输入英文内容。";$("translateNotice").className="error";return;}
+    button.disabled=true;
+    $("translateNotice").textContent="正在翻译，请稍候…";
+    $("translateNotice").className="muted";
+    $("translateResult").textContent="";
+    try{
+      const response=await fetch("/api/admin/translate",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify({text,source_lang:"english",target_lang:target.value})});
+      const data=await response.json();
+      if(!response.ok||!data.ok)throw new Error(data.error||"翻译失败");
+      $("translateResult").textContent=data.translated_text;
+      $("translateNotice").textContent="翻译完成。请人工检查产品术语和技术表述后再用于正式页面。";
+    }catch(error){
+      $("translateNotice").textContent=error.message;
+      $("translateNotice").className="error";
+    }finally{button.disabled=false;}
+  });
   load();
 })();
