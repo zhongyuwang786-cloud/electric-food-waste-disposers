@@ -35,9 +35,9 @@ async function getKeys(issuer) {
 export async function requireAdmin(request, env) {
   const team = String(env.ACCESS_TEAM_DOMAIN || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
   const audience = String(env.ACCESS_AUD || "");
-  if (!team || !audience) return new Response("Admin access is not configured", { status: 503 });
+  if (!team || !audience) return new Response(JSON.stringify({ ok: false, error: "Admin access is not configured. Set ACCESS_TEAM_DOMAIN and ACCESS_AUD in Cloudflare Pages environment variables." }), { status: 503, headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
   const token = request.headers.get("Cf-Access-Jwt-Assertion");
-  if (!token) return new Response("Unauthorized", { status: 401 });
+  if (!token) return new Response(JSON.stringify({ ok: false, error: "Unauthorized. Sign in through Cloudflare Access and retry." }), { status: 401, headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
   try {
     const parts = token.split(".");
     if (parts.length !== 3) throw new Error("Invalid token");
@@ -55,6 +55,6 @@ export async function requireAdmin(request, env) {
     return null;
   } catch (error) {
     console.error("Access JWT verification failed");
-    return new Response("Unauthorized", { status: 401 });
+    return new Response(JSON.stringify({ ok: false, error: "Unauthorized. Sign in through Cloudflare Access and retry." }), { status: 401, headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
   }
 }
