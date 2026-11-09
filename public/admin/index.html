@@ -14,6 +14,19 @@
 <main class="wrap">
 <header class="top"><div><h1>询盘管理</h1><p class="muted">Electric Food Waste Disposers · 内部管理页面</p></div><button id="refresh">刷新列表</button></header>
 <section class="panel">
+<h2 style="font-size:18px;margin:0 0 8px">AI 翻译测试</h2>
+<p class="muted">输入英文内容，测试 Workers AI 翻译。当前先开放简体中文及其他已配置语言；繁体中文将在加入文字转换步骤后启用。</p>
+<div class="tools">
+<textarea id="translateInput" rows="4" placeholder="Enter English product description…" style="width:100%;min-height:100px;padding:10px;border:1px solid #cbd8d4;border-radius:7px;font:inherit"></textarea>
+<select id="translateTarget" aria-label="目标语言">
+<option value="japanese">日语</option><option value="korean">韩语</option><option value="spanish">西班牙语</option><option value="portuguese">葡萄牙语</option><option value="german">德语</option><option value="russian">俄语</option><option value="arabic">阿拉伯语</option><option value="chinese">简体中文</option>
+</select>
+<button id="translateButton" type="button">测试翻译</button>
+</div>
+<p id="translateNotice" class="muted" role="status" aria-live="polite">翻译结果会显示在下方。</p>
+<div id="translateResult" style="white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;background:#f8faf9;border-radius:7px;min-height:42px"></div>
+</section>
+<section class="panel">
 <div class="tools">
 <input id="q" type="search" placeholder="搜索姓名、公司或邮箱">
 <select id="status"><option value="">全部状态</option><option value="new">新询盘</option><option value="contacted">已联系</option><option value="qualified">有效客户</option><option value="closed">已完成</option><option value="spam">垃圾询盘</option></select>
