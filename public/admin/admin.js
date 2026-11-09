@@ -62,7 +62,9 @@
     $("translateResult").textContent="";
     try{
       const response=await fetch("/api/admin/translate",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify({text,source_lang:"english",target_lang:target.value})});
-      const data=await response.json();
+      const raw=await response.text();
+      let data;
+      try { data=JSON.parse(raw); } catch { throw new Error("服务器返回了非 JSON 响应（HTTP "+response.status+"）。请检查 Cloudflare Access 配置或部署日志。"); }
       if(!response.ok||!data.ok)throw new Error(data.error||"翻译失败");
       $("translateResult").textContent=data.translated_text;
       $("translateNotice").textContent="翻译完成。请人工检查产品术语和技术表述后再用于正式页面。";
