@@ -1874,3 +1874,13 @@
 - Backup: Existing backend and shared script retained in Git history before this commit.
 - Validation: Existing D1 schema is unchanged; product and quantity are appended to the existing message field to avoid a database migration.
 - Deployment: Prepared on branch b2b-inquiry-product-quantity; production deployment not triggered.
+### SEO-0135 — New localized white square top-opening product pages
+- Date: 2026-11-09
+- Page/language: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/
+- Change type: New indexable product URLs, localized page structure, product-list internal links, sitemap and hreflang.
+- Before: This product had no dedicated public product-detail URL or product-list entry.
+- After: Added ten localized product-detail URLs and corresponding product-list cards; added reciprocal hreflang and x-default entries to the sitemap.
+- Title/meta description: New localized title and description metadata added to each detail page; existing product-list title and description are unchanged.
+- SEO impact: Adds a distinct product entity page and internal discovery paths for ten language versions. Claims are limited to visible exterior design and the confirmed heating/drying volume-reduction process; unconfirmed technical specifications remain subject to inquiry.
+- Backup: Existing ten product-list pages are preserved in SEO-BACKUPS/2026-11-09/pre-white-square-top-opening/; sitemap backup is preserved in the same directory. The product detail URLs are new and had no previous page to back up.
+- Validation: Product-list links and image path point to /assets/images/shl-24-white-square-top-opening.png; sitemap includes all ten hreflang URLs and x-default. Deployment pending.
