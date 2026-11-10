@@ -71,6 +71,15 @@ export async function onRequestPatch({ request, env }) {
   const id = Number(data?.id);
   if (!Number.isSafeInteger(id) || id < 1) return json(400, { ok: false, error: "Invalid product ID" });
 
+  if (data?.action === "unpublish") {
+    try {
+      await env.DB.prepare("UPDATE products SET published_at = NULL, updated_at = datetime('now') WHERE id = ?").bind(id).run();
+      return json(200, { ok: true, id, published: false });
+    } catch {
+      return json(500, { ok: false, error: "Could not unpublish product." });
+    }
+  }
+
   if (data?.action === "publish") {
     try {
       const row = await env.DB.prepare("SELECT * FROM products WHERE id = ?").bind(id).first();
