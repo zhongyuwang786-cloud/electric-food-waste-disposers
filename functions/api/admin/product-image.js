@@ -1,4 +1,4 @@
-import { requireAdmin } from "./_admin-auth.js";
+import { requireAdmin } from "../_admin-auth.js";
 
 const json = (status, body) => new Response(JSON.stringify(body), {
   status,
