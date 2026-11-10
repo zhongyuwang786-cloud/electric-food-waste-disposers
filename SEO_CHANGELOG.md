@@ -1893,6 +1893,6 @@
 - After: Added a publication timestamp and an admin publish/unpublish action; published records are served through localized product detail routes, added to the ten language product catalogs, and included in a dynamic sitemap referenced by robots.txt. English content is used as the fallback on Traditional Chinese pages until verified Traditional Chinese translations are available.
 - Title/meta description: Existing static catalog titles and descriptions are unchanged. Published detail-page title and meta description are generated from the saved English/translated SEO fields.
 - SEO impact: Creates crawlable product-detail URLs and internal catalog links for published products; sitemap output is limited to published records. Unpublished and archived products are excluded.
-- Backup: Previous catalog HTML and robots.txt are preserved in Git history before these changes; no existing static product-detail pages were overwritten.
+- Backup: Previous ten localized catalog HTML files and robots.txt are copied to `SEO-BACKUPS/2026-11-10/pre-dynamic-product-publishing/`; no existing static product-detail pages were overwritten.
 - Validation: Checked JavaScript module syntax for the new Pages Functions and admin script; checked the ten catalog files contain the published-product loader. D1 migration must be applied before production publishing can work.
 - Deployment: Code committed; production deployment and live URL validation pending.
