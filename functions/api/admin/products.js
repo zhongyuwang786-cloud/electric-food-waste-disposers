@@ -85,17 +85,25 @@ export async function onRequestPatch({ request, env }) {
       const row = await env.DB.prepare("SELECT * FROM products WHERE id = ?").bind(id).first();
       if (!row) return json(404, { ok: false, error: "Product not found." });
       const image = text(row.image_url, 1000);
-      if (!image || (!/^https:\/\//i.test(image) && !image.startsWith("/assets/"))) {
-        return json(400, { ok: false, error: "请先填写有效的产品图片 HTTPS 地址或 /assets/ 图片路径。" });
+      const validImage = /^https:\/\//i.test(image) || /^\/assets\/[a-z0-9/_\-.]+$/i.test(image);
+      if (!validImage) {
+        return json(400, { ok: false, error: "请先填写有效的 HTTPS 图片地址或站内 /assets/ 图片路径。" });
+      }
+      if (!text(row.title_en, 180) || !text(row.description_en, 12000)) {
+        return json(400, { ok: false, error: "发布前必须填写英文产品名称和英文详细介绍。" });
       }
       let translations = {};
       try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
       const required = ["japanese","korean","spanish","portuguese","german","russian","arabic","chinese"];
       const missing = required.filter(language => {
         const item = translations[language];
-        return !item || typeof item !== "object" || !String(item.title || "").trim() || !String(item.description || "").trim();
+        return !item || typeof item !== "object" ||
+          !String(item.title || "").trim() ||
+          !String(item.description || "").trim() ||
+          !String(item.seo_title || "").trim() ||
+          !String(item.seo_description || "").trim();
       });
-      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题或详情译文，暂不能发布：" + missing.join(", ") });
+      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题、详情或 SEO 译文，暂不能发布：" + missing.join(", ") });
       await env.DB.prepare("UPDATE products SET status = 'draft', published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
       return json(200, { ok: true, id, published: true });
     } catch (error) {
