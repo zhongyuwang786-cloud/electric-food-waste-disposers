@@ -73,5 +73,63 @@
       $("translateNotice").className="error";
     }finally{button.disabled=false;}
   });
-  load();
+
+  const productFields = ["productTitle","productSlug","productSummary","productDescription","productImage","productSeoTitle","productSeoDescription"];
+  function productNotice(message,error=false){ $("productNotice").textContent=message; $("productNotice").className=error?"error":"muted"; }
+  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productSave").textContent="保存英文草稿"; }
+  function fillProduct(p){
+    $("productId").value=p.id;
+    $("productTitle").value=p.title_en||"";
+    $("productSlug").value=p.slug||"";
+    $("productSummary").value=p.summary_en||"";
+    $("productDescription").value=p.description_en||"";
+    $("productImage").value=p.image_url||"";
+    $("productSeoTitle").value=p.seo_title_en||"";
+    $("productSeoDescription").value=p.seo_description_en||"";
+    $("productSave").textContent="保存修改";
+    $("productsPanel").scrollIntoView({behavior:"smooth",block:"start"});
+    productNotice("正在编辑："+p.title_en);
+  }
+  async function loadProducts(){
+    $("productRefresh").disabled=true;
+    try{
+      const response=await fetch("/api/admin/products",{headers:{Accept:"application/json"},credentials:"same-origin",cache:"no-store"});
+      const data=await response.json();
+      if(!response.ok||!data.ok)throw new Error(data.error||"产品列表加载失败");
+      const rows=$("productRows");
+      if(!data.products.length){rows.innerHTML='<tr><td colspan="5" class="empty">暂无产品草稿</td></tr>';productNotice("产品数据表已连接，当前没有草稿。");return;}
+      rows.innerHTML=data.products.map(p=>'<tr><td>'+esc(p.title_en)+'</td><td>'+esc(p.slug)+'</td><td>'+ (p.status==="archived"?"已归档":"草稿") +'</td><td>'+esc(p.updated_at)+'</td><td><button type="button" data-edit="'+Number(p.id)+'" style="padding:6px 9px">编辑</button> <button type="button" data-archive="'+Number(p.id)+'" style="padding:6px 9px">归档</button></td></tr>').join("");
+      rows.querySelectorAll("[data-edit]").forEach(button=>button.addEventListener("click",()=>fillProduct(data.products.find(p=>p.id===Number(button.dataset.edit)))));
+      rows.querySelectorAll("[data-archive]").forEach(button=>button.addEventListener("click",async()=>{
+        const p=data.products.find(item=>item.id===Number(button.dataset.archive));
+        if(!p||!confirm("将这条产品草稿归档？"))return;
+        try{
+          const response=await fetch("/api/admin/products",{method:"PATCH",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({id:p.id,slug:p.slug,title_en:p.title_en,summary_en:p.summary_en,description_en:p.description_en,image_url:p.image_url,seo_title_en:p.seo_title_en,seo_description_en:p.seo_description_en,status:"archived"})});
+          const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||"归档失败");
+          if(String($("productId").value)===String(p.id))resetProduct();
+          productNotice("产品草稿已归档。");loadProducts();
+        }catch(error){productNotice(error.message,true);}
+      }));
+      productNotice("已加载 "+data.products.length+" 条产品记录。");
+    }catch(error){$("productRows").innerHTML='<tr><td colspan="5" class="empty">'+esc(error.message)+'</td></tr>';productNotice(error.message,true);}
+    finally{$("productRefresh").disabled=false;}
+  }
+  $("productTitle").addEventListener("input",()=>{
+    if(!$("productSlug").value.trim())$("productSlug").value=$("productTitle").value.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  });
+  $("productForm").addEventListener("submit",async event=>{
+    event.preventDefault();
+    const button=$("productSave"), id=$("productId").value;
+    const payload={slug:$("productSlug").value,title_en:$("productTitle").value,summary_en:$("productSummary").value,description_en:$("productDescription").value,image_url:$("productImage").value,seo_title_en:$("productSeoTitle").value,seo_description_en:$("productSeoDescription").value};
+    button.disabled=true;productNotice("正在保存产品草稿…");
+    try{
+      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id}:payload)});
+      const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||"保存失败");
+      resetProduct();productNotice(id?"产品草稿已更新。":"产品草稿已保存。");await loadProducts();
+    }catch(error){productNotice(error.message,true);}
+    finally{button.disabled=false;}
+  });
+  $("productReset").addEventListener("click",resetProduct);
+  $("productRefresh").addEventListener("click",loadProducts);
+\n  load();\n  loadProducts();
 })();
