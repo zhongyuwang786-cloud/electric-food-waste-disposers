@@ -9,3 +9,7 @@ database_id = "395b2462-30bf-4171-bdc8-35567ed3f06b"
 
 [ai]
 binding = "AI"
+
+[[r2_buckets]]
+binding = "PRODUCT_IMAGES"
+bucket_name = "electric-food-waste-product-images"
