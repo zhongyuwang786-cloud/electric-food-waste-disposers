@@ -16,9 +16,9 @@ const searchBots = [
   ["SeznamBot", /SeznamBot/i], ["DuckDuckBot", /DuckDuckBot/i], ["Qwantify", /Qwantify/i],
   ["Ecosia", /Ecosia/i], ["Brave", /Bravebot/i], ["Yahoo", /Slurp/i]
 ];
-const social = ["facebook.com","l.facebook.com","instagram.com","l.instagram.com","youtube.com","youtu.be","tiktok.com","linkedin.com","pinterest.com","t.co","x.com","twitter.com"];
-const search = ["google.","bing.com","baidu.com","yandex.","naver.com","daum.net","sogou.com","so.com","sm.cn","seznam.cz","duckduckgo.com","qwant.com","ecosia.org","search.brave.com","search.yahoo.com"];
-const aiReferrers = ["chatgpt.com","chat.openai.com","perplexity.ai","claude.ai","gemini.google.com","copilot.microsoft.com","you.com","phind.com","komo.ai"];
+const social = ["facebook","instagram","youtube","youtu.be","tiktok","linkedin","pinterest","t.co","x.com","twitter"];
+const search = ["google","bing","baidu","yandex","naver","daum","sogou","so.com","sm.cn","seznam","duckduckgo","qwant","ecosia","brave","yahoo"];
+const aiReferrers = ["chatgpt","openai","perplexity","claude.ai","gemini.google","copilot.microsoft","you.com","phind.com","komo.ai"];
 const locales = new Set(["en","zh-cn","zh-tw","ja","ko","es","pt","de","ru","ar"]);
 function host(value) { try { return value ? new URL(value).hostname.toLowerCase().replace(/^www\./,"") : ""; } catch { return ""; } }
 function sourceFor(url, refHost) {
