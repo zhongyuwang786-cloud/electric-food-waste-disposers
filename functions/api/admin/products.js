@@ -82,10 +82,18 @@ export async function onRequestPatch({ request, env }) {
   if (!slugPattern.test(fields.slug) || !fields.title_en) return json(400, { ok: false, error: "A valid slug and English title are required." });
   if (fields.image_url && !/^https:\/\//i.test(fields.image_url) && !fields.image_url.startsWith("/assets/")) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ path." });
   const status = data.status === "archived" ? "archived" : "draft";
+  let translationsJson = null;
+  if (Object.prototype.hasOwnProperty.call(data, "translations")) {
+    if (!data.translations || typeof data.translations !== "object" || Array.isArray(data.translations)) {
+      return json(400, { ok: false, error: "Translations must be an object." });
+    }
+    translationsJson = JSON.stringify(data.translations);
+    if (translationsJson.length > 100000) return json(413, { ok: false, error: "Translation data is too large." });
+  }
   try {
     const result = await env.DB.prepare(
-      "UPDATE products SET slug = ?, title_en = ?, summary_en = ?, description_en = ?, image_url = ?, seo_title_en = ?, seo_description_en = ?, status = ?, updated_at = datetime('now') WHERE id = ?"
-    ).bind(fields.slug, fields.title_en, fields.summary_en, fields.description_en, fields.image_url, fields.seo_title_en, fields.seo_description_en, status, id).run();
+      "UPDATE products SET slug = ?, title_en = ?, summary_en = ?, description_en = ?, image_url = ?, seo_title_en = ?, seo_description_en = ?, status = ?, translations_json = COALESCE(?, translations_json), updated_at = datetime('now') WHERE id = ?"
+    ).bind(fields.slug, fields.title_en, fields.summary_en, fields.description_en, fields.image_url, fields.seo_title_en, fields.seo_description_en, status, translationsJson, id).run();
     if (!result.meta?.changes) return json(404, { ok: false, error: "Product not found." });
     return json(200, { ok: true, id, status });
   } catch (error) {
