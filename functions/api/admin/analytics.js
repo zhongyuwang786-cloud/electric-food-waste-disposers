@@ -45,7 +45,7 @@ export async function onRequestGet({ request, env }) {
       ok:true, available:true, window:"最近 7 天（UTC 数据库时间）", comparison:"此前 7 天",
       coverage:"仅统计网站公开请求；后台及管理员 API 已排除。真人页面访问按 HTML 页面请求统计；静态资源和其他请求单独计入请求量。机器人 User-Agent 自称未通过 Cloudflare verifiedBot 验证时，只列为未验证声明，不视为已确认爬虫。",
       totals:{ current_requests:Number(t.current_requests||0), previous_requests:Number(t.previous_requests||0), current_pageviews:Number(t.current_pageviews||0), previous_pageviews:Number(t.previous_pageviews||0), unique_visitors:t.unique_visitors===null?null:Number(t.unique_visitors||0), visitor_hash_configured:Boolean(env.ANALYTICS_HASH_SECRET), verified_crawler_requests:Number(t.verified_crawler_requests||0), unverified_claim_requests:Number(t.unverified_claim_requests||0), errors, measured_requests:measured, error_rate:measured?errors/measured:null },
-      trend:trend.results||[], sources:sources.results||[], bots:bots.results||[], pages:pages.results||[], countries:countries.results||[], statuses:statuses.results||[], recent:safeRows(recent.results),
+      trend:trend.results||[], sources:sources.results||[], bots:bots.results||[], pages:pages.results||[], countries:countries.results||[], languages:languages.results||[], statuses:statuses.results||[], recent:safeRows(recent.results),
       inquiries:inquiries?{current:Number(inquiries.current_inquiries||0),previous:Number(inquiries.previous_inquiries||0),conversion_rate:null,note:"询盘数来自 D1 inquiries 表；当前没有会话级归因，故不计算转化率。"}:null
     });
   } catch (error) {
