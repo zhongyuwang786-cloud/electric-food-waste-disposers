@@ -45,7 +45,7 @@ export async function onRequestPost({ request, env }) {
   const image = text(data?.image_url, 1000);
   if (!slugPattern.test(slug)) return json(400, { ok: false, error: "Slug must use lowercase letters, numbers and hyphens." });
   if (!title) return json(400, { ok: false, error: "English product title is required." });
-  if (image && !/^https:\/\//i.test(image) && !/^\/(?:assets|media)\//i.test(image)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ path." });
+  if (image && !/^https:\/\//i.test(image) && !/^\/(?:assets|media)\//i.test(image)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ or /media/ path." });
   const values = [
     slug, title, text(data.summary_en, 500), text(data.description_en, 12000), image,
     text(data.seo_title_en, 180), text(data.seo_description_en, 320)
@@ -122,7 +122,7 @@ export async function onRequestPatch({ request, env }) {
     seo_description_en: text(data.seo_description_en, 320)
   };
   if (!slugPattern.test(fields.slug) || !fields.title_en) return json(400, { ok: false, error: "A valid slug and English title are required." });
-  if (fields.image_url && !/^https:\/\//i.test(fields.image_url) && !/^\/(?:assets|media)\//i.test(fields.image_url)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ path." });
+  if (fields.image_url && !/^https:\/\//i.test(fields.image_url) && !/^\/(?:assets|media)\//i.test(fields.image_url)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ or /media/ path." });
   const status = data.status === "archived" ? "archived" : "draft";
   let translationsJson = null;
   if (Object.prototype.hasOwnProperty.call(data, "translations")) {
