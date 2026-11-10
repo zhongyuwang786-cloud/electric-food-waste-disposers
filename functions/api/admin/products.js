@@ -70,6 +70,31 @@ export async function onRequestPatch({ request, env }) {
   try { data = await request.json(); } catch { return json(400, { ok: false, error: "Invalid JSON" }); }
   const id = Number(data?.id);
   if (!Number.isSafeInteger(id) || id < 1) return json(400, { ok: false, error: "Invalid product ID" });
+
+  if (data?.action === "publish") {
+    try {
+      const row = await env.DB.prepare("SELECT * FROM products WHERE id = ?").bind(id).first();
+      if (!row) return json(404, { ok: false, error: "Product not found." });
+      const image = text(row.image_url, 1000);
+      if (!image || (!/^https:\/\//i.test(image) && !image.startsWith("/assets/"))) {
+        return json(400, { ok: false, error: "请先填写有效的产品图片 HTTPS 地址或 /assets/ 图片路径。" });
+      }
+      let translations = {};
+      try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
+      const required = ["japanese","korean","spanish","portuguese","german","russian","arabic","chinese"];
+      const missing = required.filter(language => {
+        const item = translations[language];
+        return !item || typeof item !== "object" || !String(item.title || "").trim() || !String(item.description || "").trim();
+      });
+      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题或详情译文，暂不能发布：" + missing.join(", ") });
+      await env.DB.prepare("UPDATE products SET published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
+      return json(200, { ok: true, id, published: true });
+    } catch (error) {
+      console.error("Admin product publish failed");
+      return json(500, { ok: false, error: "Could not publish product." });
+    }
+  }
+
   const fields = {
     slug: text(data.slug, 100).toLowerCase(),
     title_en: text(data.title_en, 180),
@@ -92,8 +117,8 @@ export async function onRequestPatch({ request, env }) {
   }
   try {
     const result = await env.DB.prepare(
-      "UPDATE products SET slug = ?, title_en = ?, summary_en = ?, description_en = ?, image_url = ?, seo_title_en = ?, seo_description_en = ?, status = ?, translations_json = COALESCE(?, translations_json), updated_at = datetime('now') WHERE id = ?"
-    ).bind(fields.slug, fields.title_en, fields.summary_en, fields.description_en, fields.image_url, fields.seo_title_en, fields.seo_description_en, status, translationsJson, id).run();
+      "UPDATE products SET slug = ?, title_en = ?, summary_en = ?, description_en = ?, image_url = ?, seo_title_en = ?, seo_description_en = ?, status = ?, published_at = CASE WHEN ? = 'archived' THEN NULL ELSE published_at END, translations_json = COALESCE(?, translations_json), updated_at = datetime('now') WHERE id = ?"
+    ).bind(fields.slug, fields.title_en, fields.summary_en, fields.description_en, fields.image_url, fields.seo_title_en, fields.seo_description_en, status, status, translationsJson, id).run();
     if (!result.meta?.changes) return json(404, { ok: false, error: "Product not found." });
     return json(200, { ok: true, id, status });
   } catch (error) {
