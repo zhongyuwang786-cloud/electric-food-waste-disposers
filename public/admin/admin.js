@@ -154,9 +154,11 @@
   }
   function updateProductImagePreview(value){
     const preview=$("productImagePreview");
+    const link=$("productImagePreviewLink");
+    const hint=$("productImagePreviewHint");
     const url=String(value||"").trim();
-    if(url){preview.src=url;preview.hidden=false;}
-    else{preview.hidden=true;preview.removeAttribute("src");}
+    if(url){preview.src=url;link.href=url;link.hidden=false;hint.hidden=false;}
+    else{link.hidden=true;link.removeAttribute("href");hint.hidden=true;preview.removeAttribute("src");}
   }
   $("productImage").addEventListener("input",()=>updateProductImagePreview($("productImage").value));
   $("productImageUpload").addEventListener("click",async()=>{
