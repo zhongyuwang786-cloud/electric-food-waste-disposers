@@ -38,7 +38,8 @@
     <label style="grid-column:1/-1">产品图片路径 / HTTPS 图片地址<input id="productImage" maxlength="1000" placeholder="/assets/images/your-product-image.jpg" style="display:block;width:100%;margin-top:5px"></label>
     <label>SEO 标题<input id="productSeoTitle" maxlength="180" style="display:block;width:100%;margin-top:5px"></label>
     <label>SEO 描述<input id="productSeoDescription" maxlength="320" style="display:block;width:100%;margin-top:5px"></label>
-    <div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button id="productSave" type="submit">保存英文草稿</button><button id="productReset" type="button">清空表单</button></div>
+    <div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button id="productSave" type="submit">保存英文草稿</button><button id="productTranslate" type="button" disabled>生成并保存多语言</button><button id="productReset" type="button">清空表单</button></div>
+    <p id="productTranslateNotice" class="muted" style="grid-column:1/-1;margin:0" role="status" aria-live="polite">先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对；此功能只保存后台译文，不会发布到网站前台。</p>
   </form>
   <p id="productNotice" class="muted" role="status" aria-live="polite">产品草稿尚未加载。</p>
   <div class="table-wrap"><table style="min-width:650px"><thead><tr><th>英文产品名称</th><th>Slug</th><th>状态</th><th>更新时间</th><th>操作</th></tr></thead><tbody id="productRows"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody></table></div>
