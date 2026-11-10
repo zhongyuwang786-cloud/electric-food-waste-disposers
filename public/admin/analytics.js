@@ -36,9 +36,9 @@
       metric("近七天请求量",number(t.current_requests),delta(t.current_requests,t.previous_requests)),
       metric("真人页面访问",number(t.current_pageviews),delta(t.current_pageviews,t.previous_pageviews)),
       metric("独立访客（脱敏）",t.visitor_hash_configured?number(t.unique_visitors):"尚不可用",t.visitor_hash_configured?"按日哈希去重，不显示 IP":"需配置 ANALYTICS_HASH_SECRET"),
-      metric("已验证爬虫请求",number(t.verified_crawler_requests),"Cloudflare verifiedBot 标记"),
-      metric("未验证 UA 声明",number(t.unverified_claim_requests),"不作为已确认爬虫身份"),
-      metric("HTTP 错误率",pct(t.error_rate),number(t.errors)+" / "+number(t.measured_requests)+" 条已记录请求")
+      metric("已验证爬虫请求",number(t.verified_crawler_requests),"前周 "+number(t.previous_verified_crawler_requests)+" 条"),
+      metric("未验证 UA 声明",number(t.unverified_claim_requests),"前周 "+number(t.previous_unverified_claim_requests)+" 条；不视为已确认身份"),
+      metric("HTTP 错误率",pct(t.error_rate),"前周 "+pct(t.previous_error_rate)+"；"+number(t.errors)+" / "+number(t.measured_requests)+" 条请求")
     ].join("");
     const botRows=(data.bots||[]).map(x=>'<tr><td>'+esc(x.actor_label||"未知")+'</td><td>'+esc(({ai_claim_unverified:"AI 爬虫 UA 声明",search_claim_unverified:"搜索爬虫 UA 声明",ai_crawler:"AI 爬虫（已验证）",search_crawler:"搜索爬虫（已验证）"})[x.actor_category]||"其他")+'</td><td>'+esc(x.identity_verified?"已验证":"未验证")+'</td><td>'+number(x.total)+'</td></tr>');
     $("botTable").innerHTML=table(["UA 标识","类别","身份状态","请求量"],botRows,"近七天暂无已识别的爬虫请求");
