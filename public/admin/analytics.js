@@ -40,8 +40,8 @@
       metric("未验证 UA 声明",number(t.unverified_claim_requests),"不作为已确认爬虫身份"),
       metric("HTTP 错误率",pct(t.error_rate),number(t.errors)+" / "+number(t.measured_requests)+" 条已记录请求")
     ].join("");
-    const botRows=(data.bots||[]).map(x=>'<tr><td>'+esc(x.actor_label||"未知")+'</td><td>'+esc(x.actor_category==="unverified_claim"?"UA 声明，未验证":x.identity_verified?"Cloudflare 标记已验证":"未验证")+'</td><td>'+number(x.total)+'</td></tr>');
-    $("botTable").innerHTML=table(["爬虫标识","身份状态","请求量"],botRows,"近七天暂无已识别的爬虫请求");
+    const botRows=(data.bots||[]).map(x=>'<tr><td>'+esc(x.actor_label||"未知")+'</td><td>'+esc(({ai_claim_unverified:"AI 爬虫 UA 声明",search_claim_unverified:"搜索爬虫 UA 声明",ai_crawler:"AI 爬虫（已验证）",search_crawler:"搜索爬虫（已验证）"})[x.actor_category]||"其他")+'</td><td>'+esc(x.identity_verified?"已验证":"未验证")+'</td><td>'+number(x.total)+'</td></tr>');
+    $("botTable").innerHTML=table(["UA 标识","类别","身份状态","请求量"],botRows,"近七天暂无已识别的爬虫请求");
     const trendRows=(data.trend||[]).map(x=>'<tr><td>'+esc(x.day)+'</td><td>'+number(x.pageviews)+'</td><td>'+number(x.verified_crawls)+'</td><td>'+number(x.unverified_claims)+'</td><td>'+number(x.requests)+'</td></tr>');
     $("crawlerTrend").innerHTML=table(["日期（UTC）","真人页面访问","已验证爬虫","未验证 UA 声明","总请求"],trendRows,"数据采集后将显示趋势");
     const statusRows=(data.statuses||[]).map(x=>'<tr><td>'+number(x.status)+'</td><td>'+number(x.total)+'</td></tr>');
@@ -58,6 +58,7 @@
     $("sourceBars").innerHTML=barRows((data.sources||[]).map(x=>({...x,label:sourceLabels[x.category]||x.category})),"label","total",sourceTotal);
     $("topPages").innerHTML=table(["热门页面","真人页面访问"],(data.pages||[]).map(x=>'<tr><td>'+esc(x.path)+'</td><td>'+number(x.total)+'</td></tr>'),"暂无页面访问记录");
     $("countryTable").innerHTML=table(["国家/地区代码","真人页面访问"],(data.countries||[]).map(x=>'<tr><td>'+esc(x.country)+'</td><td>'+number(x.total)+'</td></tr>'),"暂无国家/地区数据");
+    $("languageTable").innerHTML=table(["网站语言","真人页面访问"],(data.languages||[]).map(x=>'<tr><td>'+esc(x.language)+'</td><td>'+number(x.total)+'</td></tr>'),"暂无语言分布数据");
     $("inquirySummary").textContent=data.inquiries
       ? "近七天询盘 "+number(data.inquiries.current)+" 条；前七天 "+number(data.inquiries.previous)+" 条。"+data.inquiries.note
       : "询盘转化数据暂不可用：无法读取 D1 inquiries 表。";
