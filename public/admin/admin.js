@@ -146,12 +146,13 @@
     const payload={slug:$("productSlug").value,title_en:$("productTitle").value,summary_en:$("productSummary").value,description_en:$("productDescription").value,image_url:$("productImage").value,seo_title_en:$("productSeoTitle").value,seo_description_en:$("productSeoDescription").value};
     button.disabled=true;productNotice("正在保存产品草稿…");
     try{
-      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id,translations:productTranslations}:payload)});
+      const currentEnglish=JSON.stringify(englishSnapshot());
+      const translationsToKeep=(id && originalEnglish && currentEnglish!==originalEnglish)?{}:productTranslations;
+      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id,translations:translationsToKeep}:payload)});
       const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||"保存失败");
       if(id){ $("productId").value=id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
       else { $("productId").value=data.id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
-      const currentEnglish=JSON.stringify(englishSnapshot());
-      if(!id || (originalEnglish && currentEnglish!==originalEnglish)){ productTranslations={}; }
+      productTranslations=translationsToKeep;
       originalEnglish=currentEnglish;
       productNotice(id?"产品草稿已更新。":"产品草稿已保存。");await loadProducts();
     }catch(error){productNotice(error.message,true);}
