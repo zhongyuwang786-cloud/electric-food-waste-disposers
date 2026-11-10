@@ -41,8 +41,24 @@
     <div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button id="productSave" type="submit">保存英文草稿</button><button id="productTranslate" type="button" disabled>生成并保存多语言</button><button id="productReset" type="button">清空表单</button></div>
     <p id="productTranslateNotice" class="muted" style="grid-column:1/-1;margin:0" role="status" aria-live="polite">先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对；此功能只保存后台译文，不会发布到网站前台。</p>
   </form>
+  <section style="margin-top:18px;padding:16px;border:1px solid #dce5e2;border-radius:10px;background:#f8faf9">
+    <h3 style="font-size:16px;margin:0 0 8px">多语言译文校对</h3>
+    <p class="muted">选择语言后检查并修改标题、简介、详情和 SEO 文案。保存后只更新后台译文，不会发布到网站。</p>
+    <div class="tools"><select id="translationLanguage" aria-label="选择要校对的语言">
+      <option value="japanese">日语</option><option value="korean">韩语</option><option value="spanish">西班牙语</option><option value="portuguese">葡萄牙语</option><option value="german">德语</option><option value="russian">俄语</option><option value="arabic">阿拉伯语</option><option value="chinese">简体中文</option>
+    </select><button id="translationLoad" type="button">载入译文</button></div>
+    <div id="translationEditor" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px">
+      <label>译文标题<input id="translatedTitle" style="display:block;width:100%;margin-top:5px"></label>
+      <label>SEO 标题<input id="translatedSeoTitle" style="display:block;width:100%;margin-top:5px"></label>
+      <label style="grid-column:1/-1">译文简介<textarea id="translatedSummary" rows="2" style="display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #cbd8d4;border-radius:7px;font:inherit"></textarea></label>
+      <label style="grid-column:1/-1">译文详情<textarea id="translatedDescription" rows="4" style="display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #cbd8d4;border-radius:7px;font:inherit"></textarea></label>
+      <label style="grid-column:1/-1">SEO 描述<textarea id="translatedSeoDescription" rows="2" style="display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #cbd8d4;border-radius:7px;font:inherit"></textarea></label>
+      <div style="grid-column:1/-1"><button id="translationSave" type="button">保存当前语言译文</button></div>
+    </div>
+    <p id="translationNotice" class="muted" role="status" aria-live="polite">先从产品列表点击“编辑”，再载入对应语言译文。</p>
+  </section>
   <p id="productNotice" class="muted" role="status" aria-live="polite">产品草稿尚未加载。</p>
-  <div class="table-wrap"><table style="min-width:650px"><thead><tr><th>英文产品名称</th><th>Slug</th><th>状态</th><th>更新时间</th><th>操作</th></tr></thead><tbody id="productRows"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody></table></div>
+  <div class="table-wrap"><table style="min-width:820px"><thead><tr><th>英文产品名称</th><th>Slug</th><th>状态</th><th>更新时间</th><th>操作</th></tr></thead><tbody id="productRows"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody></table></div>
 </section>
 
 <section class="panel">
