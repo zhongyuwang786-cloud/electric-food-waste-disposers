@@ -1884,3 +1884,15 @@
 - SEO impact: Adds a distinct product entity page and internal discovery paths for ten language versions. Claims are limited to visible exterior design and the confirmed heating/drying volume-reduction process; unconfirmed technical specifications remain subject to inquiry.
 - Backup: Existing ten product-list pages are preserved in SEO-BACKUPS/2026-11-09/pre-white-square-top-opening/; sitemap backup is preserved in the same directory. The product detail URLs are new and had no previous page to back up.
 - Validation: Product-list links and image path point to /assets/images/shl-24-white-square-top-opening.png; sitemap includes all ten hreflang URLs and x-default. Deployment pending.
+
+### SEO-0136 — Dynamic multilingual product publishing
+- Date: 2026-11-10
+- Scope: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/, published product detail routes, /sitemap-products.xml, and robots.txt.
+- Change type: New database-backed product detail URLs, localized product-list discovery, structured product metadata, canonical URLs, hreflang, and dynamic product sitemap.
+- Before: Products created in the admin existed only as D1 drafts and were not visible in public product catalogs or indexable detail URLs.
+- After: Added a publication timestamp and an admin publish/unpublish action; published records are served through localized product detail routes, added to the ten language product catalogs, and included in a dynamic sitemap referenced by robots.txt. English content is used as the fallback on Traditional Chinese pages until verified Traditional Chinese translations are available.
+- Title/meta description: Existing static catalog titles and descriptions are unchanged. Published detail-page title and meta description are generated from the saved English/translated SEO fields.
+- SEO impact: Creates crawlable product-detail URLs and internal catalog links for published products; sitemap output is limited to published records. Unpublished and archived products are excluded.
+- Backup: Previous catalog HTML and robots.txt are preserved in Git history before these changes; no existing static product-detail pages were overwritten.
+- Validation: Checked JavaScript module syntax for the new Pages Functions and admin script; checked the ten catalog files contain the published-product loader. D1 migration must be applied before production publishing can work.
+- Deployment: Code committed; production deployment and live URL validation pending.
