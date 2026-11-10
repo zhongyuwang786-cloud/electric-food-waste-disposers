@@ -14,11 +14,13 @@ const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({ "&":
 const paragraphHtml = value => String(value || "").split(/\n{2,}/).map(part => "<p>" + escapeHtml(part).replace(/\n/g, "<br>") + "</p>").join("");
 const response = (body, status = 200) => new Response(body, { status, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=60, s-maxage=60" } });
 
-export async function onRequestGet({ params, env }) {
+export async function onRequestGet(context) {
+  const { params, env } = context;
   const lang = String(params.lang || "en").toLowerCase();
   const locale = LANGUAGES[lang];
   if (!locale) return response("<!doctype html><title>Not found</title><h1>Not found</h1>", 404);
-  if (!env.DB) return response("<!doctype html><title>Temporarily unavailable</title><h1>Temporarily unavailable</h1>", 503);
+  // Keep original static product detail pages working when the slug is not in D1.
+  if (!env.DB) return context.next();
   const slug = String(params.slug || "");
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return response("<!doctype html><title>Not found</title><h1>Not found</h1>", 404);
   let row;
@@ -26,9 +28,9 @@ export async function onRequestGet({ params, env }) {
     row = await env.DB.prepare("SELECT * FROM products WHERE slug = ? AND published_at IS NOT NULL LIMIT 1").bind(slug).first();
   } catch (error) {
     console.error("Published product page lookup failed");
-    return response("<!doctype html><title>Temporarily unavailable</title><h1>Temporarily unavailable</h1>", 503);
+    return context.next();
   }
-  if (!row) return response("<!doctype html><title>Product not found</title><h1>Product not found</h1>", 404);
+  if (!row) return context.next();
   let translations = {};
   try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
   const translated = translations[locale.key] || {};
