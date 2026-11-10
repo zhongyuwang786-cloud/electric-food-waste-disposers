@@ -22,7 +22,9 @@ CREATE TABLE IF NOT EXISTS products (
   seo_description_en TEXT NOT NULL DEFAULT '',
   translations_json TEXT NOT NULL DEFAULT '{}',
   status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'archived')),
+  published_at TEXT,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS idx_products_status_updated ON products(status, updated_at);
+CREATE INDEX IF NOT EXISTS idx_products_published ON products(published_at);
