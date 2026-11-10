@@ -76,7 +76,7 @@
 
   const productFields = ["productTitle","productSlug","productSummary","productDescription","productImage","productSeoTitle","productSeoDescription"];
   function productNotice(message,error=false){ $("productNotice").textContent=message; $("productNotice").className=error?"error":"muted"; }
-  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productSave").textContent="保存英文草稿"; }
+  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; }
   function fillProduct(p){
     $("productId").value=p.id;
     $("productTitle").value=p.title_en||"";
@@ -87,6 +87,8 @@
     $("productSeoTitle").value=p.seo_title_en||"";
     $("productSeoDescription").value=p.seo_description_en||"";
     $("productSave").textContent="保存修改";
+    $("productTranslate").disabled=false;
+    $("productTranslateNotice").textContent=Object.keys(p.translations||{}).length ? "已保存 "+Object.keys(p.translations).length+" 种语言译文；重新生成会覆盖旧译文。" : "英文草稿已载入。点击“生成并保存多语言”生成 8 种语言。";
     $("productsPanel").scrollIntoView({behavior:"smooth",block:"start"});
     productNotice("正在编辑："+p.title_en);
   }
@@ -104,7 +106,7 @@
         const p=data.products.find(item=>item.id===Number(button.dataset.archive));
         if(!p||!confirm("将这条产品草稿归档？"))return;
         try{
-          const response=await fetch("/api/admin/products",{method:"PATCH",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({id:p.id,slug:p.slug,title_en:p.title_en,summary_en:p.summary_en,description_en:p.description_en,image_url:p.image_url,seo_title_en:p.seo_title_en,seo_description_en:p.seo_description_en,status:"archived"})});
+          const response=await fetch("/api/admin/products",{method:"PATCH",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({id:p.id,slug:p.slug,title_en:p.title_en,summary_en:p.summary_en,description_en:p.description_en,image_url:p.image_url,seo_title_en:p.seo_title_en,seo_description_en:p.seo_description_en,translations:p.translations||{},status:"archived"})});
           const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||"归档失败");
           if(String($("productId").value)===String(p.id))resetProduct();
           productNotice("产品草稿已归档。");loadProducts();
@@ -125,9 +127,73 @@
     try{
       const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id}:payload)});
       const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||"保存失败");
-      resetProduct();productNotice(id?"产品草稿已更新。":"产品草稿已保存。");await loadProducts();
+      if(id){ $("productId").value=id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
+      else { $("productId").value=data.id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
+      productNotice(id?"产品草稿已更新。":"产品草稿已保存。");await loadProducts();
     }catch(error){productNotice(error.message,true);}
     finally{button.disabled=false;}
+  });
+  const translationLanguages = [
+    ["japanese","日语"],["korean","韩语"],["spanish","西班牙语"],["portuguese","葡萄牙语"],
+    ["german","德语"],["russian","俄语"],["arabic","阿拉伯语"],["chinese","简体中文"]
+  ];
+  function splitForTranslation(value, limit=4500){
+    const chunks=[]; let rest=String(value||"");
+    while(rest.length>limit){
+      let cut=rest.lastIndexOf("\\n",limit);
+      if(cut<Math.floor(limit*0.55))cut=rest.lastIndexOf(" ",limit);
+      if(cut<Math.floor(limit*0.55))cut=limit;
+      chunks.push(rest.slice(0,cut)); rest=rest.slice(cut).trimStart();
+    }
+    if(rest)chunks.push(rest);
+    return chunks;
+  }
+  async function translateProductField(value,target){
+    const chunks=splitForTranslation(value);
+    const translated=[];
+    for(const chunk of chunks){
+      const response=await fetch("/api/admin/translate",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify({text:chunk,source_lang:"english",target_lang:target})});
+      const raw=await response.text(); let data;
+      try{data=JSON.parse(raw);}catch{throw new Error("翻译接口返回异常（HTTP "+response.status+"）。");}
+      if(!response.ok||!data.ok)throw new Error(data.error||"翻译失败");
+      translated.push(data.translated_text||"");
+    }
+    return translated.join("\\n\\n");
+  }
+  $("productTranslate").addEventListener("click",async()=>{
+    const id=Number($("productId").value);
+    if(!id){$("productTranslateNotice").textContent="请先保存英文草稿。";return;}
+    const button=$("productTranslate"); button.disabled=true; $("productSave").disabled=true;
+    const fields={
+      title:$("productTitle").value.trim(),summary:$("productSummary").value.trim(),
+      description:$("productDescription").value.trim(),seo_title:$("productSeoTitle").value.trim(),
+      seo_description:$("productSeoDescription").value.trim()
+    };
+    if(!fields.title){$("productTranslateNotice").textContent="请先填写英文产品名称。";button.disabled=false;$("productSave").disabled=false;return;}
+    const translations={};
+    try{
+      for(let i=0;i<translationLanguages.length;i++){
+        const [language,label]=translationLanguages[i];
+        $("productTranslateNotice").textContent="正在生成 "+label+"（"+(i+1)+"/"+translationLanguages.length+"）…请勿关闭页面。";
+        const translated={};
+        for(const [key,value] of Object.entries(fields)){
+          translated[key]=value?await translateProductField(value,language):"";
+        }
+        translations[language]=translated;
+      }
+      $("productTranslateNotice").textContent="正在保存 8 种语言译文…";
+      const payload={id,slug:$("productSlug").value,title_en:fields.title,summary_en:fields.summary,description_en:fields.description,image_url:$("productImage").value,seo_title_en:fields.seo_title,seo_description_en:fields.seo_description,translations};
+      const response=await fetch("/api/admin/products",{method:"PATCH",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify(payload)});
+      const raw=await response.text();let data;
+      try{data=JSON.parse(raw);}catch{throw new Error("保存译文时服务器返回异常（HTTP "+response.status+"）。");}
+      if(!response.ok||!data.ok)throw new Error(data.error||"译文保存失败");
+      $("productTranslateNotice").textContent="已生成并保存 8 种语言译文。请人工检查产品术语、SEO 文案和技术表述；当前仍为后台草稿，未发布到前台。";
+      productNotice("多语言译文已保存。");
+      await loadProducts();
+    }catch(error){
+      $("productTranslateNotice").textContent="处理中断："+error.message+" 已生成的临时译文未保存；修正问题后可重新生成。";
+      $("productTranslateNotice").className="error";
+    }finally{button.disabled=false;$("productSave").disabled=false;}
   });
   $("productReset").addEventListener("click",resetProduct);
   $("productRefresh").addEventListener("click",loadProducts);
