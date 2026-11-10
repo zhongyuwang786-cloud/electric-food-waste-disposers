@@ -34,8 +34,7 @@ async function visitorHash(request, env) {
   const secret = String(env.ANALYTICS_HASH_SECRET || "");
   const ip = request.headers.get("CF-Connecting-IP");
   if (!secret || !ip) return null;
-  const day = new Date().toISOString().slice(0,10);
-  const bytes = new TextEncoder().encode(secret + "|" + day + "|" + ip);
+  const bytes = new TextEncoder().encode(secret + "|" + ip);
   const digest = await crypto.subtle.digest("SHA-256", bytes);
   return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2,"0")).join("");
 }
