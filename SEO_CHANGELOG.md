@@ -1896,3 +1896,22 @@
 - Backup: Previous ten localized catalog HTML files and robots.txt are copied to `SEO-BACKUPS/2026-11-10/pre-dynamic-product-publishing/`; no existing static product-detail pages were overwritten.
 - Validation: Checked JavaScript module syntax for the new Pages Functions and admin script; checked the ten catalog files contain the published-product loader. D1 migration must be applied before production publishing can work.
 - Deployment: Code committed; production deployment and live URL validation pending.
+
+
+## 2026-11-10 — Product publication validation hardening
+
+### Page title changes
+- No additional title changes.
+
+### Meta description changes
+- No additional meta description changes.
+
+### Page structure changes
+- No public page structure changes.
+- Hardened the admin publication gate so a product cannot be published unless English title and detail text, a valid HTTPS or site asset image path, and title/detail/SEO title/SEO description translations for all eight supported translated languages are present.
+- The public product detail renderer, localized product collection integration, and dynamic product sitemap remain the publication destinations.
+
+### Scope and verification
+- Updated `functions/api/admin/products.js`.
+- Commit: `3251e9d14168c4fe7f5e5f589b684e9ebdbba8bd`.
+- Deployment and live publication still require Cloudflare Pages deployment and browser testing.
