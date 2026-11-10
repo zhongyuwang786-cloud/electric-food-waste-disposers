@@ -55,7 +55,8 @@
       metric("错误率",pct(t.error_rate),"按已记录公开请求计算")
     ].join("");
     const sourceTotal=(data.sources||[]).reduce((sum,x)=>sum+Number(x.total||0),0);
-    const sourceItems=["search_engine","social_media","ai_recommendation","direct","other"].map(category=>({label:sourceLabels[category],total:(data.sources||[]).find(x=>x.category===category)?.total||0}));\n    $("sourceBars").innerHTML=barRows(sourceItems,"label","total",sourceTotal);
+    const sourceItems=["search_engine","social_media","ai_recommendation","direct","other"].map(category=>({label:sourceLabels[category],total:(data.sources||[]).find(x=>x.category===category)?.total||0}));
+    $("sourceBars").innerHTML=barRows(sourceItems,"label","total",sourceTotal);
     $("topPages").innerHTML=table(["热门页面","真人页面访问"],(data.pages||[]).map(x=>'<tr><td>'+esc(x.path)+'</td><td>'+number(x.total)+'</td></tr>'),"暂无页面访问记录");
     $("countryTable").innerHTML=table(["国家/地区代码","真人页面访问"],(data.countries||[]).map(x=>'<tr><td>'+esc(x.country)+'</td><td>'+number(x.total)+'</td></tr>'),"暂无国家/地区数据");
     $("languageTable").innerHTML=table(["网站语言","真人页面访问"],(data.languages||[]).map(x=>'<tr><td>'+esc(x.language)+'</td><td>'+number(x.total)+'</td></tr>'),"暂无语言分布数据");
