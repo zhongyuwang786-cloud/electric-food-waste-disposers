@@ -96,7 +96,7 @@ export async function onRequestPatch({ request, env }) {
         return !item || typeof item !== "object" || !String(item.title || "").trim() || !String(item.description || "").trim();
       });
       if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题或详情译文，暂不能发布：" + missing.join(", ") });
-      await env.DB.prepare("UPDATE products SET published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
+      await env.DB.prepare("UPDATE products SET status = 'draft', published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
       return json(200, { ok: true, id, published: true });
     } catch (error) {
       console.error("Admin product publish failed");
