@@ -125,7 +125,7 @@
     const payload={slug:$("productSlug").value,title_en:$("productTitle").value,summary_en:$("productSummary").value,description_en:$("productDescription").value,image_url:$("productImage").value,seo_title_en:$("productSeoTitle").value,seo_description_en:$("productSeoDescription").value};
     button.disabled=true;productNotice("正在保存产品草稿…");
     try{
-      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id}:payload)});
+      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id,translations:{}}:payload)});
       const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||"保存失败");
       if(id){ $("productId").value=id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
       else { $("productId").value=data.id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
@@ -140,7 +140,7 @@
   function splitForTranslation(value, limit=4500){
     const chunks=[]; let rest=String(value||"");
     while(rest.length>limit){
-      let cut=rest.lastIndexOf("\\n",limit);
+      let cut=rest.lastIndexOf("\n",limit);
       if(cut<Math.floor(limit*0.55))cut=rest.lastIndexOf(" ",limit);
       if(cut<Math.floor(limit*0.55))cut=limit;
       chunks.push(rest.slice(0,cut)); rest=rest.slice(cut).trimStart();
@@ -158,7 +158,7 @@
       if(!response.ok||!data.ok)throw new Error(data.error||"翻译失败");
       translated.push(data.translated_text||"");
     }
-    return translated.join("\\n\\n");
+    return translated.join("\n\n");
   }
   $("productTranslate").addEventListener("click",async()=>{
     const id=Number($("productId").value);
