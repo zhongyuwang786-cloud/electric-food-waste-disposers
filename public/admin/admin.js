@@ -94,7 +94,7 @@
     translationNotice(item.title||item.summary||item.description?"已载入该语言译文，可检查并修改。":"该语言暂无已保存译文。");
   }
   function productNotice(message,error=false){ $("productNotice").textContent=message; $("productNotice").className=error?"error":"muted"; }
-  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productImageFile").value=""; $("productImagePreview").hidden=true; $("productImagePreview").removeAttribute("src"); $("productImageUploadNotice").textContent="选择图片后上传，系统会自动填写图片地址。"; $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productPublish").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; productTranslations={}; originalEnglish=null; loadTranslationEditor(); translationNotice("请先从产品列表选择一条草稿。"); }
+  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productImageFile").value=""; updateProductImagePreview(""); $("productImageUploadNotice").textContent="选择图片后上传，系统会自动填写图片地址。"; $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productPublish").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; productTranslations={}; originalEnglish=null; loadTranslationEditor(); translationNotice("请先从产品列表选择一条草稿。"); }
   function fillProduct(p){
     $("productId").value=p.id;
     productTranslations=p.translations||{};
