@@ -55,7 +55,7 @@ async function record(request, response, env) {
   let actorCategory = "human", actorLabel = null, identityVerified = 0, source = "other";
   const referrerHost = host(request.headers.get("Referer"));
   if (claimed) {
-    actorCategory = verified ? (ai ? "ai_crawler" : "search_crawler") : "unverified_claim";
+    actorCategory = verified ? (ai ? "ai_crawler" : "search_crawler") : (ai ? "ai_claim_unverified" : "search_claim_unverified");
     actorLabel = claimed[0];
     identityVerified = verified ? 1 : 0;
     eventType = isCrawlerResource ? "crawler_resource_request" : "crawler_request";
