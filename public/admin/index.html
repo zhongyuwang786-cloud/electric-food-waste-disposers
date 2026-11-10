@@ -35,7 +35,18 @@
     <label>英文网址标识（slug）<input id="productSlug" required maxlength="100" placeholder="e.g. compact-food-waste-dryer" style="display:block;width:100%;margin-top:5px"></label>
     <label style="grid-column:1/-1">英文简短介绍<textarea id="productSummary" rows="2" maxlength="500" style="display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #cbd8d4;border-radius:7px;font:inherit"></textarea></label>
     <label style="grid-column:1/-1">英文详细介绍<textarea id="productDescription" rows="4" maxlength="12000" style="display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #cbd8d4;border-radius:7px;font:inherit"></textarea></label>
-    <label style="grid-column:1/-1">产品图片路径 / HTTPS 图片地址<input id="productImage" maxlength="1000" placeholder="/assets/images/your-product-image.jpg" style="display:block;width:100%;margin-top:5px"></label>
+    <div style="grid-column:1/-1">
+      <label for="productImageFile">上传产品图片（JPG / PNG / WebP，最大 10 MB）</label>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px">
+        <input id="productImageFile" type="file" accept="image/jpeg,image/png,image/webp" style="max-width:100%;padding:8px;border:1px solid #cbd8d4;border-radius:7px;background:#fff">
+        <button id="productImageUpload" type="button">上传图片</button>
+        <span id="productImageUploadNotice" class="muted" role="status" aria-live="polite">选择图片后上传，系统会自动填写图片地址。</span>
+      </div>
+      <label style="display:block;margin-top:10px">图片地址（也可手动填写 HTTPS 或站内图片路径）
+        <input id="productImage" maxlength="1000" placeholder="/media/your-image.webp" style="display:block;width:100%;margin-top:5px">
+      </label>
+      <img id="productImagePreview" alt="产品图片预览" hidden style="display:block;max-width:240px;max-height:220px;object-fit:contain;margin-top:10px;padding:8px;border:1px solid #dce5e2;border-radius:8px;background:#fff">
+    </div>
     <label>SEO 标题<input id="productSeoTitle" maxlength="180" style="display:block;width:100%;margin-top:5px"></label>
     <label>SEO 描述<input id="productSeoDescription" maxlength="320" style="display:block;width:100%;margin-top:5px"></label>
     <div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button id="productSave" type="submit">保存英文草稿</button><button id="productTranslate" type="button" disabled>生成并保存多语言</button><button id="productPublish" type="button" disabled>发布 / 更新网站</button><button id="productReset" type="button">清空表单</button></div>
