@@ -94,7 +94,7 @@
     translationNotice(item.title||item.summary||item.description?"已载入该语言译文，可检查并修改。":"该语言暂无已保存译文。");
   }
   function productNotice(message,error=false){ $("productNotice").textContent=message; $("productNotice").className=error?"error":"muted"; }
-  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productPublish").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; productTranslations={}; originalEnglish=null; loadTranslationEditor(); translationNotice("请先从产品列表选择一条草稿。"); }
+  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productImageFile").value=""; $("productImagePreview").hidden=true; $("productImagePreview").removeAttribute("src"); $("productImageUploadNotice").textContent="选择图片后上传，系统会自动填写图片地址。"; $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productPublish").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; productTranslations={}; originalEnglish=null; loadTranslationEditor(); translationNotice("请先从产品列表选择一条草稿。"); }
   function fillProduct(p){
     $("productId").value=p.id;
     productTranslations=p.translations||{};
@@ -103,6 +103,7 @@
     $("productSummary").value=p.summary_en||"";
     $("productDescription").value=p.description_en||"";
     $("productImage").value=p.image_url||"";
+    updateProductImagePreview(p.image_url||"");
     $("productSeoTitle").value=p.seo_title_en||"";
     $("productSeoDescription").value=p.seo_description_en||"";
     originalEnglish=JSON.stringify(englishSnapshot());
@@ -151,6 +152,33 @@
     }catch(error){$("productRows").innerHTML='<tr><td colspan="5" class="empty">'+esc(error.message)+'</td></tr>';productNotice(error.message,true);}
     finally{$("productRefresh").disabled=false;}
   }
+  function updateProductImagePreview(value){
+    const preview=$("productImagePreview");
+    const url=String(value||"").trim();
+    if(url){preview.src=url;preview.hidden=false;}
+    else{preview.hidden=true;preview.removeAttribute("src");}
+  }
+  $("productImage").addEventListener("input",()=>updateProductImagePreview($("productImage").value));
+  $("productImageUpload").addEventListener("click",async()=>{
+    const file=$("productImageFile").files[0];
+    const button=$("productImageUpload");
+    const notice=$("productImageUploadNotice");
+    if(!file){notice.textContent="请先选择一张图片。";notice.className="error";return;}
+    if(!["image/jpeg","image/png","image/webp"].includes(file.type)){notice.textContent="只支持 JPG、PNG 或 WebP 图片。";notice.className="error";return;}
+    if(file.size>10*1024*1024){notice.textContent="图片不能超过 10 MB。";notice.className="error";return;}
+    button.disabled=true;notice.textContent="正在上传图片…";notice.className="muted";
+    try{
+      const body=new FormData();body.append("image",file);
+      const response=await fetch("/api/admin/product-image",{method:"POST",body,credentials:"same-origin",cache:"no-store"});
+      const raw=await response.text();let data;
+      try{data=JSON.parse(raw);}catch{throw new Error("上传接口返回异常（HTTP "+response.status+"）。");}
+      if(!response.ok||!data.ok)throw new Error(data.error||"图片上传失败");
+      $("productImage").value=data.image_url;
+      updateProductImagePreview(data.image_url);
+      notice.textContent="上传成功，图片地址已自动填写。保存产品草稿后即可使用。";
+    }catch(error){notice.textContent=error.message;notice.className="error";}
+    finally{button.disabled=false;}
+  });
   $("productTitle").addEventListener("input",()=>{
     if(!$("productSlug").value.trim())$("productSlug").value=$("productTitle").value.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
   });
