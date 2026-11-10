@@ -10,7 +10,7 @@ export async function onRequestGet({ request, env }) {
   if (!env.DB) return analyticsJson(503, { ok:false, available:false, reason:"D1 数据库绑定 DB 不可用。" });
   try {
     await ensureAnalyticsSchema(env);
-    const [totals, trend, sources, bots, pages, countries, statuses, recent, inquiries] = await Promise.all([
+    const [totals, trend, sources, bots, pages, countries, languages, statuses, recent, inquiries] = await Promise.all([
       env.DB.prepare(`SELECT
         SUM(CASE WHEN event_at >= datetime('now','-7 days') THEN 1 ELSE 0 END) AS current_requests,
         SUM(CASE WHEN event_at >= datetime('now','-14 days') AND event_at < datetime('now','-7 days') THEN 1 ELSE 0 END) AS previous_requests,
@@ -31,6 +31,7 @@ export async function onRequestGet({ request, env }) {
       env.DB.prepare(`SELECT actor_label, actor_category, identity_verified, COUNT(*) AS total FROM site_analytics_events WHERE event_type IN ('crawler_request','crawler_resource_request') AND event_at >= datetime('now','-7 days') GROUP BY actor_label, actor_category, identity_verified ORDER BY total DESC LIMIT 30`).all(),
       env.DB.prepare(`SELECT path, COUNT(*) AS total FROM site_analytics_events WHERE event_type='human_pageview' AND event_at >= datetime('now','-7 days') GROUP BY path ORDER BY total DESC LIMIT 10`).all(),
       env.DB.prepare(`SELECT country, COUNT(*) AS total FROM site_analytics_events WHERE event_type='human_pageview' AND event_at >= datetime('now','-7 days') AND country IS NOT NULL GROUP BY country ORDER BY total DESC LIMIT 15`).all(),
+      env.DB.prepare(`SELECT language, COUNT(*) AS total FROM site_analytics_events WHERE event_type='human_pageview' AND event_at >= datetime('now','-7 days') AND language IS NOT NULL GROUP BY language ORDER BY total DESC`).all(),
       env.DB.prepare(`SELECT status, COUNT(*) AS total FROM site_analytics_events WHERE event_at >= datetime('now','-7 days') GROUP BY status ORDER BY total DESC`).all(),
       env.DB.prepare(`SELECT event_at, path, status, country, event_type, actor_label, actor_category, identity_verified FROM site_analytics_events ORDER BY id DESC LIMIT 30`).all(),
       env.DB.prepare(`SELECT
