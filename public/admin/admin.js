@@ -75,10 +75,29 @@
   });
 
   const productFields = ["productTitle","productSlug","productSummary","productDescription","productImage","productSeoTitle","productSeoDescription"];
+  let productTranslations = {};
+  let originalEnglish = null;
+  const englishSnapshot = () => ({
+    title_en:$("productTitle").value, summary_en:$("productSummary").value,
+    description_en:$("productDescription").value, seo_title_en:$("productSeoTitle").value,
+    seo_description_en:$("productSeoDescription").value
+  });
+  function translationNotice(message,error=false){$("translationNotice").textContent=message;$("translationNotice").className=error?"error":"muted";}
+  function loadTranslationEditor(){
+    const language=$("translationLanguage").value;
+    const item=productTranslations[language]||{};
+    $("translatedTitle").value=item.title||"";
+    $("translatedSummary").value=item.summary||"";
+    $("translatedDescription").value=item.description||"";
+    $("translatedSeoTitle").value=item.seo_title||"";
+    $("translatedSeoDescription").value=item.seo_description||"";
+    translationNotice(item.title||item.summary||item.description?"已载入该语言译文，可检查并修改。":"该语言暂无已保存译文。");
+  }
   function productNotice(message,error=false){ $("productNotice").textContent=message; $("productNotice").className=error?"error":"muted"; }
-  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; }
+  function resetProduct(){ $("productId").value=""; productFields.forEach(id=>$(id).value=""); $("productSave").textContent="保存英文草稿"; $("productTranslate").disabled=true; $("productTranslateNotice").textContent="先保存英文草稿，再生成 8 种语言。AI 翻译需人工校对。"; productTranslations={}; originalEnglish=null; loadTranslationEditor(); translationNotice("请先从产品列表选择一条草稿。"); }
   function fillProduct(p){
     $("productId").value=p.id;
+    productTranslations=p.translations||{};
     $("productTitle").value=p.title_en||"";
     $("productSlug").value=p.slug||"";
     $("productSummary").value=p.summary_en||"";
@@ -86,9 +105,11 @@
     $("productImage").value=p.image_url||"";
     $("productSeoTitle").value=p.seo_title_en||"";
     $("productSeoDescription").value=p.seo_description_en||"";
+    originalEnglish=JSON.stringify(englishSnapshot());
     $("productSave").textContent="保存修改";
     $("productTranslate").disabled=false;
-    $("productTranslateNotice").textContent=Object.keys(p.translations||{}).length ? "已保存 "+Object.keys(p.translations).length+" 种语言译文；重新生成会覆盖旧译文。" : "英文草稿已载入。点击“生成并保存多语言”生成 8 种语言。";
+    $("productTranslateNotice").textContent=Object.keys(productTranslations).length ? "已保存 "+Object.keys(productTranslations).length+" 种语言译文；重新生成会覆盖旧译文。" : "英文草稿已载入。点击“生成并保存多语言”生成 8 种语言。";
+    loadTranslationEditor();
     $("productsPanel").scrollIntoView({behavior:"smooth",block:"start"});
     productNotice("正在编辑："+p.title_en);
   }
@@ -100,7 +121,7 @@
       if(!response.ok||!data.ok)throw new Error(data.error||"产品列表加载失败");
       const rows=$("productRows");
       if(!data.products.length){rows.innerHTML='<tr><td colspan="5" class="empty">暂无产品草稿</td></tr>';productNotice("产品数据表已连接，当前没有草稿。");return;}
-      rows.innerHTML=data.products.map(p=>'<tr><td>'+esc(p.title_en)+'</td><td>'+esc(p.slug)+'</td><td>'+ (p.status==="archived"?"已归档":"草稿") +'</td><td>'+esc(p.updated_at)+'</td><td><button type="button" data-edit="'+Number(p.id)+'" style="padding:6px 9px">编辑</button> <button type="button" data-archive="'+Number(p.id)+'" style="padding:6px 9px">归档</button></td></tr>').join("");
+      rows.innerHTML=data.products.map(p=>'<tr><td>'+esc(p.title_en)+'</td><td>'+esc(p.slug)+'</td><td>'+ (p.status==="archived"?"已归档":"草稿") +'</td><td>'+esc(p.updated_at)+'</td><td><button type="button" data-edit="'+Number(p.id)+'" style="padding:6px 9px">编辑 / 校对</button> <button type="button" data-archive="'+Number(p.id)+'" style="padding:6px 9px">归档</button></td></tr>').join("");
       rows.querySelectorAll("[data-edit]").forEach(button=>button.addEventListener("click",()=>fillProduct(data.products.find(p=>p.id===Number(button.dataset.edit)))));
       rows.querySelectorAll("[data-archive]").forEach(button=>button.addEventListener("click",async()=>{
         const p=data.products.find(item=>item.id===Number(button.dataset.archive));
@@ -125,10 +146,13 @@
     const payload={slug:$("productSlug").value,title_en:$("productTitle").value,summary_en:$("productSummary").value,description_en:$("productDescription").value,image_url:$("productImage").value,seo_title_en:$("productSeoTitle").value,seo_description_en:$("productSeoDescription").value};
     button.disabled=true;productNotice("正在保存产品草稿…");
     try{
-      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id,translations:{}}:payload)});
+      const response=await fetch("/api/admin/products",{method:id?"PATCH":"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",body:JSON.stringify(id?{...payload,id,translations:productTranslations}:payload)});
       const data=await response.json();if(!response.ok||!data.ok)throw new Error(data.error||"保存失败");
       if(id){ $("productId").value=id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
       else { $("productId").value=data.id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; }
+      const currentEnglish=JSON.stringify(englishSnapshot());
+      if(!id || (originalEnglish && currentEnglish!==originalEnglish)){ productTranslations={}; }
+      originalEnglish=currentEnglish;
       productNotice(id?"产品草稿已更新。":"产品草稿已保存。");await loadProducts();
     }catch(error){productNotice(error.message,true);}
     finally{button.disabled=false;}
@@ -187,6 +211,8 @@
       const raw=await response.text();let data;
       try{data=JSON.parse(raw);}catch{throw new Error("保存译文时服务器返回异常（HTTP "+response.status+"）。");}
       if(!response.ok||!data.ok)throw new Error(data.error||"译文保存失败");
+      productTranslations=translations;
+      loadTranslationEditor();
       $("productTranslateNotice").textContent="已生成并保存 8 种语言译文。请人工检查产品术语、SEO 文案和技术表述；当前仍为后台草稿，未发布到前台。";
       productNotice("多语言译文已保存。");
       await loadProducts();
@@ -194,6 +220,34 @@
       $("productTranslateNotice").textContent="处理中断："+error.message+" 已生成的临时译文未保存；修正问题后可重新生成。";
       $("productTranslateNotice").className="error";
     }finally{button.disabled=false;$("productSave").disabled=false;}
+  });
+  $("translationLanguage").addEventListener("change",loadTranslationEditor);
+  $("translationLoad").addEventListener("click",loadTranslationEditor);
+  $("translationSave").addEventListener("click",async()=>{
+    const id=Number($("productId").value);
+    if(!id){translationNotice("请先从产品列表编辑一条已保存的产品草稿。",true);return;}
+    const language=$("translationLanguage").value;
+    productTranslations[language]={
+      title:$("translatedTitle").value.trim(),
+      summary:$("translatedSummary").value.trim(),
+      description:$("translatedDescription").value.trim(),
+      seo_title:$("translatedSeoTitle").value.trim(),
+      seo_description:$("translatedSeoDescription").value.trim()
+    };
+    const button=$("translationSave");button.disabled=true;
+    translationNotice("正在保存当前语言译文…");
+    try{
+      const english=englishSnapshot();
+      const payload={id,slug:$("productSlug").value,title_en:english.title_en,summary_en:english.summary_en,description_en:english.description_en,image_url:$("productImage").value,seo_title_en:english.seo_title_en,seo_description_en:english.seo_description_en,translations:productTranslations};
+      const response=await fetch("/api/admin/products",{method:"PATCH",headers:{"Content-Type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify(payload)});
+      const raw=await response.text();let data;try{data=JSON.parse(raw);}catch{throw new Error("服务器返回异常（HTTP "+response.status+"）。");}
+      if(!response.ok||!data.ok)throw new Error(data.error||"译文保存失败");
+      originalEnglish=JSON.stringify(englishSnapshot());
+      translationNotice("当前语言译文已保存。仍为后台草稿，尚未发布到网站。");
+      productNotice("已保存 "+language+" 译文。");
+      await loadProducts();
+    }catch(error){translationNotice(error.message,true);}
+    finally{button.disabled=false;}
   });
   $("productReset").addEventListener("click",resetProduct);
   $("productRefresh").addEventListener("click",loadProducts);
