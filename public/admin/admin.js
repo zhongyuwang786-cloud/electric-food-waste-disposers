@@ -131,5 +131,7 @@
   });
   $("productReset").addEventListener("click",resetProduct);
   $("productRefresh").addEventListener("click",loadProducts);
-\n  load();\n  loadProducts();
+
+  load();
+  loadProducts();
 })();
