@@ -8,11 +8,31 @@
 <title>询盘管理后台</title>
 <style>
 :root{font-family:Arial,"Microsoft YaHei",sans-serif;color:#182b28;background:#f3f6f5}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1180px;margin:0 auto;padding:28px 18px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}h1{font-size:25px;margin:0}.muted{color:#687875;font-size:13px}.panel{background:#fff;border:1px solid #dce5e2;border-radius:12px;padding:18px;margin-top:18px}.tools{display:flex;gap:10px;flex-wrap:wrap}.tools input,.tools select,button{font:inherit;padding:10px 12px;border:1px solid #cbd8d4;border-radius:7px;background:#fff;color:#182b28}.tools input{flex:1;min-width:210px}button{cursor:pointer;background:#173d36;color:white;border-color:#173d36}button:disabled{opacity:.55;cursor:wait}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:850px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #e7eeeb;vertical-align:top;font-size:14px}th{font-size:12px;color:#60716d;background:#f8faf9}td.message{white-space:pre-wrap;min-width:230px;max-width:330px;overflow-wrap:anywhere}.status{min-width:125px;padding:7px;border:1px solid #cbd8d4;border-radius:6px;background:white}.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}.error{color:#a12626}.empty{padding:30px;text-align:center;color:#687875}.actions{display:flex;gap:8px;align-items:center}.small{font-size:12px;color:#687875}@media(max-width:600px){.wrap{padding:18px 12px}h1{font-size:21px}.panel{padding:12px}#productForm,#translationEditor{grid-template-columns:1fr!important}#productForm label,#translationEditor label{grid-column:1!important}}
-</style>
+.analytics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin:14px 0}.analytics-metric{border:1px solid #dce5e2;border-radius:9px;padding:13px;background:#f8faf9;min-width:0}.analytics-metric strong{display:block;font-size:23px;margin:7px 0;overflow-wrap:anywhere}.analytics-block{margin-top:18px}.analytics-block h3{font-size:16px;margin:0 0 10px}.analytics-bar-row{display:grid;grid-template-columns:minmax(100px,180px) 1fr 60px;align-items:center;gap:10px;margin:10px 0;font-size:13px}.analytics-bar-track{height:10px;background:#edf2f0;border-radius:20px;overflow:hidden}.analytics-bar-track i{display:block;height:100%;background:#397d70;border-radius:20px}.analytics-note{padding:12px;background:#f8faf9;border:1px solid #dce5e2;border-radius:8px;font-size:13px;color:#52635f;line-height:1.6}@media(max-width:600px){.analytics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-metric strong{font-size:19px}.analytics-bar-row{grid-template-columns:95px 1fr 45px;gap:6px}}</style>
 </head>
 <body>
 <main class="wrap">
-<header class="top"><div><h1>询盘管理</h1><p class="muted">Electric Food Waste Disposers · 内部管理页面</p></div><button id="refresh">刷新列表</button></header>
+<header class="top"><div><h1>询盘与产品管理</h1><p class="muted">Electric Food Waste Disposers · 内部管理页面</p></div><div class="tools"><button type="button" data-admin-jump="crawlerAnalyticsPanel">爬虫数据分析</button><button type="button" data-admin-jump="trafficAnalyticsPanel">流量来源分析</button><button id="refresh">刷新询盘</button></div></header>
+<section class="panel" id="crawlerAnalyticsPanel">
+  <div class="top"><div><h2 style="font-size:19px;margin:0 0 6px">爬虫数据分析</h2><p class="muted">搜索引擎与 AI 爬虫请求、真人页面访问、HTTP 健康度及最近事件。</p></div><button id="analyticsRefresh" type="button">刷新分析数据</button></div>
+  <p id="analyticsUnavailable" class="analytics-note" role="status" aria-live="polite">正在读取网站分析数据…</p>
+  <div id="crawlerMetrics" class="analytics-grid"></div>
+  <div class="analytics-block"><h3>搜索引擎 / AI 爬虫识别明细</h3><p class="muted">UA 自称但未通过 Cloudflare 验证的请求会单独标注，不计为已确认身份。</p><div id="botTable"></div></div>
+  <div class="analytics-block"><h3>近七天访问与抓取趋势</h3><div id="crawlerTrend"></div></div>
+  <div class="analytics-block"><h3>HTTP 响应状态</h3><div id="statusTable"></div></div>
+  <div class="analytics-block"><h3>最近请求与异常事件</h3><div id="recentEvents"></div></div>
+</section>
+<section class="panel" id="trafficAnalyticsPanel">
+  <h2 style="font-size:19px;margin:0 0 6px">流量来源分析</h2>
+  <p class="muted">仅统计真人 HTML 页面访问；爬虫请求和静态资源请求不会计入来源流量。</p>
+  <div id="trafficMetrics" class="analytics-grid"></div>
+  <div class="analytics-block"><h3>流量来源分类</h3><div id="sourceBars"></div><p class="small">分类：全部流量、搜索引擎、社媒推荐、AI 推荐、直接访问、其他来源。来源证据不足时归入其他来源。</p></div>
+  <div class="analytics-block"><h3>热门页面</h3><div id="topPages"></div></div>
+  <div class="analytics-block"><h3>国家 / 地区分布</h3><div id="countryTable"></div></div>
+  <div class="analytics-block"><h3>询盘情况</h3><p id="inquirySummary" class="analytics-note">等待读取询盘数据…</p></div>
+  <p id="analyticsCoverage" class="analytics-note"></p>
+  <p id="analyticsUpdated" class="small"></p>
+</section>
 <section class="panel">
 <h2 style="font-size:18px;margin:0 0 8px">AI 翻译测试</h2>
 <p class="muted">输入英文内容，测试 Workers AI 翻译。当前先开放简体中文及其他已配置语言；繁体中文将在加入文字转换步骤后启用。</p>
@@ -86,5 +106,6 @@
 <p class="small">安全提示：请勿在公共或共享设备上使用此页面。退出时关闭浏览器窗口。</p>
 </main>
 <script src="/admin/admin.js" defer></script>
+<script src="/admin/analytics.js" defer></script>
 </body>
 </html>
