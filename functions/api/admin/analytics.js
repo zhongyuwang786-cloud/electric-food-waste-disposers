@@ -24,7 +24,7 @@ export async function onRequestGet({ request, env }) {
         SUM(CASE WHEN status >= 400 AND event_at >= datetime('now','-7 days') THEN 1 ELSE 0 END) AS errors,
         SUM(CASE WHEN status >= 400 AND event_at >= datetime('now','-14 days') AND event_at < datetime('now','-7 days') THEN 1 ELSE 0 END) AS previous_errors,
         SUM(CASE WHEN event_at >= datetime('now','-14 days') AND event_at < datetime('now','-7 days') THEN 1 ELSE 0 END) AS previous_measured_requests,
-        SUM(CASE WHEN event_at >= datetime('now','-7 days') THEN 1 ELSE 0 END) AS measured_requests
+        SUM(CASE WHEN event_at >= datetime('now','-7 days') THEN 1 ELSE 0 END) AS measured_requests,
         MIN(event_at) AS first_event_at, CASE WHEN MIN(event_at) <= datetime('now','-14 days') THEN 1 ELSE 0 END AS comparison_ready
         FROM site_analytics_events`).first(),
       env.DB.prepare(`SELECT date(event_at) AS day,
