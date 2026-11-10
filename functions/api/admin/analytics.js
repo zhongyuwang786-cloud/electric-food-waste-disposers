@@ -25,7 +25,7 @@ export async function onRequestGet({ request, env }) {
         SUM(CASE WHEN status >= 400 AND event_at >= datetime('now','-14 days') AND event_at < datetime('now','-7 days') THEN 1 ELSE 0 END) AS previous_errors,
         SUM(CASE WHEN event_at >= datetime('now','-14 days') AND event_at < datetime('now','-7 days') THEN 1 ELSE 0 END) AS previous_measured_requests,
         SUM(CASE WHEN event_at >= datetime('now','-7 days') THEN 1 ELSE 0 END) AS measured_requests
-        FROM site_analytics_events`).first(),
+        MIN(event_at) AS first_event_at, CASE WHEN MIN(event_at) <= datetime('now','-14 days') THEN 1 ELSE 0 END AS comparison_ready\n        FROM site_analytics_events`).first(),
       env.DB.prepare(`SELECT date(event_at) AS day,
         SUM(CASE WHEN event_type='human_pageview' THEN 1 ELSE 0 END) AS pageviews,
         SUM(CASE WHEN event_type IN ('crawler_request','crawler_resource_request') AND identity_verified=1 THEN 1 ELSE 0 END) AS verified_crawls,
@@ -46,8 +46,8 @@ export async function onRequestGet({ request, env }) {
     const t = totals || {};
     const measured = Number(t.measured_requests || 0), errors = Number(t.errors || 0);
     return analyticsJson(200, {
-      ok:true, available:true, window:"最近 7 天（UTC 数据库时间）", comparison:"此前 7 天",
-      coverage:"仅统计网站公开请求；后台及管理员 API 已排除。真人页面访问按 HTML 页面请求统计；静态资源和其他请求单独计入请求量。机器人 User-Agent 自称未通过 Cloudflare verifiedBot 验证时，只列为未验证声明，不视为已确认爬虫。",
+      ok:true, available:true, window:"最近 7 天（UTC 数据库时间）", comparison:"此前 7 天", comparison_ready:Boolean(t.comparison_ready),
+      coverage:"本功能部署后开始采集，不补造部署前历史数据。仅统计网站公开请求；后台及管理员 API 已排除。真人页面访问按 HTML 页面请求统计；静态资源和其他请求单独计入请求量。机器人 User-Agent 自称未通过 Cloudflare verifiedBot 验证时，只列为未验证声明，不视为已确认爬虫。",
       totals:{ current_requests:Number(t.current_requests||0), previous_requests:Number(t.previous_requests||0), current_pageviews:Number(t.current_pageviews||0), previous_pageviews:Number(t.previous_pageviews||0), unique_visitors:t.unique_visitors===null?null:Number(t.unique_visitors||0), visitor_hash_configured:Boolean(env.ANALYTICS_HASH_SECRET), verified_crawler_requests:Number(t.verified_crawler_requests||0), previous_verified_crawler_requests:Number(t.previous_verified_crawler_requests||0), unverified_claim_requests:Number(t.unverified_claim_requests||0), previous_unverified_claim_requests:Number(t.previous_unverified_claim_requests||0), errors, previous_errors:Number(t.previous_errors||0), measured_requests:measured, previous_measured_requests:Number(t.previous_measured_requests||0), error_rate:measured?errors/measured:null, previous_error_rate:Number(t.previous_measured_requests||0)?Number(t.previous_errors||0)/Number(t.previous_measured_requests):null },
       trend:trend.results||[], sources:sources.results||[], bots:bots.results||[], pages:pages.results||[], countries:countries.results||[], languages:languages.results||[], statuses:statuses.results||[], recent:safeRows(recent.results),
       inquiries:inquiries?{current:Number(inquiries.current_inquiries||0),previous:Number(inquiries.previous_inquiries||0),conversion_rate:null,note:"询盘数来自 D1 inquiries 表；当前没有会话级归因，故不计算转化率。"}:null
