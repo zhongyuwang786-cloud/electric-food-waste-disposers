@@ -1915,3 +1915,15 @@
 - Updated `functions/api/admin/products.js`.
 - Commit: `3251e9d14168c4fe7f5e5f589b684e9ebdbba8bd`.
 - Deployment and live publication still require Cloudflare Pages deployment and browser testing.
+
+
+### SEO-0137 — Preserve existing static product detail routes
+- Date: 2026-11-10
+- Scope: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/{slug}/
+- Change type: Product-detail route resolution; no page title, meta description, canonical URL, or visible static page content changed.
+- Before: The database-backed dynamic product route returned “Product not found” when a requested slug belonged to an existing static product detail page rather than a published D1 record.
+- After: The route now falls back to Cloudflare Pages static asset handling when the D1 record is absent or the database is unavailable, preserving the original static product detail pages while keeping published D1 products dynamic.
+- Title/meta description: Not changed.
+- SEO impact: Restores access to existing product detail URLs and prevents the dynamic route from masking their original content.
+- Validation: Source-level route fallback checked; live production validation requires the Pages deployment to complete.
+- Deployment: Committed to the repository default branch; Cloudflare Pages deployment and browser verification pending.
