@@ -1939,5 +1939,18 @@
 - Title/meta description: Not changed.
 - SEO intent: Better answer the observed institutional-use query without claiming the product is certified, tested or suitable for care homes, schools or commercial kitchens. All suitability remains subject to the selected product's confirmed documentation.
 - Backup: SEO-BACKUPS/2026-11-11/pre-care-home-guide-update/en-how-food-waste-dryer-works-index.html
-- Validation: Source-level content and structured-data edits prepared. Live page, rich-result eligibility and deployment are not yet verified.
-- Deployment: Changes are on branch seo-care-home-guide-2026-11-11; production deployment has not been triggered.
+- Validation: Source-level content and structured-data edits are present on main. User confirmed the Cloudflare Pages deployment succeeded on 2026-11-11; live-page fetch and rich-result eligibility could not be independently verified in this assistant environment.
+- Deployment: Merged to main in commit 5731cdcc842e2df581ba3349b7d38d3c9fefa9b9; user confirmed production deployment succeeded on 2026-11-11.
+
+### SEO-0139 — Clarify food waste dryer, grinder and digester processing types
+- Date: 2026-11-11
+- Page: /en/resources/food-waste-dryer-vs-grinder/
+- Change type: Article content structure, comparison table and FAQ structured data. Existing URL, page title, meta description, canonical and hreflang values are unchanged.
+- Search Console evidence: In the 2026-10-12 to 2026-11-08 period, the query "food waste dryer vs digester" generated 4 impressions at an average position of 35; "food waste processor drying type" generated 2 impressions at an average position of 12 and "waste processor drying type" generated 1 impression at an average position of 12 for this page.
+- Before: The guide compared drying and grinding but did not explain how biological digestion differs from either process.
+- After: Added a three-way comparison of dryer, grinder and digester; clarified that digester is a broad term and that process, operating conditions and output depend on the system; added a matching FAQ and FAQPage structured-data entry. Updated Article dateModified.
+- Title/meta description: Not changed.
+- SEO intent: Address observed comparison and processing-type queries while avoiding unsupported product-performance, suitability or certification claims.
+- Backup: SEO-BACKUPS/2026-11-11/pre-dryer-vs-digester-guide-update/en-food-waste-dryer-vs-grinder-index.html
+- Validation: Source anchors checked; JSON-LD parsing and title/meta/canonical/hreflang preservation to be checked before PR.
+- Deployment: Pending review and merge; Cloudflare Pages deployment not triggered.
