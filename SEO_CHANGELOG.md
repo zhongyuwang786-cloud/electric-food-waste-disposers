@@ -1957,3 +1957,18 @@
 - Validation: Verified all ten localized HTML pages exist and each has a self-referencing canonical plus 11 hreflang links. Verified the sitemap previously had exactly one <loc> for this slug; added ten <url> entries. XML parsing and live HTTP validation remain pending.
 - Deployment: Working branch only; not merged to main and not deployed.
 - Notes: Sitemap inclusion supports discovery but does not guarantee indexing or ranking.
+
+
+### SEO-0140 — Add x-default alternate to the dynamic product sitemap
+
+- Date: 2026-11-11
+- Page/language: Dynamically published product detail URLs across all 10 language routes
+- Change type: Dynamic XML sitemap hreflang annotations; no page title, meta description, canonical URL, visible content or page structure changed.
+- Before: The D1-backed product sitemap emitted hreflang alternates for the ten supported languages but did not emit an x-default alternate.
+- After: Each dynamically generated product URL now also emits an x-default alternate pointing to the English product URL for the same slug.
+- Target search intent: International B2B product discovery across localized product pages.
+- Reason: Align dynamic product sitemap annotations with the x-default convention already used in the static sitemap and localized page HTML.
+- Files: functions/sitemap-products.xml.js; SEO_CHANGELOG.md.
+- Validation: Confirmed the dynamic sitemap generator contains all ten locale mappings and added the English x-default link to each generated product URL. Runtime XML and live HTTP validation remain pending.
+- Deployment: Working branch only; not merged to main and not deployed.
+- Notes: x-default is an optional language fallback annotation; its presence does not guarantee indexing or ranking.
