@@ -1942,3 +1942,18 @@
 - Validation: Confirmed the exact placeholder existed before replacement; verified the update was committed to the working branch. Live URL and AI crawler retrieval remain pending deployment verification.
 - Deployment: Working branch only; not merged to main and not deployed.
 - Notes: This is an information accuracy improvement, not a claim that llms.txt directly improves Google rankings or guarantees AI citations.
+
+
+### SEO-0139 — Add all localized white-square product URLs to the main sitemap
+
+- Date: 2026-11-11
+- Page/language: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/ (10 localized pages)
+- Change type: XML sitemap coverage and hreflang sitemap annotations; no page title, meta description, canonical URL, page copy or page structure changed.
+- Before: The main sitemap contained only the English URL for this product design. The other nine localized product pages existed in the repository, each with its own canonical URL and 11 alternate links in page HTML, but were absent as <loc> entries in the main sitemap.
+- After: Added all 10 localized product URLs to public/sitemap.xml, with reciprocal hreflang alternates for all ten languages and x-default pointing to the English page.
+- Target search intent: Localized product discovery for white square top-opening kitchen food waste dryers and B2B OEM/ODM sourcing.
+- Reason: Ensure all existing localized versions are discoverable through the main XML sitemap and maintain language annotations at sitemap level.
+- Files: public/sitemap.xml; SEO_CHANGELOG.md.
+- Validation: Verified all ten localized HTML pages exist and each has a self-referencing canonical plus 11 hreflang links. Verified the sitemap previously had exactly one <loc> for this slug; added ten <url> entries. XML parsing and live HTTP validation remain pending.
+- Deployment: Working branch only; not merged to main and not deployed.
+- Notes: Sitemap inclusion supports discovery but does not guarantee indexing or ranking.
