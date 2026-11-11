@@ -1952,5 +1952,5 @@
 - Title/meta description: Not changed.
 - SEO intent: Address observed comparison and processing-type queries while avoiding unsupported product-performance, suitability or certification claims.
 - Backup: SEO-BACKUPS/2026-11-11/pre-dryer-vs-digester-guide-update/en-food-waste-dryer-vs-grinder-index.html
-- Validation: Source anchors checked; JSON-LD parsing and title/meta/canonical/hreflang preservation to be checked before PR.
-- Deployment: Pending review and merge; Cloudflare Pages deployment not triggered.
+- Validation: Original page backup matches the pre-change main-branch file. Both JSON-LD blocks parse successfully (Article and FAQPage). Existing title, meta description and canonical URL remain unchanged; 11 hreflang entries remain present. User confirmed Cloudflare Pages production deployment succeeded on 2026-11-11; independent live-page fetch was unavailable in this environment.
+- Deployment: Merged to main in commit 55a8bb1ea7a2a13ccd58692a7adbb8f557e3de9c; user confirmed production deployment succeeded on 2026-11-11.
