@@ -1972,3 +1972,18 @@
 - Validation: Confirmed the dynamic sitemap generator contains all ten locale mappings and added the English x-default link to each generated product URL. Runtime XML and live HTTP validation remain pending.
 - Deployment: Working branch only; not merged to main and not deployed.
 - Notes: x-default is an optional language fallback annotation; its presence does not guarantee indexing or ranking.
+
+
+### SEO-0141 — Correct product-specific inquiry subjects and localized URLs
+
+- Date: 2026-11-11
+- Page/language: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/ (10 localized pages)
+- Change type: Product inquiry CTA accuracy and destination alignment; page title, meta description, canonical, hreflang, and product specifications were not changed.
+- Before: The email and WhatsApp prefilled inquiry text incorrectly named this white-square top-opening design as the White Front-Control Food Waste Dryer. The prefilled product-page URL in all ten language versions pointed to the English URL.
+- After: Corrected the prefilled product name to White Square Top-Opening Food Waste Dryer and made the prefilled URL match the current localized page language. The inquiry opener remains in English for international B2B communication.
+- Target intent: Product-specific manufacturer inquiries from international brands, importers and distributors.
+- Reason: Prevent inaccurate inquiry records and reduce friction when a buyer contacts the manufacturer from a localized product page.
+- Files: public/{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/index.html; SEO_CHANGELOG.md.
+- Validation: Source audit confirmed the mismatch on all ten localized pages before editing. Updated all ten email and WhatsApp CTA strings and verified the corrected product name and language-specific URL in source. Live click-through verification remains pending.
+- Deployment: Working branch only; not merged to main or deployed to production.
+- Notes: This is an inquiry accuracy and conversion-path correction; no ranking or indexing improvement is claimed.
