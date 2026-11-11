@@ -1927,3 +1927,18 @@
 - SEO impact: Restores access to existing product detail URLs and prevents the dynamic route from masking their original content.
 - Validation: Source-level route fallback checked; live production validation requires the Pages deployment to complete.
 - Deployment: Committed to the repository default branch; Cloudflare Pages deployment and browser verification pending.
+
+
+### SEO-0138 — Update verified contact channels in llms.txt
+
+- Date: 2026-11-11
+- Page/language: Site-wide GEO reference file; all 10 language groups
+- Change type: GEO / AI-readable site information update; no HTML page title, meta description, canonical, hreflang, or visible page structure changed.
+- Before: The public llms.txt contact line said that a verified sales email and phone number still needed to be added.
+- After: Replaced that placeholder with the company-provided sales email (zhongyuwang786@gmail.com) and WhatsApp number (+86 15820479535).
+- Target search intent: Brand and importer inquiries for electric kitchen food waste dryers, OEM/ODM and private-label manufacturing.
+- Reason: Keep the AI-readable company reference file aligned with the verified contact channels already supplied for website inquiries.
+- Files: public/llms.txt; SEO_CHANGELOG.md.
+- Validation: Confirmed the exact placeholder existed before replacement; verified the update was committed to the working branch. Live URL and AI crawler retrieval remain pending deployment verification.
+- Deployment: Working branch only; not merged to main and not deployed.
+- Notes: This is an information accuracy improvement, not a claim that llms.txt directly improves Google rankings or guarantees AI citations.
