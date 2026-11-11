@@ -1927,3 +1927,63 @@
 - SEO impact: Restores access to existing product detail URLs and prevents the dynamic route from masking their original content.
 - Validation: Source-level route fallback checked; live production validation requires the Pages deployment to complete.
 - Deployment: Committed to the repository default branch; Cloudflare Pages deployment and browser verification pending.
+
+
+### SEO-0138 — Update verified contact channels in llms.txt
+
+- Date: 2026-11-11
+- Page/language: Site-wide GEO reference file; all 10 language groups
+- Change type: GEO / AI-readable site information update; no HTML page title, meta description, canonical, hreflang, or visible page structure changed.
+- Before: The public llms.txt contact line said that a verified sales email and phone number still needed to be added.
+- After: Replaced that placeholder with the company-provided sales email (zhongyuwang786@gmail.com) and WhatsApp number (+86 15820479535).
+- Target search intent: Brand and importer inquiries for electric kitchen food waste dryers, OEM/ODM and private-label manufacturing.
+- Reason: Keep the AI-readable company reference file aligned with the verified contact channels already supplied for website inquiries.
+- Files: public/llms.txt; SEO_CHANGELOG.md.
+- Validation: Confirmed the exact placeholder existed before replacement; verified the update was committed to the working branch. Live URL and AI crawler retrieval remain pending deployment verification.
+- Deployment: Working branch only; not merged to main and not deployed.
+- Notes: This is an information accuracy improvement, not a claim that llms.txt directly improves Google rankings or guarantees AI citations.
+
+
+### SEO-0139 — Add all localized white-square product URLs to the main sitemap
+
+- Date: 2026-11-11
+- Page/language: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/ (10 localized pages)
+- Change type: XML sitemap coverage and hreflang sitemap annotations; no page title, meta description, canonical URL, page copy or page structure changed.
+- Before: The main sitemap contained only the English URL for this product design. The other nine localized product pages existed in the repository, each with its own canonical URL and 11 alternate links in page HTML, but were absent as <loc> entries in the main sitemap.
+- After: Added all 10 localized product URLs to public/sitemap.xml, with reciprocal hreflang alternates for all ten languages and x-default pointing to the English page.
+- Target search intent: Localized product discovery for white square top-opening kitchen food waste dryers and B2B OEM/ODM sourcing.
+- Reason: Ensure all existing localized versions are discoverable through the main XML sitemap and maintain language annotations at sitemap level.
+- Files: public/sitemap.xml; SEO_CHANGELOG.md.
+- Validation: Verified all ten localized HTML pages exist and each has a self-referencing canonical plus 11 hreflang links. Verified the sitemap previously had exactly one <loc> for this slug; added ten <url> entries. XML parsing and live HTTP validation remain pending.
+- Deployment: Working branch only; not merged to main and not deployed.
+- Notes: Sitemap inclusion supports discovery but does not guarantee indexing or ranking.
+
+
+### SEO-0140 — Add x-default alternate to the dynamic product sitemap
+
+- Date: 2026-11-11
+- Page/language: Dynamically published product detail URLs across all 10 language routes
+- Change type: Dynamic XML sitemap hreflang annotations; no page title, meta description, canonical URL, visible content or page structure changed.
+- Before: The D1-backed product sitemap emitted hreflang alternates for the ten supported languages but did not emit an x-default alternate.
+- After: Each dynamically generated product URL now also emits an x-default alternate pointing to the English product URL for the same slug.
+- Target search intent: International B2B product discovery across localized product pages.
+- Reason: Align dynamic product sitemap annotations with the x-default convention already used in the static sitemap and localized page HTML.
+- Files: functions/sitemap-products.xml.js; SEO_CHANGELOG.md.
+- Validation: Confirmed the dynamic sitemap generator contains all ten locale mappings and added the English x-default link to each generated product URL. Runtime XML and live HTTP validation remain pending.
+- Deployment: Working branch only; not merged to main and not deployed.
+- Notes: x-default is an optional language fallback annotation; its presence does not guarantee indexing or ranking.
+
+
+### SEO-0141 — Correct product-specific inquiry subjects and localized URLs
+
+- Date: 2026-11-11
+- Page/language: /{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/ (10 localized pages)
+- Change type: Product inquiry CTA accuracy and destination alignment; page title, meta description, canonical, hreflang, and product specifications were not changed.
+- Before: The email and WhatsApp prefilled inquiry text incorrectly named this white-square top-opening design as the White Front-Control Food Waste Dryer. The prefilled product-page URL in all ten language versions pointed to the English URL.
+- After: Corrected the prefilled product name to White Square Top-Opening Food Waste Dryer and made the prefilled URL match the current localized page language. The inquiry opener remains in English for international B2B communication.
+- Target intent: Product-specific manufacturer inquiries from international brands, importers and distributors.
+- Reason: Prevent inaccurate inquiry records and reduce friction when a buyer contacts the manufacturer from a localized product page.
+- Files: public/{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/products/white-square-top-opening/index.html; SEO_CHANGELOG.md.
+- Validation: Source audit confirmed the mismatch on all ten localized pages before editing. Updated all ten email and WhatsApp CTA strings and verified the corrected product name and language-specific URL in source. Live click-through verification remains pending.
+- Deployment: Working branch only; not merged to main or deployed to production.
+- Notes: This is an inquiry accuracy and conversion-path correction; no ranking or indexing improvement is claimed.

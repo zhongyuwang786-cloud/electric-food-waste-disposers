@@ -11,7 +11,8 @@ export async function onRequestGet({ env }) {
       for (const lang of langs) {
         const loc = "https://electricfoodwaste.com/" + lang + "/products/" + encodeURIComponent(product.slug) + "/";
         const alternates = langs.map(code => '<xhtml:link rel="alternate" hreflang="' + hreflang[code] + '" href="https://electricfoodwaste.com/' + code + '/products/' + encodeURIComponent(product.slug) + '/"/>').join("");
-        urls.push("<url><loc>" + loc + "</loc>" + alternates + (product.published_at ? "<lastmod>" + new Date(product.published_at.replace(" ", "T") + "Z").toISOString().slice(0,10) + "</lastmod>" : "") + "</url>");
+        const xDefault = '<xhtml:link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/products/' + encodeURIComponent(product.slug) + '/"/>';
+        urls.push("<url><loc>" + loc + "</loc>" + alternates + xDefault + (product.published_at ? "<lastmod>" + new Date(product.published_at.replace(" ", "T") + "Z").toISOString().slice(0,10) + "</lastmod>" : "") + "</url>");
       }
     }
     const xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' + urls.join("") + "</urlset>";
