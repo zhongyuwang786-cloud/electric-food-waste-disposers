@@ -1927,3 +1927,17 @@
 - SEO impact: Restores access to existing product detail URLs and prevents the dynamic route from masking their original content.
 - Validation: Source-level route fallback checked; live production validation requires the Pages deployment to complete.
 - Deployment: Committed to the repository default branch; Cloudflare Pages deployment and browser verification pending.
+
+ 
+### SEO-0138 — Add institutional-kitchen buyer guidance to the English food waste dryer guide
+- Date: 2026-11-11
+- Page: /en/resources/how-food-waste-dryer-works/
+- Change type: Article content structure and FAQ structured data. Existing URL, title, meta description, canonical and hreflang values are unchanged.
+- Search Console evidence: In the 2026-10-12 to 2026-11-08 period, the query "food waste dryer for care homes" generated 12 impressions at an average position of 22.1 and was mapped to this page.
+- Before: The article explained the heating-and-drying process and general importer checks but did not directly address institutional-kitchen buyer considerations.
+- After: Added a section for care homes and institutional kitchens covering capacity verification, accepted input materials, workflow, cleaning, electrical configuration and evidence for performance claims; added a matching FAQ and FAQPage structured-data entry.
+- Title/meta description: Not changed.
+- SEO intent: Better answer the observed institutional-use query without claiming the product is certified, tested or suitable for care homes, schools or commercial kitchens. All suitability remains subject to the selected product's confirmed documentation.
+- Backup: SEO-BACKUPS/2026-11-11/pre-care-home-guide-update/en-how-food-waste-dryer-works-index.html
+- Validation: Source-level content and structured-data edits prepared. Live page, rich-result eligibility and deployment are not yet verified.
+- Deployment: Changes are on branch seo-care-home-guide-2026-11-11; production deployment has not been triggered.
