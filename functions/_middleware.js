@@ -73,7 +73,7 @@ async function record(request, response, env) {
       .bind(path.slice(0,1000), request.method, response.status, request.cf?.country || null, language, ua.slice(0,500), referrerHost || null, source, eventType, actorCategory, actorLabel, identityVerified, hash).run();
   } catch (error) { console.error("Site analytics event could not be stored"); }
 }
-const countryLocales={JP:"ja",KR:"ko",ES:"es",PT:"pt",DE:"de",RU:"ru",CN:"zh-cn",TW:"zh-tw",HK:"zh-tw",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",EG:"ar",JO:"ar",LB:"ar",MA:"ar",DZ:"ar",TN:"ar"};
+const countryLocales={JP:"ja",KR:"ko",ES:"es",PT:"pt",BR:"pt",DE:"de",RU:"ru",CN:"zh-cn",TW:"zh-tw",HK:"zh-tw",MX:"es",AR:"es",CL:"es",CO:"es",PE:"es",VE:"es",EC:"es",GT:"es",CU:"es",DO:"es",HN:"es",PY:"es",UY:"es",BO:"es",CR:"es",PA:"es",SV:"es",NI:"es",PR:"es",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",EG:"ar",JO:"ar",LB:"ar",MA:"ar",DZ:"ar",TN:"ar"};
 const crawlerPattern=/Googlebot|bingbot|Baiduspider|YandexBot|Yeti|Daumoa|Sogou|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|PerplexityBot|Google-Extended|Applebot|CCBot|Bytespider|DeepSeekBot|KimiBot|DoubaoBot|YuanbaoBot|ERNIE/i;
 export async function onRequest(context) {
   const request=context.request,url=new URL(request.url),ua=request.headers.get("User-Agent")||"";

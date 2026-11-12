@@ -18,6 +18,8 @@
   var old=document.querySelector(".mobile-menu-toggle");
   if(old)old.remove();
   var nav=header&&header.querySelector(".desktop-nav");
+  var resourcesLink=nav&&nav.querySelector('a[data-i18n="navResources"],a[href="#resources"]');
+  if(resourcesLink)resourcesLink.href="/"+locale+"/resources/";
   if(header&&nav){
     var toggle=document.createElement("button");
     toggle.type="button";toggle.className="mobile-menu-toggle";
