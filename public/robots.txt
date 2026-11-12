@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://electricfoodwaste.com/sitemap.xml
-Sitemap: https://electricfoodwaste.com/sitemap-products.xml
+Sitemap: https://electricfoodwaste.com/sitemap-products.xml\nSitemap: https://electricfoodwaste.com/sitemap-resources.xml\n
