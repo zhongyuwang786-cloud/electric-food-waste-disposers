@@ -2081,3 +2081,16 @@
 - Files: public/{locale}/resources/index.html.
 - Validation: source-level metadata consistency checked; live verification pending deployment. No product specifications, certifications, or unconfirmed commercial claims added.
 - Deployment: not deployed; phase-1b-resource-metadata.
+
+## 2026-11-12 — Phase 2: Blog and Knowledge Center CMS foundation
+
+### CMS-ARTICLE-001
+- Added D1 article storage migration: `migrations/0004_blog_posts.sql`.
+- Added Cloudflare Access-protected article management API with create, edit, publish, unpublish and archive actions.
+- Added Markdown article editor in the admin, per-language translation editor, AI translation for Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic and Simplified Chinese; Traditional Chinese remains manual pending a verified conversion process.
+- Added public published-article API, localized article route, Article JSON-LD, canonical URLs, hreflang only for completed translations, and a dynamic article sitemap.
+- Added dynamic article cards to all ten knowledge-center indexes. Untranslated locales do not display duplicate English content.
+- Existing static guide slugs are reserved and static pages remain available as route fallbacks.
+- Files: functions/api/admin/blog.js; functions/api/resources.js; functions/[lang]/resources/[slug].js; functions/sitemap-resources.xml.js; public/admin/blog.js; public/resources.js; public/admin/index.html; public/{locale}/resources/index.html; public/robots.txt; migrations/0004_blog_posts.sql.
+- Validation: source review pending; D1 migration must be applied before the admin API can work. Cloudflare deployment and live tests pending.
+- No unconfirmed product specifications, certifications, factory-capacity claims or customer relationships were added.
