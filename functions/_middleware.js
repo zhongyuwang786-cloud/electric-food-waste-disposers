@@ -73,9 +73,18 @@ async function record(request, response, env) {
       .bind(path.slice(0,1000), request.method, response.status, request.cf?.country || null, language, ua.slice(0,500), referrerHost || null, source, eventType, actorCategory, actorLabel, identityVerified, hash).run();
   } catch (error) { console.error("Site analytics event could not be stored"); }
 }
+const countryLocales={JP:"ja",KR:"ko",ES:"es",PT:"pt",DE:"de",RU:"ru",CN:"zh-cn",TW:"zh-tw",HK:"zh-tw",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",EG:"ar",JO:"ar",LB:"ar",MA:"ar",DZ:"ar",TN:"ar"};
+const crawlerPattern=/Googlebot|bingbot|Baiduspider|YandexBot|Yeti|Daumoa|Sogou|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|PerplexityBot|Google-Extended|Applebot|CCBot|Bytespider|DeepSeekBot|KimiBot|DoubaoBot|YuanbaoBot|ERNIE/i;
 export async function onRequest(context) {
-  const response = await context.next();
-  const task = record(context.request, response, context.env);
-  context.waitUntil(task);
+  const request=context.request,url=new URL(request.url),ua=request.headers.get("User-Agent")||"";
+  if(request.method==="GET"&&url.pathname==="/"&&url.searchParams.get("choose-language")!=="1"&&!crawlerPattern.test(ua)){
+    url.pathname="/"+(countryLocales[request.cf?.country||""]||"en")+"/";
+    const response=Response.redirect(url.toString(),302);
+    response.headers.set("Cache-Control","private, no-store");
+    context.waitUntil(record(request,response,context.env));
+    return response;
+  }
+  const response=await context.next();
+  context.waitUntil(record(request,response,context.env));
   return response;
 }

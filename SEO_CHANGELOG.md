@@ -1954,3 +1954,107 @@
 - Backup: SEO-BACKUPS/2026-11-11/pre-dryer-vs-digester-guide-update/en-food-waste-dryer-vs-grinder-index.html
 - Validation: Original page backup matches the pre-change main-branch file. Both JSON-LD blocks parse successfully (Article and FAQPage). Existing title, meta description and canonical URL remain unchanged; 11 hreflang entries remain present. User confirmed Cloudflare Pages production deployment succeeded on 2026-11-11; independent live-page fetch was unavailable in this environment.
 - Deployment: Merged to main in commit 55a8bb1ea7a2a13ccd58692a7adbb8f557e3de9c; user confirmed production deployment succeeded on 2026-11-11.
+
+
+## 2026-11-12 — Phase 1 Knowledge Center and navigation
+
+### SEO-KC-EN — Localized archive
+- Page: /en/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: Food Waste Disposer Knowledge Center | Electric Food Waste Disposers
+- Meta description: Practical technical and buying guides for brands, importers and professional buyers.
+- Files: public/en/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-JA — Localized archive
+- Page: /ja/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: 生ごみ乾燥機の知識センター | Electric Food Waste Disposers
+- Meta description: ブランド、輸入業者、専門バイヤー向けの技術解説と調達ガイド。
+- Files: public/ja/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-KO — Localized archive
+- Page: /ko/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: 음식물 쓰레기 건조기 지식 센터 | Electric Food Waste Disposers
+- Meta description: 브랜드, 수입업체 및 전문 구매자를 위한 기술 설명과 구매 가이드.
+- Files: public/ko/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-ES — Localized archive
+- Page: /es/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: Centro de conocimiento sobre secadores de residuos alimentarios | Electric Food Waste Disposers
+- Meta description: Guías técnicas y de compra para marcas, importadores y compradores profesionales.
+- Files: public/es/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-PT — Localized archive
+- Page: /pt/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: Centro de conhecimento sobre secadores de resíduos alimentares | Electric Food Waste Disposers
+- Meta description: Guias técnicos e de compra para marcas, importadores e compradores profissionais.
+- Files: public/pt/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-DE — Localized archive
+- Page: /de/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: Wissenszentrum für Küchenabfalltrockner | Electric Food Waste Disposers
+- Meta description: Technische Informationen und Einkaufsratgeber für Marken, Importeure und Einkäufer.
+- Files: public/de/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-RU — Localized archive
+- Page: /ru/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: Центр знаний о сушилках для пищевых отходов | Electric Food Waste Disposers
+- Meta description: Технические материалы и руководства для брендов, импортёров и покупателей.
+- Files: public/ru/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-AR — Localized archive
+- Page: /ar/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: مركز المعرفة حول مجففات نفايات الطعام | Electric Food Waste Disposers
+- Meta description: شروحات تقنية وأدلة شراء للعلامات التجارية والمستوردين والمشترين.
+- Files: public/ar/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-ZH-CN — Localized archive
+- Page: /zh-cn/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: 厨余垃圾干燥机知识中心 | Electric Food Waste Disposers
+- Meta description: 为品牌商、进口商和专业采购团队提供技术说明与实用采购指南。
+- Files: public/zh-cn/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-ZH-TW — Localized archive
+- Page: /zh-tw/resources/
+- Change: Added localized article archive, unique title and meta description, canonical, reciprocal hreflang, x-default, CollectionPage JSON-LD and links to three existing guides.
+- Title: 廚餘垃圾乾燥機知識中心 | Electric Food Waste Disposers
+- Meta description: 為品牌商、進口商與專業採購團隊提供技術說明及實用採購指南。
+- Files: public/zh-tw/resources/index.html; public/sitemap.xml.
+- Validation: Source generated; live and schema checks pending deployment.
+- Deployment: Not deployed; phase-1-knowledge-center-navigation.
+
+### SEO-KC-LINK-EN — Fix buyer guide link
+- Page: /en/. Before: #contact. After: /en/resources/oem-odm-food-waste-dryer-buyers-guide/. Deployment: Not deployed.
+
+### SEO-KC-ROOT — Country-aware root routing
+- Human GET requests to / redirect temporarily and without caching according to Cloudflare country metadata; unknown countries default to English. Recognized crawlers retain the language-selection page. ?choose-language=1 bypasses redirect.
+- File: functions/_middleware.js. Runtime verification pending deployment.
+
+### SEO-KC-NAV — Mobile navigation
+- Added localized Knowledge Center and Contact links; floating email CTA on non-home pages now points to the locale homepage contact section.
+- File: public/site-ui.js. Browser testing pending deployment.
