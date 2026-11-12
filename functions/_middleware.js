@@ -78,8 +78,7 @@ export async function onRequest(context) {
   const request=context.request,url=new URL(request.url),ua=request.headers.get("User-Agent")||"";
   if(request.method==="GET"&&url.pathname==="/"&&url.searchParams.get("choose-language")!=="1"&&!aiBots.some(([,pattern])=>pattern.test(ua))&&!searchBots.some(([,pattern])=>pattern.test(ua))){
     url.pathname="/"+(countryLocales[request.cf?.country||""]||"en")+"/";
-    const response=Response.redirect(url.toString(),302);
-    response.headers.set("Cache-Control","private, no-store");
+    const response=new Response(null,{status:302,headers:{"Location":url.toString(),"Cache-Control":"private, no-store"}});
     context.waitUntil(record(request,response,context.env));
     return response;
   }
