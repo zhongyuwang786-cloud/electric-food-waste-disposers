@@ -2070,3 +2070,14 @@
 - File: functions/_middleware.js.
 - Validation: source-level correction; production verification pending Cloudflare deployment and a fresh crawl.
 - Deployment: not yet deployed.
+
+## 2026-11-12 — Knowledge center metadata refinement (10 locales)
+
+### SEO-KC-META
+- Scope: all ten localized knowledge center index pages.
+- Updated each page's HTML title, meta description, Open Graph title/description, and CollectionPage JSON-LD name/description to keep metadata consistent.
+- Refined titles for concise topic relevance and expanded localized descriptions to explain the guides' technical, comparison, product-selection, and OEM/ODM purchasing coverage.
+- Locales: en, ja, ko, es, pt, de, ru, ar, zh-cn, zh-tw.
+- Files: public/{locale}/resources/index.html.
+- Validation: source-level metadata consistency checked; live verification pending deployment. No product specifications, certifications, or unconfirmed commercial claims added.
+- Deployment: not deployed; phase-1b-resource-metadata.
