@@ -74,10 +74,9 @@ async function record(request, response, env) {
   } catch (error) { console.error("Site analytics event could not be stored"); }
 }
 const countryLocales={JP:"ja",KR:"ko",ES:"es",PT:"pt",BR:"pt",DE:"de",RU:"ru",CN:"zh-cn",TW:"zh-tw",HK:"zh-tw",MX:"es",AR:"es",CL:"es",CO:"es",PE:"es",VE:"es",EC:"es",GT:"es",CU:"es",DO:"es",HN:"es",PY:"es",UY:"es",BO:"es",CR:"es",PA:"es",SV:"es",NI:"es",PR:"es",SA:"ar",AE:"ar",QA:"ar",KW:"ar",BH:"ar",OM:"ar",EG:"ar",JO:"ar",LB:"ar",MA:"ar",DZ:"ar",TN:"ar"};
-const crawlerPattern=/Googlebot|bingbot|Baiduspider|YandexBot|Yeti|Daumoa|Sogou|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|PerplexityBot|Google-Extended|Applebot|CCBot|Bytespider|DeepSeekBot|KimiBot|DoubaoBot|YuanbaoBot|ERNIE/i;
 export async function onRequest(context) {
   const request=context.request,url=new URL(request.url),ua=request.headers.get("User-Agent")||"";
-  if(request.method==="GET"&&url.pathname==="/"&&url.searchParams.get("choose-language")!=="1"&&!crawlerPattern.test(ua)){
+  if(request.method==="GET"&&url.pathname==="/"&&url.searchParams.get("choose-language")!=="1"&&!aiBots.some(([,pattern])=>pattern.test(ua))&&!searchBots.some(([,pattern])=>pattern.test(ua))){
     url.pathname="/"+(countryLocales[request.cf?.country||""]||"en")+"/";
     const response=Response.redirect(url.toString(),302);
     response.headers.set("Cache-Control","private, no-store");
