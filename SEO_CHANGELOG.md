@@ -2058,3 +2058,15 @@
 ### SEO-KC-NAV — Mobile navigation
 - Added localized Knowledge Center and Contact links; floating email CTA on non-home pages now points to the locale homepage contact section.
 - File: public/site-ui.js. Browser testing pending deployment.
+
+
+## 2026-11-12 — Hotfix: immutable redirect response headers
+
+### SEO-KC-ROOT-HOTFIX
+- Scope: Cloudflare Pages middleware, root language redirect.
+- Audit finding: the live homepage root returned HTTP 500 during the post-merge crawl.
+- Cause identified in code: mutating headers on the immutable Response returned by Response.redirect() can throw at runtime.
+- Fix: construct a fresh 302 Response with Location and Cache-Control headers instead of mutating Response.redirect().
+- File: functions/_middleware.js.
+- Validation: source-level correction; production verification pending Cloudflare deployment and a fresh crawl.
+- Deployment: not yet deployed.
