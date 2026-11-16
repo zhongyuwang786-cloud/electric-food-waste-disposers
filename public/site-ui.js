@@ -51,4 +51,14 @@
   email.setAttribute("aria-label",t.email);email.setAttribute("title",t.email);
   email.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 8.1L3.4 7.2v9.7h17.2V7.2L12 13.1Zm0-2.4L19.5 7h-15L12 10.7Z"/></svg><span>'+t.email+'</span>';
   document.body.appendChild(email);
+  if(locale==="zh-cn"||locale==="zh-tw"){
+    var footer=document.querySelector("footer");
+    if(footer){
+      var walker=document.createTreeWalker(footer,NodeFilter.SHOW_TEXT);
+      var node;
+      while((node=walker.nextNode())){
+        node.nodeValue=node.nodeValue.replace(/义乌市飞浦星日用品有限公司/g,"").replace(/義烏市飛浦星日用品有限公司/g,"");
+      }
+    }
+  }
 })();
