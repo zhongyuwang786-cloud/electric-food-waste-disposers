@@ -2919,3 +2919,16 @@
 - Files: `functions/sitemap-resources.xml.js`; `functions/[lang]/resources/[slug].js`
 - Validation: Source-level checks confirm x-default output and language metadata. Runtime sitemap XML, page rendering, and production deployment remain unverified.
 - Deployment: Pending PR review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0219 — Align resource article translation eligibility with trimmed content
+- Date: 2026-11-18
+- Page/language: Dynamic resource article pages and resource XML sitemap
+- Change type: Translation completeness, hreflang and content validation
+- Before: Resource article detail pages and sitemap checked translated title/content using truthiness. Whitespace-only values could be treated as valid translations and create URLs that appeared in hreflang or sitemap despite having no meaningful article text.
+- After: Trim article title, summary, content and SEO text before rendering. Require a non-empty trimmed title and content for localized article pages and use the same trimmed title/content test for page hreflang and sitemap language entries. Existing x-default English alternate and Article JSON-LD inLanguage remain in place.
+- Target query/intent: multilingual food-waste dryer educational resources and OEM/ODM buyer guidance
+- Reason: Prevent empty translated article URLs from being indexed or advertised as valid language alternatives.
+- Files: `functions/[lang]/resources/[slug].js`; `functions/sitemap-resources.xml.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level checks only; no live D1 records, sitemap response, or production pages were changed or tested.
+- Deployment: Proposed in PR #31; not merged or deployed.
