@@ -2918,3 +2918,16 @@
 - File: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-square-top-opening,white-top-opening}/index.html`
 - Validation: All 36 Product JSON-LD blocks parsed successfully. Verified each page-specific `@id`, correct `inLanguage`, shared manufacturer `@id`, and consistent public brand name. Product names, descriptions, images, FAQ schema, additional properties, and page metadata were preserved. No unconfirmed technical specifications were added. This is source-level validation; no production deployment or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0229 — Multilingual product descriptions and Product properties localization
+- Date: 2026-11-18
+- Page/language: 32 product detail pages across Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese; the eight `white-square-top-opening` pages received description synchronization as well.
+- Change type: Localized metadata / Product structured data language consistency
+- Before: The eight non-English `white-square-top-opening` pages had localized HTML meta descriptions but retained an English Product JSON-LD description. Across localized product pages, several Product `additionalProperty` names and process descriptions also remained in English.
+- After: Synchronized each affected Product JSON-LD description with its page's localized meta description; localized the remaining English capacity, rated-power, voltage/frequency, processing-volume, and process property labels/values into the corresponding page language. Existing unconfirmed parameter values remain unconfirmed; no specifications or product claims were added.
+- Target query/intent: localized food waste dryer product discovery; kitchen food waste dryer; localized B2B product sourcing; OEM/ODM manufacturer sourcing
+- Reason: Keep visible page metadata and machine-readable Product descriptions consistent, and make product attributes understandable to search engines and AI retrieval systems in the page language.
+- File: `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-square-top-opening,white-top-opening}/index.html`
+- Validation: Source-level inspection of all 32 updated pages confirmed valid Product JSON-LD, Product description exactly matching the HTML meta description, and no remaining English property labels/values from the targeted set. Existing localized page titles were retained. This is source-level validation; no production deployment or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
