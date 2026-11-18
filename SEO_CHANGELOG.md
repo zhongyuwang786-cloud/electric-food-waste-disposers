@@ -2971,3 +2971,16 @@
 - Files: `functions/[lang]/products/[slug].js`; `SEO_CHANGELOG.md`
 - Validation: Source-level comparison confirms the detail-route eligibility and alternate-link checks use trimmed values, matching the sitemap's title plus summary-or-description condition. No D1 records or live pages were modified or tested.
 - Deployment: Proposed in PR #27; not merged or deployed.
+
+
+### SEO-0221 — Keep dynamic product cards aligned with localized page indexability
+- Date: 2026-11-18
+- Page/language: Dynamic product cards on localized product collection pages
+- Change type: Localized content visibility and internal linking
+- Before: Dynamic product cards fell back to English title and summary for every locale when translations were missing, creating links to localized product URLs that the product detail route marks noindex and canonicalizes to English.
+- After: For translated locales, render a dynamic product card only when its translated title and either translated summary or description contain meaningful text after trimming. Use the localized text on the card. Preserve existing English and zh-tw fallback behavior.
+- Target query/intent: localized food waste dryer product discovery and product detail navigation
+- Reason: Keep product collection cards and internal links consistent with the product detail route and product sitemap language eligibility.
+- Files: `public/assets/published-products.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level checks only; no live product records, page rendering, or production deployment were tested or changed.
+- Deployment: Proposed in PR #27; not merged or deployed.
