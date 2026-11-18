@@ -22,8 +22,10 @@
         const translated = product.translations?.[languageKey] || {};
         const title = (lang === "en" ? product.title_en : translated.title || "").trim();
         const summary = (lang === "en"
-          ? product.summary_en || product.description_en
-          : translated.summary || translated.description || "").trim();
+          ? [product.summary_en, product.description_en]
+          : [translated.summary, translated.description])
+          .map(value => String(value ?? "").trim())
+          .find(Boolean) || "";
         if (!title || !summary) return;
         const card = document.createElement("article");
         card.className = "series-card";
