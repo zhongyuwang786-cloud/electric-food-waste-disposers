@@ -2995,5 +2995,5 @@
 - Target query/intent: accurate multilingual product entity interpretation and localized product discovery
 - Reason: Prevent crawlers from interpreting English fallback text as product data written in another language.
 - Files: `functions/[lang]/products/[slug].js`; `SEO_CHANGELOG.md`
-- Validation: Source-level checks pending after commit; no live product data or production pages were changed or tested.
+- Validation: Re-read the committed route and confirmed both Product and BreadcrumbList JSON-LD script blocks are conditional on the same `hasLocalizedContent` eligibility check; English and complete localized pages retain schema output, while incomplete translated pages omit both blocks. No live product data or production pages were changed or tested.
 - Deployment: Proposed in PR #27; not merged or deployed.
