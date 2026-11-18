@@ -2906,3 +2906,17 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0211 — Exclude untranslated product fallbacks from indexable language versions
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages and product XML sitemap
+- Change type: International SEO / canonical / hreflang / indexation
+- Before: Product detail routes and the product sitemap advertised every configured language for every published product, even when that product had no translation for that language. The detail route displayed English fallback text on those URLs.
+- After: Product detail pages without a localized title retain the English fallback for visitors but use the English URL as canonical and `noindex,follow`. Their hreflang alternates are limited to English and languages with a saved localized title. The product sitemap now emits only those language URLs and matching alternates.
+- Scope note: Existing zh-tw behavior is deliberately preserved and not changed in this update.
+- Target query/intent: accurate multilingual product indexing and reduced duplicate-language URLs
+- Reason: Prevent untranslated English fallback pages from being presented as distinct localized search results.
+- Files: `functions/[lang]/products/[slug].js`; `functions/sitemap-products.xml.js`
+- Validation: Source-level checks confirm localized-language filtering, English canonical/noindex fallback, and sitemap filtering. Runtime D1 data behavior, XML response, page rendering, and production deployment remain unverified.
+- Deployment: Pending PR review/merge and Cloudflare Pages deployment.
