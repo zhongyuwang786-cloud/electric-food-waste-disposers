@@ -2870,6 +2870,6 @@
 - Reason: Record the user's confirmed publication state and connect the multilingual buyer-guide cluster to the AI-readable site index.
 - File: `Cloudflare D1 CMS; functions/api/resources.js; functions/[lang]/resources/[slug].js; functions/sitemap-resources.xml.js`
 - Validation: Publication status is user-confirmed; the assistant has not independently queried D1 or rechecked all 80 URLs. Recheck sitemap and indexability after deployment.
-- Deployment: Pending PR merge and Cloudflare Pages deployment.
+- Deployment: The eight CMS article sets are user-confirmed as already published; the llms.txt update awaits this PR merge and Cloudflare Pages deployment.
 - Notes: Slugs: how-to-evaluate-food-waste-dryer-manufacturer; food-waste-dryer-oem-vs-odm; private-label-food-waste-dryers; food-waste-dryer-sample-inspection-checklist; food-waste-dryer-customization; food-waste-dryer-bulk-order-checklist; food-waste-dryer-international-packaging; how-to-choose-food-waste-dryer-supplier.
 
