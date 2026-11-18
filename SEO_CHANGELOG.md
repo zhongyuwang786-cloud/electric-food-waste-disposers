@@ -2094,3 +2094,782 @@
 - Files: functions/api/admin/blog.js; functions/api/resources.js; functions/[lang]/resources/[slug].js; functions/sitemap-resources.xml.js; public/admin/blog.js; public/resources.js; public/admin/index.html; public/{locale}/resources/index.html; public/robots.txt; migrations/0004_blog_posts.sql.
 - Validation: source review pending; D1 migration must be applied before the admin API can work. Cloudflare deployment and live tests pending.
 - No unconfirmed product specifications, certifications, factory-capacity claims or customer relationships were added.
+
+
+## 2026-11-18 — SEO/GEO metadata, entity and AI-readable resource improvements
+
+### Baseline and scope
+- Pre-change source baseline: `7845752ebcd386565449e8721d02d032eeb83716` (main). Original HTML files remain recoverable from this immutable commit.
+- Backup index: `SEO-BACKUPS/2026-11-18/pre-seo-geo/README.md`.
+- Production audit before changes: `041b0d24-4fac-490f-a14b-2f755246bf5d`; 50 pages crawled, 19 long titles, 18 long descriptions, 13 short descriptions. Crawl stopped at the 50-page limit.
+- All changes below are source changes on branch `seo-geo-entity-and-metadata-2026-11-18`; no claim of production deployment or live verification is made.
+
+### SEO-0140 — Meta description change
+- Date: 2026-11-18
+- Page/language: /en/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 150 characters.
+- After: "A manufacturer of dry kitchen food waste processors using heating and drying to reduce waste volume. OEM/ODM projects for global brands and importers."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/en/index.html`
+- Validation: Description and Open Graph description updated in source; new length 150 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0141 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ja/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 66 characters.
+- After: "加熱乾燥で生ごみを減量処理する乾燥式処理機メーカー。海外ブランドや輸入業者向けに、OEM・ODM、ロゴ、包装、仕様のカスタマイズをご相談いただけます。"
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/ja/index.html`
+- Validation: Description and Open Graph description updated in source; new length 75 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0142 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ko/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length not separately recorded characters.
+- After: "가열과 건조로 음식물 쓰레기를 감량 처리하는 건조식 처리기 제조업체입니다. 해외 브랜드와 수입업체를 위한 OEM·ODM, 로고, 포장 및 사양 맞춤 상담을 제공합니다."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/ko/index.html`
+- Validation: Description and Open Graph description updated in source; new length 93 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0143 — Meta description change
+- Date: 2026-11-18
+- Page/language: /es/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 187 characters.
+- After: "Fabricante de secadores de residuos alimentarios por calentamiento y secado. OEM/ODM, marca privada y personalización para marcas e importadores globales."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/es/index.html`
+- Validation: Description and Open Graph description updated in source; new length 154 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0144 — Meta description change
+- Date: 2026-11-18
+- Page/language: /pt/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 173 characters.
+- After: "Fabricante de secadores de resíduos alimentares por aquecimento e secagem. OEM/ODM, marca própria e personalização para marcas e importadores internacionais."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/pt/index.html`
+- Validation: Description and Open Graph description updated in source; new length 157 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0145 — Meta description change
+- Date: 2026-11-18
+- Page/language: /de/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 174 characters.
+- After: "Hersteller von Küchenabfalltrocknern mit Heiz- und Trocknungstechnik. OEM/ODM, Eigenmarken und Anpassungen für internationale Marken und Importeure."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/de/index.html`
+- Validation: Description and Open Graph description updated in source; new length 148 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0146 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ru/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 193 characters.
+- After: "Производитель сушилок пищевых отходов с нагревом и сушкой. OEM/ODM, собственная марка и настройка продукции для международных брендов и импортёров."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/ru/index.html`
+- Validation: Description and Open Graph description updated in source; new length 147 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0147 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ar/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length not separately recorded characters.
+- After: "شركة مصنّعة لأجهزة تجفيف مخلفات الطعام بالتسخين والتجفيف. تعاون OEM/ODM وتخصيص العلامة التجارية والمنتج للمستوردين والعلامات التجارية الدولية."
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/ar/index.html`
+- Validation: Description and Open Graph description updated in source; new length 142 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0148 — Meta description change
+- Date: 2026-11-18
+- Page/language: /zh-cn/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 55 characters.
+- After: "采用加热烘干方式进行厨余减量处理。为全球品牌商和进口商提供干燥式厨房垃圾处理器 OEM/ODM、LOGO、包装及规格定制。MOQ 500 台以上，交期按订单确认。"
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/zh-cn/index.html`
+- Validation: Description and Open Graph description updated in source; new length 81 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0149 — Meta description change
+- Date: 2026-11-18
+- Page/language: /zh-tw/
+- Change type: Meta description change
+- Before: Existing localized description in baseline commit; prior length 54 characters.
+- After: "採用加熱烘乾方式進行廚餘減量處理。為全球品牌商和進口商提供乾燥式廚餘處理器 OEM/ODM、LOGO、包裝及規格客製。MOQ 500 台以上，交期依訂單確認。"
+- Target query/intent: localized food waste dryer manufacturer; heating and drying; OEM/ODM; importers
+- Reason: Improve snippet clarity and keep the description within the 70–160 character review range without changing confirmed business claims.
+- File: `public/zh-tw/index.html`
+- Validation: Description and Open Graph description updated in source; new length 79 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0150 — HTML title change
+- Date: 2026-11-18
+- Page/language: /es/
+- Change type: HTML title change
+- Before: "Fabricante de procesadores de residuos alimentarios | OEM ODM"
+- After: "Secadores de residuos alimentarios | OEM y ODM"
+- Target query/intent: localized food waste dryer manufacturer; OEM/ODM
+- Reason: Shorten titles while keeping the core product category and commercial intent visible.
+- File: `public/es/index.html`
+- Validation: HTML title and Open Graph title synchronized; new title length 46 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0151 — HTML title change
+- Date: 2026-11-18
+- Page/language: /pt/
+- Change type: HTML title change
+- Before: "Fabricante de processadores de resíduos alimentares | OEM ODM"
+- After: "Secadores de resíduos alimentares | OEM e ODM"
+- Target query/intent: localized food waste dryer manufacturer; OEM/ODM
+- Reason: Shorten titles while keeping the core product category and commercial intent visible.
+- File: `public/pt/index.html`
+- Validation: HTML title and Open Graph title synchronized; new title length 45 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0152 — HTML title change
+- Date: 2026-11-18
+- Page/language: /ru/
+- Change type: HTML title change
+- Before: "Производитель устройств для сухой переработки пищевых отходов | OEM ODM"
+- After: "Сушилки пищевых отходов | OEM/ODM производитель"
+- Target query/intent: localized food waste dryer manufacturer; OEM/ODM
+- Reason: Shorten titles while keeping the core product category and commercial intent visible.
+- File: `public/ru/index.html`
+- Validation: HTML title and Open Graph title synchronized; new title length 47 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0153 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /en/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/en/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0154 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /ja/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/ja/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0155 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /ko/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/ko/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0156 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /es/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/es/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0157 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /pt/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/pt/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0158 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /de/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/de/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0159 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /ru/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/ru/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0160 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /ar/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/ar/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0161 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /zh-cn/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/zh-cn/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-0162 — Organization JSON-LD entity enrichment
+- Date: 2026-11-18
+- Page/language: /zh-tw/
+- Change type: Organization JSON-LD entity enrichment
+- Before: Organization schema contained name, URL, description and knowsAbout, but no areaServed or contactPoint.
+- After: Added areaServed Worldwide and a sales ContactPoint with the confirmed email, WhatsApp telephone and ten supported website languages.
+- Target query/intent: manufacturer entity; dry food waste processing; OEM/ODM manufacturer contact
+- Reason: Give search engines and answer engines consistent entity, service-area and contact information across localized homepages.
+- File: `public/zh-tw/index.html`
+- Validation: JSON-LD was parsed and serialized during source update; no unverified address, certification or production claim was added.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-163 — AI-readable site information update
+- Date: 2026-11-18
+- Page/language: /llms.txt
+- Change type: AI-readable site information update
+- Before: The existing llms.txt contained a placeholder asking to add verified contact details and covered only the earlier static knowledge guides.
+- After: Replaced the contact placeholder with the confirmed sales email and WhatsApp number; added eight user-confirmed published buyer-guide slugs and the ten-locale URL pattern.
+- Target query/intent: brand entity; food waste dryer manufacturer; OEM/ODM; buyer sourcing guides
+- Reason: Make official business facts and published resources easier for AI answer systems to discover while keeping unknown product specifications explicitly unconfirmed.
+- File: `public/llms.txt`
+- Validation: Content checked against confirmed project facts and the user's publication confirmation; live fetch after deployment pending.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-164 — HTML title change
+- Date: 2026-11-18
+- Page/language: /de/factory/
+- Change type: HTML title change
+- Before: "Fertigung und Qualitätsmanagement | Electric Food Waste Disposers"
+- After: "Fertigung und Qualität für Küchenabfalltrockner"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/de/factory/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 47 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-165 — HTML title change
+- Date: 2026-11-18
+- Page/language: /de/oem-odm/
+- Change type: HTML title change
+- Before: "OEM- und ODM-Hersteller für Küchenabfalltrockner | Private Label"
+- After: "OEM/ODM für Küchenabfalltrockner | Eigenmarke"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/de/oem-odm/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 45 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-166 — HTML title change
+- Date: 2026-11-18
+- Page/language: /de/products/
+- Change type: HTML title change
+- Before: "Elektrische Küchenabfalltrockner Produkte | Hersteller & OEM/ODM"
+- After: "Küchenabfalltrockner: Produkte und OEM/ODM"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/de/products/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 42 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-167 — HTML title change
+- Date: 2026-11-18
+- Page/language: /en/resources/food-waste-dryer-vs-grinder/
+- Change type: HTML title change
+- Before: "Food Waste Dryer vs. Food Waste Grinder: Key Differences | Electric Food Waste Disposers"
+- After: "Food Waste Dryer vs. Grinder: Key Differences"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/en/resources/food-waste-dryer-vs-grinder/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 45 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-168 — HTML title change
+- Date: 2026-11-18
+- Page/language: /en/resources/how-food-waste-dryer-works/
+- Change type: HTML title change
+- Before: "How Does a Food Waste Dryer Work? | Electric Food Waste Disposers"
+- After: "How a Food Waste Dryer Works | Heating & Drying"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/en/resources/how-food-waste-dryer-works/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 47 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-169 — HTML title change
+- Date: 2026-11-18
+- Page/language: /es/oem-odm/
+- Change type: HTML title change
+- Before: "Fabricante OEM y ODM de secadores de residuos alimentarios | Marca propia"
+- After: "OEM/ODM de secadores de residuos alimentarios"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/es/oem-odm/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 45 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-170 — HTML title change
+- Date: 2026-11-18
+- Page/language: /es/products/
+- Change type: HTML title change
+- Before: "Productos de secadores eléctricos de residuos alimentarios | Fabricante OEM/ODM"
+- After: "Secadores de residuos alimentarios | Productos"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/es/products/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 46 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-171 — HTML title change
+- Date: 2026-11-18
+- Page/language: /es/resources/food-waste-dryer-vs-grinder/
+- Change type: HTML title change
+- Before: "Secador de residuos alimentarios vs. triturador: ¿cuál es la diferencia? | Electric Food Waste Disposers"
+- After: "Secador vs. triturador de residuos alimentarios"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/es/resources/food-waste-dryer-vs-grinder/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 47 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-172 — HTML title change
+- Date: 2026-11-18
+- Page/language: /es/resources/how-food-waste-dryer-works/
+- Change type: HTML title change
+- Before: "¿Cómo funciona un secador de residuos alimentarios? | Electric Food Waste Disposers"
+- After: "Cómo funciona un secador de residuos alimentarios"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/es/resources/how-food-waste-dryer-works/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 49 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-173 — HTML title change
+- Date: 2026-11-18
+- Page/language: /pt/factory/
+- Change type: HTML title change
+- Before: "Fábrica e controle de qualidade | Electric Food Waste Disposers"
+- After: "Fábrica e qualidade de secadores de resíduos"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/pt/factory/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 44 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-174 — HTML title change
+- Date: 2026-11-18
+- Page/language: /pt/oem-odm/
+- Change type: HTML title change
+- Before: "Fabricante OEM e ODM de secadores de resíduos alimentares | Marca própria"
+- After: "OEM/ODM de secadores de resíduos alimentares"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/pt/oem-odm/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 44 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-175 — HTML title change
+- Date: 2026-11-18
+- Page/language: /pt/products/
+- Change type: HTML title change
+- Before: "Produtos de secadores elétricos de resíduos alimentares | Fabricante OEM/ODM"
+- After: "Secadores de resíduos alimentares | Produtos"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/pt/products/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 44 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-176 — HTML title change
+- Date: 2026-11-18
+- Page/language: /pt/resources/how-food-waste-dryer-works/
+- Change type: HTML title change
+- Before: "Como funciona um secador de resíduos alimentares? | Electric Food Waste Disposers"
+- After: "Como funciona um secador de resíduos alimentares"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/pt/resources/how-food-waste-dryer-works/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 48 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-177 — HTML title change
+- Date: 2026-11-18
+- Page/language: /ru/factory/
+- Change type: HTML title change
+- Before: "Производство и контроль качества | Electric Food Waste Disposers"
+- After: "Производство и качество сушилок пищевых отходов"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/ru/factory/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 47 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-178 — HTML title change
+- Date: 2026-11-18
+- Page/language: /ru/oem-odm/
+- Change type: HTML title change
+- Before: "OEM и ODM производитель сушилок пищевых отходов | Собственная марка"
+- After: "OEM/ODM сушилок пищевых отходов | Под своей маркой"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/ru/oem-odm/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 50 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-179 — HTML title change
+- Date: 2026-11-18
+- Page/language: /ru/products/
+- Change type: HTML title change
+- Before: "Электрические сушилки пищевых отходов | Продукция производителя OEM/ODM"
+- After: "Сушилки пищевых отходов | Каталог продукции"
+- Target query/intent: food waste dryer; grinder comparison; OEM/ODM; product sourcing
+- Reason: Shorten overlong localized titles and retain the page's primary search intent.
+- File: `public/ru/products/index.html`
+- Validation: HTML title and Open Graph title updated; new title length 43 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-180 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ar/oem-odm/
+- Change type: Meta description change
+- Before: Existing localized description measured at 200 characters in the 2026-11-18 production audit.
+- After: "تصنيع OEM وODM لأجهزة تجفيف مخلفات الطعام للعلامات التجارية. تخصيص الشعار والتغليف والكتيبات والألوان والمواصفات الكهربائية. الحد الأدنى 500 وحدة."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/ar/oem-odm/index.html`
+- Validation: Meta description and Open Graph description updated; new length 146 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-181 — Meta description change
+- Date: 2026-11-18
+- Page/language: /de/oem-odm/
+- Change type: Meta description change
+- Before: Existing localized description measured at 231 characters in the 2026-11-18 production audit.
+- After: "OEM/ODM-Küchenabfalltrockner für internationale Marken. Logo, Verpackung, Handbücher, Farben und elektrische Spezifikationen anpassen. MOQ: 500 Stück."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/de/oem-odm/index.html`
+- Validation: Meta description and Open Graph description updated; new length 150 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-182 — Meta description change
+- Date: 2026-11-18
+- Page/language: /de/products/
+- Change type: Meta description change
+- Before: Existing localized description measured at 164 characters in the 2026-11-18 production audit.
+- After: "Entdecken Sie Küchenabfalltrockner-Designs, Innenbehälteroptionen und OEM/ODM-Anpassungen für internationale Marken und Importeure."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/de/products/index.html`
+- Validation: Meta description and Open Graph description updated; new length 131 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-183 — Meta description change
+- Date: 2026-11-18
+- Page/language: /en/oem-odm/
+- Change type: Meta description change
+- Before: Existing localized description measured at 188 characters in the 2026-11-18 production audit.
+- After: "OEM/ODM food waste dryer manufacturing for brands. Customize logos, packaging, manuals, appearance and electrical specifications. MOQ: 500+ units."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/en/oem-odm/index.html`
+- Validation: Meta description and Open Graph description updated; new length 146 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-184 — Meta description change
+- Date: 2026-11-18
+- Page/language: /en/resources/food-waste-dryer-vs-grinder/
+- Change type: Meta description change
+- Before: Existing localized description measured at 181 characters in the 2026-11-18 production audit.
+- After: "Compare food waste dryers and grinders by process, installation, output and buyer requirements. Review key differences before selecting equipment."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/en/resources/food-waste-dryer-vs-grinder/index.html`
+- Validation: Meta description and Open Graph description updated; new length 146 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-185 — Meta description change
+- Date: 2026-11-18
+- Page/language: /es/oem-odm/
+- Change type: Meta description change
+- Before: Existing localized description measured at 234 characters in the 2026-11-18 production audit.
+- After: "Fabricación OEM/ODM de secadores de residuos alimentarios. Personalización de logotipo, embalaje, manuales y especificaciones. MOQ: 500 unidades."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/es/oem-odm/index.html`
+- Validation: Meta description and Open Graph description updated; new length 145 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-186 — Meta description change
+- Date: 2026-11-18
+- Page/language: /es/products/
+- Change type: Meta description change
+- Before: Existing localized description measured at 190 characters in the 2026-11-18 production audit.
+- After: "Explore diseños de secadores de residuos alimentarios, opciones de recipientes internos y personalización OEM/ODM para marcas e importadores."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/es/products/index.html`
+- Validation: Meta description and Open Graph description updated; new length 141 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-187 — Meta description change
+- Date: 2026-11-18
+- Page/language: /es/resources/how-food-waste-dryer-works/
+- Change type: Meta description change
+- Before: Existing localized description measured at 204 characters in the 2026-11-18 production audit.
+- After: "Conozca cómo el calentamiento y el secado reducen la humedad de los residuos alimentarios y qué deben verificar los compradores antes de pedir."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/es/resources/how-food-waste-dryer-works/index.html`
+- Validation: Meta description and Open Graph description updated; new length 143 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-188 — Meta description change
+- Date: 2026-11-18
+- Page/language: /pt/oem-odm/
+- Change type: Meta description change
+- Before: Existing localized description measured at 233 characters in the 2026-11-18 production audit.
+- After: "Fabrico OEM/ODM de secadores de resíduos alimentares para marcas. Personalize logotipo, embalagem, manuais e especificações. MOQ: 500 unidades."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/pt/oem-odm/index.html`
+- Validation: Meta description and Open Graph description updated; new length 143 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-189 — Meta description change
+- Date: 2026-11-18
+- Page/language: /pt/products/
+- Change type: Meta description change
+- Before: Existing localized description measured at 182 characters in the 2026-11-18 production audit.
+- After: "Conheça designs de secadores de resíduos alimentares, opções de recipientes internos e personalização OEM/ODM para marcas e importadores."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/pt/products/index.html`
+- Validation: Meta description and Open Graph description updated; new length 137 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-190 — Meta description change
+- Date: 2026-11-18
+- Page/language: /pt/resources/how-food-waste-dryer-works/
+- Change type: Meta description change
+- Before: Existing localized description measured at 173 characters in the 2026-11-18 production audit.
+- After: "Entenda como o aquecimento e a secagem reduzem a humidade dos resíduos alimentares e o que os compradores devem confirmar antes do pedido."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/pt/resources/how-food-waste-dryer-works/index.html`
+- Validation: Meta description and Open Graph description updated; new length 138 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-191 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ru/oem-odm/
+- Change type: Meta description change
+- Before: Existing localized description measured at 215 characters in the 2026-11-18 production audit.
+- After: "OEM/ODM-производство сушилок пищевых отходов для брендов. Логотип, упаковка, инструкции и характеристики настраиваются по проекту. MOQ: 500 шт."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/ru/oem-odm/index.html`
+- Validation: Meta description and Open Graph description updated; new length 143 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-192 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ru/products/
+- Change type: Meta description change
+- Before: Existing localized description measured at 166 characters in the 2026-11-18 production audit.
+- After: "Изучите модели сушилок пищевых отходов, варианты внутренних контейнеров и возможности OEM/ODM для международных брендов и импортёров."
+- Target query/intent: localized food waste dryer product range; OEM/ODM; supplier and buyer comparison
+- Reason: Trim descriptions exceeding the 160-character review threshold while preserving the page-specific offer and buyer intent.
+- File: `public/ru/products/index.html`
+- Validation: Meta description and Open Graph description updated; new length 133 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-193 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ja/factory/
+- Change type: Meta description change
+- Before: Existing localized description measured at 41 characters in the 2026-11-18 production audit.
+- After: "生ごみ乾燥処理機の製造調整、製品開発、品質管理の進め方をご紹介。仕様確認やサンプル評価など、海外ブランド・輸入業者との協力内容も解説します。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/ja/factory/index.html`
+- Validation: Meta description updated; new length 70 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-194 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ja/resources/food-waste-dryer-vs-grinder/
+- Change type: Meta description change
+- Before: Existing localized description measured at 49 characters in the 2026-11-18 production audit.
+- After: "加熱乾燥式と機械粉砕式の違いを、処理原理、設置条件、処理後の状態、購入時の確認事項から比較。輸入業者やブランド向けの選定ポイントも解説します。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/ja/resources/food-waste-dryer-vs-grinder/index.html`
+- Validation: Meta description updated; new length 71 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-195 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ja/resources/how-food-waste-dryer-works/
+- Change type: Meta description change
+- Before: Existing localized description measured at 60 characters in the 2026-11-18 production audit.
+- After: "加熱・乾燥で生ごみの水分を減らす仕組みを解説。ブランドや輸入業者が製品仕様、処理条件、サンプル評価で確認すべき点も紹介します。導入前の確認事項も詳しく解説します。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/ja/resources/how-food-waste-dryer-works/index.html`
+- Validation: Meta description updated; new length 81 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-196 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ko/factory/
+- Change type: Meta description change
+- Before: Existing localized description measured at 52 characters in the 2026-11-18 production audit.
+- After: "음식물 쓰레기 건조 처리기 프로젝트의 제조 조정, 제품 개발 및 품질 관리 과정을 소개합니다. 사양 확인과 샘플 평가 등 해외 브랜드·수입업체의 협력 항목도 확인하세요."
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/ko/factory/index.html`
+- Validation: Meta description updated; new length 94 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-197 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ko/resources/food-waste-dryer-vs-grinder/
+- Change type: Meta description change
+- Before: Existing localized description measured at 55 characters in the 2026-11-18 production audit.
+- After: "가열 건조 방식과 기계식 분쇄 방식의 차이를 처리 원리, 설치 조건, 처리 후 상태와 구매 전 확인 사항으로 비교합니다. 수입업체와 브랜드의 제품 선택에 도움을 줍니다."
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/ko/resources/food-waste-dryer-vs-grinder/index.html`
+- Validation: Meta description updated; new length 94 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-198 — Meta description change
+- Date: 2026-11-18
+- Page/language: /ko/resources/how-food-waste-dryer-works/
+- Change type: Meta description change
+- Before: Existing localized description measured at 69 characters in the 2026-11-18 production audit.
+- After: "가열과 건조로 음식물 쓰레기의 수분을 줄이는 원리를 설명합니다. 브랜드와 수입업체가 사양, 처리 조건, 샘플 평가에서 확인할 사항도 소개합니다."
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/ko/resources/how-food-waste-dryer-works/index.html`
+- Validation: Meta description updated; new length 80 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-199 — Meta description change
+- Date: 2026-11-18
+- Page/language: /zh-cn/factory/
+- Change type: Meta description change
+- Before: Existing localized description measured at 19 characters in the 2026-11-18 production audit.
+- After: "了解干燥式厨房垃圾处理器项目的生产协调、产品开发与质量管理沟通流程，并查看品牌商和进口商在规格确认、样品评估及订单准备阶段需要讨论的事项，供海外采购团队参考。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/zh-cn/factory/index.html`
+- Validation: Meta description updated; new length 79 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-200 — Meta description change
+- Date: 2026-11-18
+- Page/language: /zh-cn/products/
+- Change type: Meta description change
+- Before: Existing localized description measured at 55 characters in the 2026-11-18 production audit.
+- After: "了解干燥式厨房垃圾处理器的不同外观设计、内桶配置与产品选择，并查看面向品牌商和进口商的 OEM/ODM 定制范围、样品安排及采购沟通要点，供海外采购团队参考。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/zh-cn/products/index.html`
+- Validation: Meta description updated; new length 79 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-201 — Meta description change
+- Date: 2026-11-18
+- Page/language: /zh-tw/factory/
+- Change type: Meta description change
+- Before: Existing localized description measured at 29 characters in the 2026-11-18 production audit.
+- After: "了解乾燥式廚餘處理器專案的生產協調、產品開發與品質管理溝通流程，並查看品牌商和進口商在規格確認、樣品評估及訂單準備階段需要討論的事項，供海外採購團隊參考。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/zh-tw/factory/index.html`
+- Validation: Meta description updated; new length 77 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-202 — Meta description change
+- Date: 2026-11-18
+- Page/language: /zh-tw/products/
+- Change type: Meta description change
+- Before: Existing localized description measured at 54 characters in the 2026-11-18 production audit.
+- After: "了解乾燥式廚餘處理器的不同外觀設計、內桶配置與產品選擇，並查看面向品牌商和進口商的 OEM/ODM 客製範圍、樣品安排及採購溝通重點，供海外採購團隊參考。"
+- Target query/intent: localized factory coordination; food waste dryer product selection; buyer guidance
+- Reason: Expand descriptions below the 70-character review threshold with useful page-specific context rather than filler.
+- File: `public/zh-tw/products/index.html`
+- Validation: Meta description updated; new length 77 characters.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+
+### SEO-203 — CMS publication record
+- Date: 2026-11-18
+- Page/language: CMS / 8 articles × 10 locales
+- Change type: CMS publication record
+- Before: The repository changelog had no consolidated record for the newly published CMS buyer-guide series.
+- After: User confirmed that eight buyer guides are translated and published in all ten website languages. Article titles, descriptions, canonical URLs, hreflang and sitemap entries are managed by the D1 CMS and dynamic routes.
+- Target query/intent: food waste dryer supplier; OEM/ODM; private label; sample inspection; customization; bulk orders; packaging; sourcing
+- Reason: Record the user's confirmed publication state and connect the multilingual buyer-guide cluster to the AI-readable site index.
+- File: `Cloudflare D1 CMS; functions/api/resources.js; functions/[lang]/resources/[slug].js; functions/sitemap-resources.xml.js`
+- Validation: Publication status is user-confirmed; the assistant has not independently queried D1 or rechecked all 80 URLs. Recheck sitemap and indexability after deployment.
+- Deployment: Pending PR merge and Cloudflare Pages deployment.
+- Notes: Slugs: how-to-evaluate-food-waste-dryer-manufacturer; food-waste-dryer-oem-vs-odm; private-label-food-waste-dryers; food-waste-dryer-sample-inspection-checklist; food-waste-dryer-customization; food-waste-dryer-bulk-order-checklist; food-waste-dryer-international-packaging; how-to-choose-food-waste-dryer-supplier.
+
