@@ -2945,3 +2945,16 @@
 - File: `functions/[lang]/products/[slug].js`
 - Validation: Source-level checks confirm conditional image output and `inLanguage`. Runtime rendering and structured-data validation remain unverified.
 - Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0213 — Prevent English SEO metadata fallback on untranslated product pages
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages across localized routes
+- Change type: Metadata localization / canonical / indexation / Open Graph
+- Before: Non-English product pages could fall back to English SEO titles and descriptions when localized SEO fields were empty; pages with only a translated title could still be treated as complete localized pages.
+- After: Non-English pages use localized SEO title, summary, and description fields, falling back to the localized product title or localized body text rather than English SEO fields. A language version is indexable only when it has a localized title and at least one localized summary/description (existing zh-tw behavior is preserved). Incomplete language pages remain viewable with fallback content but use the English canonical and `noindex,follow`; empty meta and Open Graph descriptions are omitted.
+- Target query/intent: accurate localized product search snippets and multilingual indexing
+- Reason: Avoid English metadata being presented as localized search content and avoid indexing partially translated product pages as complete language versions.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level checks confirm localized field preference, no English SEO-field fallback for other locales, canonical/noindex fallback, and omission of empty description tags. Runtime D1 records, rendered HTML, and production deployment remain unverified.
+- Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
