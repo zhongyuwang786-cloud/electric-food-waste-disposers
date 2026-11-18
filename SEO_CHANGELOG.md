@@ -2906,3 +2906,42 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0210 — Resource article language targeting consistency
+- Date: 2026-11-18
+- Page/language: Published resource articles and resource XML sitemap across available language versions
+- Change type: International SEO / structured data
+- Before: Resource article pages and their sitemap alternates did not declare an x-default English URL; Article JSON-LD did not declare the page language.
+- After: Add an x-default alternate pointing to the English article URL on resource detail pages and every corresponding sitemap entry; add the current page language to Article JSON-LD. Sitemap language entries remain limited to English plus translations with both title and content.
+- Target query/intent: multilingual resource discovery and correct language targeting
+- Reason: Keep resource article page metadata and sitemap language annotations aligned while avoiding alternate URLs for unavailable translations.
+- Files: `functions/sitemap-resources.xml.js`; `functions/[lang]/resources/[slug].js`
+- Validation: Source-level checks confirm x-default output and language metadata. Runtime sitemap XML, page rendering, and production deployment remain unverified.
+- Deployment: Pending PR review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0219 — Align resource article translation eligibility with trimmed content
+- Date: 2026-11-18
+- Page/language: Dynamic resource article pages and resource XML sitemap
+- Change type: Translation completeness, hreflang and content validation
+- Before: Resource article detail pages and sitemap checked translated title/content using truthiness. Whitespace-only values could be treated as valid translations and create URLs that appeared in hreflang or sitemap despite having no meaningful article text.
+- After: Trim article title, summary, content and SEO text before rendering. Require a non-empty trimmed title and content for localized article pages and use the same trimmed title/content test for page hreflang and sitemap language entries. Existing x-default English alternate and Article JSON-LD inLanguage remain in place.
+- Target query/intent: multilingual food-waste dryer educational resources and OEM/ODM buyer guidance
+- Reason: Prevent empty translated article URLs from being indexed or advertised as valid language alternatives.
+- Files: `functions/[lang]/resources/[slug].js`; `functions/sitemap-resources.xml.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level checks only; no live D1 records, sitemap response, or production pages were changed or tested.
+- Deployment: Proposed in PR #31; not merged or deployed.
+
+
+### SEO-0220 — Exclude whitespace-only translations from resource listings
+- Date: 2026-11-18
+- Page/language: Dynamic Knowledge Center resource listing API
+- Change type: Multilingual content validation
+- Before: The public resource listing API checked translated title and content using truthiness, allowing whitespace-only translations to appear as blank cards.
+- After: Trim translated title, summary and content before returning a resource card; include an article only when both title and content contain meaningful text. This aligns listing visibility with resource detail pages and the resource sitemap.
+- Target query/intent: food waste dryer technical information and OEM/ODM buyer resources
+- Reason: Prevent empty translated cards and keep listing, detail-page and sitemap language availability consistent.
+- Files: `functions/api/resources.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level comparison only; live API responses and D1 data were not tested or changed.
+- Deployment: Proposed in PR #31; not merged or deployed.
