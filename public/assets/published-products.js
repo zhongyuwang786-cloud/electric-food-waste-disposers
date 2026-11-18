@@ -20,6 +20,10 @@
         const href = "/" + lang + "/products/" + encodeURIComponent(product.slug) + "/";
         if (existing.has(href) || !imageUrl(product.image_url)) return;
         const translated = product.translations?.[languageKey] || {};
+        const hasCompleteTranslation = ["title","description","seo_title","seo_description"].every(key =>
+          typeof translated[key] === "string" && translated[key].trim()
+        );
+        if (languageKey !== "english" && !hasCompleteTranslation) return;
         const title = translated.title || product.title_en;
         const summary = translated.summary || translated.description || product.summary_en || product.description_en || "";
         const card = document.createElement("article");
