@@ -2932,3 +2932,16 @@
 - File: `functions/[lang]/products/[slug].js`
 - Validation: Source-level inspection confirms additions are generated from the active language and product slug/title. Runtime rendering and production deployment remain unverified.
 - Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0212 — Prevent empty product image URLs in metadata and Product JSON-LD
+- Date: 2026-11-18
+- Page/language: Dynamic published product detail pages across localized routes
+- Change type: Structured data / Open Graph metadata
+- Before: When a published product had no image URL, Product JSON-LD and Open Graph metadata constructed the site root as if it were a product image.
+- After: Build an absolute image URL only when a product image exists; omit the Product JSON-LD `image`, Open Graph `og:image`, and `og:image:alt` fields when it does not. Add the current page language to Product JSON-LD.
+- Target query/intent: accurate product entity understanding and social preview metadata
+- Reason: Avoid sending crawlers and social platforms a misleading homepage URL as a product image, and declare the page language explicitly.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level checks confirm conditional image output and `inLanguage`. Runtime rendering and structured-data validation remain unverified.
+- Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
