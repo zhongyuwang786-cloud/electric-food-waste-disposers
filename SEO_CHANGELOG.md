@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0226 — Add factual WebPage structured data to factory pages
+- Date: 2026-11-18
+- Page/language: Factory and manufacturing coordination pages in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic and Simplified Chinese
+- Change type: WebPage structured data / manufacturer entity association
+- Before: Factory pages had no structured data, while their page titles, descriptions and visible content described product development, production coordination, quality planning and export coordination. No verified factory address, facility scale, certifications or production-capacity figures were available to support a more specific factory entity claim.
+- After: Add a `WebPage` JSON-LD entity to each factory page using its existing canonical URL, page title, meta description and HTML language. Associate the page with the existing public Organization entity via its stable `@id`. Do not add unverified factory addresses, certifications, workforce, facility scale or production-capacity claims.
+- Target query/intent: food waste dryer manufacturing coordination, product development, quality planning and OEM/ODM supplier research
+- Reason: Give search engines and AI crawlers a consistent, factual page entity and connect the factory information page to the public manufacturer identity without inventing facility credentials.
+- Files: `public/en/factory/index.html`, `public/ja/factory/index.html`, `public/ko/factory/index.html`, `public/es/factory/index.html`, `public/pt/factory/index.html`, `public/de/factory/index.html`, `public/ru/factory/index.html`, `public/ar/factory/index.html`, `public/zh-cn/factory/index.html`, `SEO_CHANGELOG.md`
+- Validation: Source-level checks pending after commit; no live pages or production data were changed or tested.
+- Deployment: Proposed in a new pull request; not merged or deployed.
