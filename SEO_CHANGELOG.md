@@ -2919,3 +2919,16 @@
 - Files: `public/assets/published-products.js`; product catalog pages for en, ja, ko, es, pt, de, ru, ar and zh-cn; `SEO_CHANGELOG.md`
 - Validation: Source-level checks only. No product records, publication states, or production pages were changed or tested.
 - Deployment: Proposed in a new pull request; not merged or deployed.
+
+
+### SEO-0222 — Align product publication validation with localized content requirements
+- Date: 2026-11-18
+- Page/language: Dynamic product publication; English plus Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic and Simplified Chinese
+- Change type: Product content eligibility and publication validation
+- Before: The admin publish endpoint required English title and description, then required every translated language to contain title, description, SEO title and SEO description. This rejected products whose localized title and summary were complete, and incorrectly treated optional SEO metadata as a publication requirement.
+- After: Require an English title plus either English summary or description. For each required translated language, require a non-empty localized title plus either localized summary or description. SEO title and SEO description remain optional. Validation trims text before checking it.
+- Target query/intent: Accurate multilingual product discovery and localized product detail pages for dry food waste disposer OEM/ODM buyers
+- Reason: Match the publication gate to the shared catalog card rule and the intended translation completeness rule, avoiding blocked publication caused only by absent optional SEO fields or by a valid summary without a long description.
+- Files: `functions/api/admin/products.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level review confirms the publish gate checks title plus summary-or-description and no longer requires translated SEO fields. No database records were read or changed; no product was published.
+- Deployment: PR #34 branch only; not merged or deployed.
