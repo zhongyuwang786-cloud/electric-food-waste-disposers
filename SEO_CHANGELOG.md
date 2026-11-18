@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0209 — Dynamic product sitemap x-default alternate
+- Date: 2026-11-18
+- Page/language: Dynamic product sitemap; all published product language URLs
+- Change type: International SEO / XML sitemap hreflang
+- Before: Each generated product URL listed the configured language alternates but did not include an x-default alternate.
+- After: Add an x-default alternate pointing to the English product URL for every published product URL entry.
+- Target query/intent: international product-page discovery and language targeting
+- Reason: Keep dynamic product sitemap hreflang annotations consistent with the site's static sitemap and dynamic product detail page metadata.
+- File: `functions/sitemap-products.xml.js`
+- Validation: Source-level inspection confirms each generated URL now includes the English x-default alternate alongside the existing language alternates. Runtime XML response and production deployment remain unverified.
+- Deployment: Pending PR review/merge and Cloudflare Pages deployment.
