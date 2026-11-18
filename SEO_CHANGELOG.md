@@ -2958,3 +2958,16 @@
 - File: `functions/[lang]/products/[slug].js`
 - Validation: Source-level checks confirm localized field preference, no English SEO-field fallback for other locales, canonical/noindex fallback, and omission of empty description tags. Runtime D1 records, rendered HTML, and production deployment remain unverified.
 - Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0218 — Match product detail language eligibility to sitemap trimming rules
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages; English and translated locales
+- Change type: Localized indexability, canonical, hreflang and metadata fallback consistency
+- Before: The product detail route treated whitespace-only translated title, summary or description fields as valid content because it used truthiness checks. This could make a localized page indexable and eligible for hreflang even though the product sitemap rejects the same translation after trimming.
+- After: The detail route trims localized title, summary, description and optional SEO fields before deciding whether localized content exists or selecting translated metadata. Alternate-language links now use the same non-empty title plus summary-or-description rule as the product sitemap. Incomplete localized pages retain the English canonical and noindex,follow behavior already implemented in this branch.
+- Target query/intent: accurate localized product pages; food waste dryer product and OEM/ODM sourcing searches in supported languages
+- Reason: Keep page-level canonical/indexing signals aligned with sitemap inclusion and avoid whitespace-only translations creating thin localized URLs.
+- Files: `functions/[lang]/products/[slug].js`; `SEO_CHANGELOG.md`
+- Validation: Source-level comparison confirms the detail-route eligibility and alternate-link checks use trimmed values, matching the sitemap's title plus summary-or-description condition. No D1 records or live pages were modified or tested.
+- Deployment: Proposed in PR #27; not merged or deployed.
