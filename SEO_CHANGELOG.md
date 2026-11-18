@@ -2932,3 +2932,16 @@
 - Files: `functions/[lang]/resources/[slug].js`; `functions/sitemap-resources.xml.js`; `SEO_CHANGELOG.md`
 - Validation: Source-level checks only; no live D1 records, sitemap response, or production pages were changed or tested.
 - Deployment: Proposed in PR #31; not merged or deployed.
+
+
+### SEO-0220 — Exclude whitespace-only translations from resource listings
+- Date: 2026-11-18
+- Page/language: Dynamic Knowledge Center resource listing API
+- Change type: Multilingual content validation
+- Before: The public resource listing API checked translated title and content using truthiness, allowing whitespace-only translations to appear as blank cards.
+- After: Trim translated title, summary and content before returning a resource card; include an article only when both title and content contain meaningful text. This aligns listing visibility with resource detail pages and the resource sitemap.
+- Target query/intent: food waste dryer technical information and OEM/ODM buyer resources
+- Reason: Prevent empty translated cards and keep listing, detail-page and sitemap language availability consistent.
+- Files: `functions/api/resources.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level comparison only; live API responses and D1 data were not tested or changed.
+- Deployment: Proposed in PR #31; not merged or deployed.
