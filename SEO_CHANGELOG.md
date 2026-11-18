@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0206 — Public AI index confidentiality correction
+- Date: 2026-11-18
+- Page/language: `/llms.txt`
+- Change type: Public entity-information and confidentiality correction
+- Before: The public AI-readable index exposed the Chinese legal company name.
+- After: Use the public brand presentation, Electric Food Waste Disposers, without publishing the legal company name.
+- Target query/intent: AI retrieval and brand entity clarity
+- Reason: Align public AI-readable content with the project's confidentiality requirement not to expose the legal company name.
+- File: `public/llms.txt`
+- Validation: Source-level check confirms the Chinese legal company name no longer appears in the updated file.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
