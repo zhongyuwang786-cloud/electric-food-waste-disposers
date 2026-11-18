@@ -2906,3 +2906,43 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0209 — Dynamic product sitemap x-default alternate
+- Date: 2026-11-18
+- Page/language: Dynamic product sitemap; all published product language URLs
+- Change type: International SEO / XML sitemap hreflang
+- Before: Each generated product URL listed the configured language alternates but did not include an x-default alternate.
+- After: Add an x-default alternate pointing to the English product URL for every published product URL entry.
+- Target query/intent: international product-page discovery and language targeting
+- Reason: Keep dynamic product sitemap hreflang annotations consistent with the site's static sitemap and dynamic product detail page metadata.
+- File: `functions/sitemap-products.xml.js`
+- Validation: Source-level inspection confirms each generated URL now includes the English x-default alternate alongside the existing language alternates. Runtime XML response and production deployment remain unverified.
+- Deployment: Pending PR review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0214 — Combine product sitemap translation filtering with x-default
+- Date: 2026-11-18
+- Page/language: Dynamic product XML sitemap
+- Change type: International SEO / hreflang / sitemap indexation
+- Before: The x-default sitemap update still listed all configured language URLs for every published product, including languages without saved translations.
+- After: Each product sitemap entry now includes English, the existing zh-tw route behavior, and only other languages with a saved localized title; hreflang alternates use that same active-language set, and each entry includes the English x-default alternate.
+- Target query/intent: accurate international product URL discovery
+- Reason: Prevent sitemap URLs and hreflang annotations from advertising unavailable language versions while retaining a default-language target.
+- File: `functions/sitemap-products.xml.js`
+- Validation: Source-level inspection confirms translation-aware URL generation, matching filtered alternates, and x-default output. Runtime D1 data and generated XML remain unverified.
+- Deployment: Included in PR #30; pending review/merge and Cloudflare Pages deployment. This consolidates the sitemap scope previously proposed separately in PR #32.
+
+
+
+### SEO-0215 — Match product sitemap languages to complete localized content
+- Date: 2026-11-18
+- Page/language: Dynamic product XML sitemap; localized product detail routes
+- Change type: International SEO / sitemap indexation / hreflang
+- Before: The sitemap included a language when a translated title existed, even if the localized summary and description were both empty. The dynamic detail page requires a localized title plus a localized summary or description before treating a non-English page as indexable.
+- After: Sitemap language entries and hreflang alternates now require the same localized-content condition as the dynamic product detail route: a non-empty localized title and at least one non-empty localized summary or description. English and the existing zh-tw route behavior remain unchanged; x-default continues to point to English.
+- Target query/intent: accurate localized product-page discovery and language targeting
+- Reason: Prevent the XML sitemap and hreflang annotations from advertising localized pages that the page route itself marks as incomplete.
+- File: `functions/sitemap-products.xml.js`
+- Validation: Source-level condition comparison against the dynamic product detail route completed. Runtime D1 data and generated XML remain unverified.
+- Deployment: Included in PR #30; pending review/merge and Cloudflare Pages deployment.
