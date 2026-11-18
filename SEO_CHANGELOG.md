@@ -2906,3 +2906,17 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+
+### SEO-0216 — Align product publishing validation with localized indexability
+- Date: 2026-11-18
+- Page/language: Product CMS publishing workflow; eight required translated languages
+- Change type: CMS publishing validation / multilingual SEO consistency
+- Before: Publishing required each language to contain title, description, SEO title and SEO description. This was stricter than the dynamic product detail route, which considers a language complete when it has a localized title and either a localized summary or description; localized SEO fields can safely fall back to the localized title and body text.
+- After: Publishing continues to require all eight configured translated languages, but each language must provide a non-empty title and at least one of summary or description. SEO title and SEO description are optional and are derived from the localized title/body when omitted.
+- Target query/intent: consistent multilingual product publication and localized product search snippets
+- Reason: Avoid blocking a fully translated product because optional SEO fields were left blank, while preserving the content completeness condition used by the public detail route and product sitemap.
+- File: `functions/api/admin/products.js`
+- Validation: Source-level comparison with the dynamic product route and sitemap conditions completed. No live D1 publish operation was run.
+- Deployment: Proposed in a separate PR; not merged or deployed.
