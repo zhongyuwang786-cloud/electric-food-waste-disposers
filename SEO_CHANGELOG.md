@@ -2906,3 +2906,15 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+### SEO-0228 — Multilingual product detail manufacturer entity linking
+- Date: 2026-11-18
+- Page/language: 36 product detail pages across English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese
+- Change type: Product structured data / entity identity / language annotation
+- Before: Product JSON-LD repeated a standalone Organization object under `manufacturer` on each product page, rather than explicitly referencing the homepage Organization entity. Product nodes had no stable page-level `@id` and no `inLanguage`.
+- After: Added a canonical-URL-based Product `@id` ending in `#product`, added the correct page language to `inLanguage`, and changed `manufacturer` to reference the shared Organization entity at `https://electricfoodwaste.com/#organization`.
+- Target query/intent: electric food waste dryer product; kitchen food waste dryer manufacturer; localized product model/design discovery; OEM/ODM sourcing
+- Reason: Connect each Product entity to the same manufacturer entity used by the localized homepages and product catalog pages, reducing duplicate manufacturer identities and clarifying the language and canonical identity of each product page.
+- File: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-square-top-opening,white-top-opening}/index.html`
+- Validation: All 36 pages were updated from their existing Product JSON-LD. Product names, descriptions, images, brand names, FAQ schema, additional properties, and page metadata were preserved. No unconfirmed technical specifications were added. Source-level JSON-LD parsing and field validation are pending final batch verification.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
