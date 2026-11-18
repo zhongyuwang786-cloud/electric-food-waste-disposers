@@ -3101,3 +3101,16 @@
 - Files: `public/sitemap.xml`; `public/llms.txt`.
 - Validation: Source-level XML block check confirms 10 standalone URL entries for white-square-top-opening, with 10-language hreflang alternates retained. `llms.txt` no longer contains the Chinese legal company name and lists all four product design pages. No live endpoint, production render, database, or Search Console validation was performed.
 - Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
+
+
+### SEO-0243 — Prevent CMS slug collisions with static product pages
+- Date: 2026-11-18
+- Page/language: Product publishing API, dynamic product route and dynamic product sitemap; all 10 supported language routes.
+- Change type: Product URL integrity / sitemap deduplication / publishing validation.
+- Before: CMS product publishing accepted slugs that matched the four existing static product pages. A matching published database record could take precedence in the dynamic route and produce duplicate entries in the separate product sitemap.
+- After: Added one shared list of reserved static product slugs. CMS create/update/publish requests reject those slugs; the dynamic route falls through to the existing static page for reserved slugs; the dynamic product sitemap omits reserved slugs as a safeguard for any pre-existing database rows.
+- Target query/intent: Food waste dryer product pages; localized product discovery; prevent duplicate or conflicting product URLs.
+- Reason: Preserve the existing static product pages as the canonical pages for their slugs and keep CMS-published products in a separate URL namespace.
+- Files: `functions/_static-product-slugs.js`; `functions/api/admin/products.js`; `functions/[lang]/products/[slug].js`; `functions/sitemap-products.xml.js`.
+- Validation: Source-level checks confirm all four known static product slugs are reserved, CMS create/update/publish paths reject collisions, route requests for reserved slugs fall through to static assets, and dynamic sitemap generation skips reserved database rows. No D1 records were read or modified; no production endpoint or live rendering was tested.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
