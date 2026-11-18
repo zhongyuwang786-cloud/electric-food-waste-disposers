@@ -3099,5 +3099,5 @@
 - Target query/intent: Localized food waste dryer product discovery; international B2B sourcing; AI crawler understanding of product range and official website information.
 - Reason: Ensure every localized product URL is independently discoverable through the sitemap, keep alternate-language relationships explicit, and prevent publication of company identity information that was not approved for public display.
 - Files: `public/sitemap.xml`; `public/llms.txt`.
-- Validation: Source-level XML block check confirms 10 standalone URL entries for white-square-top-opening, with 10-language hreflang alternates retained. `llms.txt` no longer contains the Chinese legal company name and now lists all four product design pages. No live endpoint, production render, database, or Search Console validation was performed.
+- Validation: Source-level XML block check confirms 10 standalone URL entries for white-square-top-opening, with 10-language hreflang alternates retained. `llms.txt` no longer contains the Chinese legal company name and lists all four product design pages. No live endpoint, production render, database, or Search Console validation was performed.
 - Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
