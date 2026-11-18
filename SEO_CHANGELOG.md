@@ -2896,3 +2896,13 @@
 - File: `functions/api/resources.js`
 - Validation: Source-level check confirms the English mapping now supplies `content`; production API response must be checked after Cloudflare Pages deployment.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+## 2026-11-18 — CMS resource listing fix merged
+
+- PR: https://github.com/zhongyuwang786-cloud/electric-food-waste-disposers/pull/26
+- Merge status: merged successfully using squash merge.
+- Merge commit: `ef767745241faa30ab2d03a44c316df9f7cb6ffe`.
+- Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
+- Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
+- Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
