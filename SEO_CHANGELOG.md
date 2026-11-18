@@ -3074,3 +3074,17 @@
 - Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening}/index.html` (27 files).
 - Validation: Source-level checks confirmed that all 36 localized product pages contain related-product modules and that existing links use their own language routes. The 27 updated pages now include the localized square top-opening target; all target pages exist in the same language-specific product directory. No unrelated links, product specifications, or commercial claims were changed. This is source-level validation only; no production rendering or live crawl test was performed.
 - Deployment: Included in PR #38; pending merge and Cloudflare Pages production deployment.
+
+
+
+### SEO-0241 — Remove unconfirmed placeholder values from Product structured data
+- Date: 2026-11-18
+- Page/language: All four product detail page types (digital-display, white-front-control, white-top-opening, and white-square-top-opening) in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese (36 pages).
+- Change type: Product structured data quality / technical-attribute accuracy.
+- Before: Product JSON-LD included placeholder values such as “To be confirmed”, “確認中”, “확인 필요”, and equivalent localized wording for capacity, rated power, voltage/frequency, and processing volume. These values were not confirmed product specifications.
+- After: Removed unconfirmed placeholder PropertyValue entries from Product JSON-LD across all 36 pages. Retained the confirmed heating/drying and volume-reduction process property, product name, description, image, brand, manufacturer entity reference, canonical-based Product @id, and language metadata. The visible technical-information tables and their transparent pending-confirmation notices remain unchanged.
+- Target query/intent: Food waste dryer product discovery; product technical information; B2B manufacturer, OEM/ODM and private-label sourcing.
+- Reason: Prevent search engines and AI retrieval systems from interpreting placeholder text as meaningful product attributes; keep machine-readable product data limited to confirmed information while preserving visible notices that technical specifications require confirmation.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening,white-square-top-opening}/index.html` (36 files).
+- Validation: Each modified Product JSON-LD block was parsed and updated from the current branch file. Post-change batch verification is pending; visible technical tables were not modified. No technical values, certifications, prices, availability, or other unconfirmed claims were introduced.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
