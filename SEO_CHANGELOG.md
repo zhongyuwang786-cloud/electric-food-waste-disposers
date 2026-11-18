@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0221 — Align dynamic product catalog cards with translation eligibility
+- Date: 2026-11-18
+- Page/language: Product catalog pages in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic and Simplified Chinese
+- Change type: Page structure and multilingual product content visibility
+- Before: Catalog pages contained duplicate inline product loaders that fell back to English titles and summaries when localized copy was missing. The shared loader also used English fallback text, so untranslated product cards could appear in non-English catalogs even when the corresponding detail URL was not eligible for indexing.
+- After: Remove the duplicate inline loaders and use the shared catalog loader. For each language, show a dynamic product card only when its title and summary/description contain meaningful text after trimming. English cards use the English source fields; non-English cards require localized fields and no longer fall back to English.
+- Target query/intent: multilingual dry food waste disposer product discovery for overseas OEM/ODM buyers
+- Reason: Keep catalog visibility consistent with the localized product detail-page and sitemap eligibility rules, and avoid mixed-language product cards.
+- Files: `public/assets/published-products.js`; product catalog pages for en, ja, ko, es, pt, de, ru, ar and zh-cn; `SEO_CHANGELOG.md`
+- Validation: Source-level checks only. No product records, publication states, or production pages were changed or tested.
+- Deployment: Proposed in a new pull request; not merged or deployed.
