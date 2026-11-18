@@ -2873,3 +2873,13 @@
 - Deployment: The eight CMS article sets are user-confirmed as already published; the llms.txt update awaits this PR merge and Cloudflare Pages deployment.
 - Notes: Slugs: how-to-evaluate-food-waste-dryer-manufacturer; food-waste-dryer-oem-vs-odm; private-label-food-waste-dryers; food-waste-dryer-sample-inspection-checklist; food-waste-dryer-customization; food-waste-dryer-bulk-order-checklist; food-waste-dryer-international-packaging; how-to-choose-food-waste-dryer-supplier.
 
+
+
+## 2026-11-18 — PR #25 merge and deployment checkpoint
+
+- PR: https://github.com/zhongyuwang786-cloud/electric-food-waste-disposers/pull/25
+- Merge status: merged successfully using squash merge.
+- Merge commit: `1b1c10640d7204dab218f8ee77de830ad8b0ad89`.
+- Cloudflare Pages branch preview for source commit `767f1656a467af794eae20d00a5375982581b88d` reported **Deploy successful**; preview URL: `https://seo-geo-entity-and-metadata.electric-food-waste-disposers.pages.dev`.
+- Production custom-domain deployment and live page verification: pending. Do not treat the branch preview deployment as proof that `electricfoodwaste.com` has updated.
+- Next validation after production deployment: check the ten localized homepages, changed factory/OEM-ODM/product/guide metadata, Organization JSON-LD, `/llms.txt`, and sitemap; then run a fresh OpenSEO audit with a crawl limit above 50 to cover more of the site.
