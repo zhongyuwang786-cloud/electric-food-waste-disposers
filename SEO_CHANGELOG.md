@@ -2919,3 +2919,16 @@
 - File: `functions/[lang]/products/[slug].js`
 - Validation: Source-level replacement check completed. Production language rendering and translated D1 product fields have not been independently tested.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0208 — Dynamic product detail hreflang and breadcrumb markup
+- Date: 2026-11-18
+- Page/language: Published dynamic product detail pages across all configured language routes
+- Change type: International SEO and structured data
+- Before: Product detail pages emitted localized alternate links but had no x-default alternate, no social image alt label and no breadcrumb structured data.
+- After: Add an English x-default alternate, use the localized product title as the Open Graph image alt text, and emit BreadcrumbList JSON-LD with localized product-list label.
+- Target query/intent: localized product detail discovery and navigation
+- Reason: Clarify default language targeting and page hierarchy for search engines and AI crawlers.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level inspection confirms additions are generated from the active language and product slug/title. Runtime rendering and production deployment remain unverified.
+- Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
