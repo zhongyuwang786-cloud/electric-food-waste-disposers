@@ -3061,3 +3061,16 @@
 - Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening,white-square-top-opening}/index.html`.
 - Validation: Each added BreadcrumbList contains three ordered ListItem entries; its final URL matches the page canonical URL, and the product label is taken from the existing Product JSON-LD. Existing Product/FAQPage JSON-LD, canonical URLs, hreflang, images, manufacturer entity references, and product facts were retained. Source-level validation only; no live rich-result test or production rendering was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0240 — Add inbound related-product links to the square top-opening design
+- Date: 2026-11-18
+- Page/language: English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese product detail pages; 27 pages updated across the three other product designs.
+- Change type: Internal linking / product discovery / localized related-product navigation.
+- Before: The square top-opening product page linked outward to other designs, but none of the other three product detail pages linked back to it from their related-product modules. This left the square design without an inbound related-product link from its sibling product pages.
+- After: Added a localized related-product card linking to the square top-opening product page on each of the other three product detail pages in all nine supported languages. Card titles use the existing localized product-page H1 wording, and CTA labels follow the language-specific related-product CTA already used on each page. Existing related links and catalogue links remain unchanged.
+- Target query/intent: Localized food waste dryer product and design discovery; compare countertop product designs; B2B manufacturer and OEM/ODM sourcing.
+- Reason: Complete the sibling-product discovery path so the square top-opening design is reachable from the related-product modules of the other product detail pages, improving internal crawl paths and topical/product relationships without introducing new product claims.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening}/index.html` (27 files).
+- Validation: Source-level checks confirmed that all 36 localized product pages contain related-product modules and that existing links use their own language routes. The 27 updated pages now include the localized square top-opening target; all target pages exist in the same language-specific product directory. No unrelated links, product specifications, or commercial claims were changed. This is source-level validation only; no production rendering or live crawl test was performed.
+- Deployment: Included in PR #38; pending merge and Cloudflare Pages production deployment.
