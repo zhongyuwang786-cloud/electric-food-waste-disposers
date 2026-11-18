@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0205 — Multilingual dynamic product detail interface
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages /en/, /ja/, /ko/, /es/, /pt/, /de/, /ru/, /ar/ and /zh-cn/
+- Change type: Multilingual UX and on-page language consistency
+- Before: Product titles and descriptions could be localized from D1, but key interface labels, process label, OEM/ODM explanation and inquiry CTA remained English.
+- After: Localize the product navigation, contact CTA, process label, overview/customization headings, confirmed OEM/ODM explanation and inquiry CTA for the eight listed languages plus English. Traditional Chinese handling is unchanged.
+- Target query/intent: localized food waste dryer product pages; manufacturer; OEM/ODM; buyer inquiries
+- Reason: Improve page-language consistency and usability for international buyers and make the primary product information easier for crawlers and AI systems to interpret in the page locale.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level replacement check completed. Production language rendering and translated D1 product fields have not been independently tested.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
