@@ -1,3 +1,5 @@
+import { STATIC_PRODUCT_SLUGS } from "../../../_static-product-slugs.js";
+
 const LANGUAGES = {
   en: { key: "english", label: "English", code: "en" },
   ja: { key: "japanese", label: "日本語", code: "ja" },
@@ -22,6 +24,7 @@ export async function onRequestGet(context) {
   // Keep original static product detail pages working when the slug is not in D1.
   if (!env.DB) return context.next();
   const slug = String(params.slug || "");
+  if (STATIC_PRODUCT_SLUGS.has(slug)) return context.next();
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return response("<!doctype html><title>Not found</title><h1>Not found</h1>", 404);
   let row;
   try {
