@@ -2906,3 +2906,30 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+
+### SEO-0216 — Align product publishing validation with localized indexability
+- Date: 2026-11-18
+- Page/language: Product CMS publishing workflow; eight required translated languages
+- Change type: CMS publishing validation / multilingual SEO consistency
+- Before: Publishing required each language to contain title, description, SEO title and SEO description. This was stricter than the dynamic product detail route, which considers a language complete when it has a localized title and either a localized summary or description; localized SEO fields can safely fall back to the localized title and body text.
+- After: Publishing continues to require all eight configured translated languages, but each language must provide a non-empty title and at least one of summary or description. SEO title and SEO description are optional and are derived from the localized title/body when omitted.
+- Target query/intent: consistent multilingual product publication and localized product search snippets
+- Reason: Avoid blocking a fully translated product because optional SEO fields were left blank, while preserving the content completeness condition used by the public detail route and product sitemap.
+- File: `functions/api/admin/products.js`
+- Validation: Source-level comparison with the dynamic product route and sitemap conditions completed. No live D1 publish operation was run.
+- Deployment: Proposed in a separate PR; not merged or deployed.
+
+
+### SEO-0217 — Prevent incomplete translations from remaining publicly published
+- Date: 2026-11-18
+- Page/language: Product CMS; eight required translated languages
+- Change type: Multilingual publication-state safeguard
+- Before: Editing English product content clears stale translations in the admin interface, but the update API preserved `published_at`. A previously published product could therefore remain public while its translated pages had been removed or become incomplete.
+- After: When an update supplies translations for a currently published product, the API checks each required language for a non-empty title and at least one non-empty summary or description. If any required translation is incomplete, it clears `published_at` in the same update. Complete translations preserve the existing publication state. The admin interface explicitly explains when this automatic unpublishing occurs.
+- Target query/intent: maintain complete localized product pages for multilingual product discovery and search indexing
+- Reason: Prevent stale or incomplete localized pages from remaining publicly available after English content changes.
+- Files: `functions/api/admin/products.js`; `public/admin/admin.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level control-flow and SQL parameter review only. No live D1 records were changed and no publish/unpublish request was executed.
+- Deployment: Proposed in PR #33; not merged or deployed.

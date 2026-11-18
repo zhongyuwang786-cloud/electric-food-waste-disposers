@@ -99,11 +99,9 @@ export async function onRequestPatch({ request, env }) {
         const item = translations[language];
         return !item || typeof item !== "object" ||
           !String(item.title || "").trim() ||
-          !String(item.description || "").trim() ||
-          !String(item.seo_title || "").trim() ||
-          !String(item.seo_description || "").trim();
+          !(String(item.summary || "").trim() || String(item.description || "").trim());
       });
-      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题、详情或 SEO 译文，暂不能发布：" + missing.join(", ") });
+      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题以及摘要或详情译文，暂不能发布：" + missing.join(", ") });
       await env.DB.prepare("UPDATE products SET status = 'draft', published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
       return json(200, { ok: true, id, published: true });
     } catch (error) {
@@ -125,19 +123,31 @@ export async function onRequestPatch({ request, env }) {
   if (fields.image_url && !/^https:\/\//i.test(fields.image_url) && !/^\/(?:assets|media)\//i.test(fields.image_url)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ or /media/ path." });
   const status = data.status === "archived" ? "archived" : "draft";
   let translationsJson = null;
+  let unpublishForIncompleteTranslations = false;
   if (Object.prototype.hasOwnProperty.call(data, "translations")) {
     if (!data.translations || typeof data.translations !== "object" || Array.isArray(data.translations)) {
       return json(400, { ok: false, error: "Translations must be an object." });
     }
     translationsJson = JSON.stringify(data.translations);
     if (translationsJson.length > 100000) return json(413, { ok: false, error: "Translation data is too large." });
+
+    const current = await env.DB.prepare("SELECT published_at FROM products WHERE id = ?").bind(id).first();
+    if (current?.published_at) {
+      const required = ["japanese", "korean", "spanish", "portuguese", "german", "russian", "arabic", "chinese"];
+      unpublishForIncompleteTranslations = required.some(language => {
+        const item = data.translations[language];
+        return !item || typeof item !== "object" ||
+          !String(item.title || "").trim() ||
+          !(String(item.summary || "").trim() || String(item.description || "").trim());
+      });
+    }
   }
   try {
     const result = await env.DB.prepare(
-      "UPDATE products SET slug = ?, title_en = ?, summary_en = ?, description_en = ?, image_url = ?, seo_title_en = ?, seo_description_en = ?, status = ?, published_at = CASE WHEN ? = 'archived' THEN NULL ELSE published_at END, translations_json = COALESCE(?, translations_json), updated_at = datetime('now') WHERE id = ?"
-    ).bind(fields.slug, fields.title_en, fields.summary_en, fields.description_en, fields.image_url, fields.seo_title_en, fields.seo_description_en, status, status, translationsJson, id).run();
+      "UPDATE products SET slug = ?, title_en = ?, summary_en = ?, description_en = ?, image_url = ?, seo_title_en = ?, seo_description_en = ?, status = ?, published_at = CASE WHEN ? = 'archived' OR ? = 1 THEN NULL ELSE published_at END, translations_json = COALESCE(?, translations_json), updated_at = datetime('now') WHERE id = ?"
+    ).bind(fields.slug, fields.title_en, fields.summary_en, fields.description_en, fields.image_url, fields.seo_title_en, fields.seo_description_en, status, status, unpublishForIncompleteTranslations ? 1 : 0, translationsJson, id).run();
     if (!result.meta?.changes) return json(404, { ok: false, error: "Product not found." });
-    return json(200, { ok: true, id, status });
+    return json(200, { ok: true, id, status, unpublished: unpublishForIncompleteTranslations });
   } catch (error) {
     if (String(error?.message || "").toLowerCase().includes("unique")) return json(409, { ok: false, error: "This product slug already exists." });
     console.error("Admin product update failed");
