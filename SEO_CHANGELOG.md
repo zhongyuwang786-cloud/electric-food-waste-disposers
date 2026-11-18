@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0207 — Localized product-category metadata alignment
+- Date: 2026-11-18
+- Page/language: Product category pages /en/, /ja/, /ko/, /es/, /pt/, /de/, /ru/, /ar/ and /zh-cn/
+- Change type: Title/description, Open Graph and structured-data consistency
+- Before: Several localized CollectionPage JSON-LD names/descriptions differed from their visible page title and meta description; all product-category social image alt labels were English.
+- After: Align each page's CollectionPage name/description and Open Graph title/description with its own localized title/description; localize the product-range image alt text and CollectionPage about name.
+- Target query/intent: localized electric food waste dryer products; manufacturer; OEM/ODM product range
+- Reason: Keep visible metadata, social metadata and machine-readable page entities consistent across language versions.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/index.html`
+- Validation: JSON-LD was parsed successfully and its name matched each page title in all nine updated language files. Production deployment and rendered output remain unverified.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
