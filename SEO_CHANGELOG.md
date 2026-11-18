@@ -3088,3 +3088,16 @@
 - Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening,white-square-top-opening}/index.html` (36 files).
 - Validation: Post-change source verification covered all 36 pages. Every Product JSON-LD block parsed successfully, contained zero remaining unconfirmed placeholder values, and retained its confirmed heating/drying and volume-reduction process property (Simplified Chinese uses the localized `工作原理` property). Visible technical-information tables and pending-confirmation notices remain present and unchanged. No technical values, certifications, prices, availability, or other unconfirmed claims were introduced. No production rendering or live-page validation was performed.
 - Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
+
+
+### SEO-0242 — Complete localized sitemap entries and align AI crawler guidance
+- Date: 2026-11-18
+- Page/language: Product sitemap entries for the white-square-top-opening page in all 10 language directories; site-wide `public/llms.txt`.
+- Change type: XML sitemap discoverability / AI crawler guidance accuracy and public business-information control.
+- Before: The sitemap contained one standalone URL entry for the white-square-top-opening page, with alternate-language links but without separate URL entries for the other nine localized pages. The AI crawler guidance file also exposed the unapproved Chinese legal company name and omitted the fourth product design from its product-page guidance.
+- After: Added a standalone sitemap URL entry for each of the remaining nine language versions, preserving the reciprocal hreflang alternate set. Removed the Chinese legal company name from `llms.txt`, retained the public-facing brand/supplier wording and confirmed contact/cooperation information, and added the fourth product design URL to the product guidance.
+- Target query/intent: Localized food waste dryer product discovery; international B2B sourcing; AI crawler understanding of product range and official website information.
+- Reason: Ensure every localized product URL is independently discoverable through the sitemap, keep alternate-language relationships explicit, and prevent publication of company identity information that was not approved for public display.
+- Files: `public/sitemap.xml`; `public/llms.txt`.
+- Validation: Source-level XML block check confirms 10 standalone URL entries for white-square-top-opening, with 10-language hreflang alternates retained. `llms.txt` no longer contains the Chinese legal company name and now lists all four product design pages. No live endpoint, production render, database, or Search Console validation was performed.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
