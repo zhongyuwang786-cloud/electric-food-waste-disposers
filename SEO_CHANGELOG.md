@@ -3022,3 +3022,16 @@
 - Files: `public/de/products/white-front-control/index.html`; `public/ru/products/white-front-control/index.html`; `public/ar/products/white-front-control/index.html`; `public/zh-cn/products/white-front-control/index.html`.
 - Validation: Source-level checks confirm the English eyebrow label was replaced in all four files. OEM/ODM abbreviations and product facts were retained; no technical specifications or claims were added. No production rendering or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0237 — Correct Portuguese white-top-opening process label
+- Date: 2026-11-18
+- Page/language: Portuguese white-top-opening product detail page.
+- Change type: Visible product copy correction.
+- Before: The process label contained the misspelling `Processoo` in the hero and technical-information section.
+- After: Corrected both labels to `Processo`; the process description remains unchanged.
+- Target query/intent: Portuguese food waste dryer product discovery; localized product attribute interpretation for B2B/OEM/ODM sourcing.
+- Reason: Remove a repeated spelling error from the Portuguese product page.
+- File: `public/pt/products/white-top-opening/index.html`.
+- Validation: Source inspection found 2 typo occurrence(s); the corrected file contains no remaining `Processoo` strings. No specifications or product claims were changed. Source-level validation only; no production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
