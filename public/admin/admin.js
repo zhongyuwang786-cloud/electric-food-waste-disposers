@@ -198,7 +198,7 @@
       else { $("productId").value=data.id; $("productSave").textContent="保存修改"; $("productTranslate").disabled=false; $("productPublish").disabled=false; }
       productTranslations=translationsToKeep;
       originalEnglish=currentEnglish;
-      productNotice(id?"产品草稿已更新。":"产品草稿已保存。");await loadProducts();
+      productNotice(data.unpublished?"英文内容已更新，多语言译文不完整，产品已自动取消发布；请重新生成并检查译文后再发布。":(id?"产品草稿已更新。":"产品草稿已保存。"));await loadProducts();
     }catch(error){productNotice(error.message,true);}
     finally{button.disabled=false;}
   });
