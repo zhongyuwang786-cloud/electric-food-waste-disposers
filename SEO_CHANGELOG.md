@@ -2931,3 +2931,16 @@
 - File: `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-square-top-opening,white-top-opening}/index.html`
 - Validation: Source-level inspection of all All 32 localized pages and the English `white-square-top-opening` page were checked for valid Product JSON-LD and Product description/meta-description consistency; the localized pages have no remaining English property labels/values from the targeted set. Existing localized page titles were retained. This is source-level validation; no production deployment or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0230 — Correct Portuguese Product structured-data property label
+- Date: 2026-11-18
+- Page/language: Portuguese product detail pages — `digital-display` and `white-top-opening`.
+- Change type: Structured data text correction
+- Before: The Product JSON-LD `additionalProperty` label for the processing method contained the typo `Processoo`.
+- After: Corrected the label to `Processo`; the existing process value remains unchanged.
+- Target query/intent: Portuguese food waste dryer product discovery; localized product attribute interpretation for B2B/OEM/ODM sourcing.
+- Reason: Remove a spelling error from machine-readable product attributes so Portuguese-language search and AI systems receive clean, correctly labeled product data.
+- File: `public/pt/products/digital-display/index.html`; `public/pt/products/white-top-opening/index.html`.
+- Validation: Source inspection confirmed the corrected label in both files. No product specifications or claims were changed. Source-level validation only; no production deployment or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
