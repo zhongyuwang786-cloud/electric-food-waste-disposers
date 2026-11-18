@@ -2984,3 +2984,16 @@
 - Files: `public/assets/published-products.js`; `SEO_CHANGELOG.md`
 - Validation: Source-level checks only; no live product records, page rendering, or production deployment were tested or changed.
 - Deployment: Proposed in PR #27; not merged or deployed.
+
+
+### SEO-0223 — Suppress structured data on incomplete localized product pages
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages across localized routes
+- Change type: Product and breadcrumb structured data eligibility
+- Before: A translated route with incomplete localized content could be marked noindex and canonicalized to English while still emitting Product JSON-LD with an English fallback name and the target locale's `inLanguage` value. BreadcrumbList could also include the fallback English product title.
+- After: Emit Product JSON-LD and BreadcrumbList JSON-LD only when the current route has complete eligible content (English route, or a translated title plus a non-empty translated summary or description). Incomplete translated routes retain their existing noindex and English canonical behavior but no longer emit language-mismatched structured data.
+- Target query/intent: accurate multilingual product entity interpretation and localized product discovery
+- Reason: Prevent crawlers from interpreting English fallback text as product data written in another language.
+- Files: `functions/[lang]/products/[slug].js`; `SEO_CHANGELOG.md`
+- Validation: Source-level checks pending after commit; no live product data or production pages were changed or tested.
+- Deployment: Proposed in PR #27; not merged or deployed.
