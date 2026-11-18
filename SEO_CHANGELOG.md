@@ -2957,3 +2957,16 @@
 - Files: `public/ja/products/white-square-top-opening/index.html`; `public/ko/products/white-square-top-opening/index.html`.
 - Validation: Source-level replacement review confirms that the previously identified English page sections and FAQ schema text were translated. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0232 — Complete Spanish and Portuguese square top-opening product-page localization
+- Date: 2026-11-18
+- Page/language: Spanish and Portuguese `white-square-top-opening` product detail pages.
+- Change type: Visible content localization / FAQ structured data localization / localized inquiry UX
+- Before: Both pages contained substantial English visible content across product overview, feature descriptions, technical-information notice, OEM/ODM customization, project terms, FAQ, related-product links, and inquiry calls to action. FAQPage JSON-LD also retained English question names and answers; navigation and hero eyebrow labels were English.
+- After: Translated the identified page sections, technical notice, project terms, FAQ content, related-product labels, navigation labels, and inquiry calls to action into Spanish and Portuguese. Localized FAQPage JSON-LD wording consistently with the visible FAQ. Corrected the product-specific email subject and localized product-page URL in inquiry links; retained the English WhatsApp inquiry opener.
+- Target query/intent: Spanish/Portuguese food waste dryer product discovery; localized kitchen food waste dryer information; B2B product sourcing; OEM/ODM and private-label manufacturer inquiries.
+- Reason: Remove substantial language mismatch so visitors, search engines, and AI retrieval systems can interpret the product and procurement information in the page language.
+- Files: `public/es/products/white-square-top-opening/index.html`; `public/pt/products/white-square-top-opening/index.html`.
+- Validation: Source-level replacement review confirms translation of the previously identified English page sections and FAQ schema wording. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
