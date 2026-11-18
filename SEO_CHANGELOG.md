@@ -3009,3 +3009,16 @@
 - Files: `public/ja/products/white-front-control/index.html`; `public/ko/products/white-front-control/index.html`; `public/es/products/white-front-control/index.html`; `public/pt/products/white-front-control/index.html`.
 - Validation: Source-level checks confirm the English eyebrow label was replaced in each page and the Portuguese typo was removed. FAQ wording, product facts, unconfirmed technical values, canonical URLs, and Product entity data were not intentionally changed. No production rendering or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0236 — Localize remaining English eyebrow labels on white-front-control pages
+- Date: 2026-11-18
+- Page/language: German, Russian, Arabic, and Simplified Chinese white-front-control product detail pages.
+- Change type: Visible page-language consistency.
+- Before: The hero eyebrow label remained as the English word `PRODUCTS` on all four localized pages.
+- After: Localized the label to `PRODUKTE`, `ПРОДУКЦИЯ`, `المنتجات`, and `产品中心` respectively.
+- Target query/intent: German, Russian, Arabic, and Simplified Chinese food waste dryer product discovery; localized product information; B2B/OEM/ODM sourcing.
+- Reason: Remove avoidable English UI residue so the product-page interface consistently follows each page language.
+- Files: `public/de/products/white-front-control/index.html`; `public/ru/products/white-front-control/index.html`; `public/ar/products/white-front-control/index.html`; `public/zh-cn/products/white-front-control/index.html`.
+- Validation: Source-level checks confirm the English eyebrow label was replaced in all four files. OEM/ODM abbreviations and product facts were retained; no technical specifications or claims were added. No production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
