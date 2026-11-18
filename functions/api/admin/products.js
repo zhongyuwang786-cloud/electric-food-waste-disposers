@@ -1,4 +1,5 @@
 import { requireAdmin } from "../_admin-auth.js";
+import { STATIC_PRODUCT_SLUGS } from "../../_static-product-slugs.js";
 
 const headers = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 const json = (status, body) => new Response(JSON.stringify(body), { status, headers });
@@ -44,6 +45,7 @@ export async function onRequestPost({ request, env }) {
   const title = text(data?.title_en, 180);
   const image = text(data?.image_url, 1000);
   if (!slugPattern.test(slug)) return json(400, { ok: false, error: "Slug must use lowercase letters, numbers and hyphens." });
+  if (STATIC_PRODUCT_SLUGS.has(slug)) return json(409, { ok: false, error: "This slug is reserved for an existing static product page." });
   if (!title) return json(400, { ok: false, error: "English product title is required." });
   if (image && !/^https:\/\//i.test(image) && !/^\/(?:assets|media)\//i.test(image)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ or /media/ path." });
   const values = [
@@ -84,6 +86,7 @@ export async function onRequestPatch({ request, env }) {
     try {
       const row = await env.DB.prepare("SELECT * FROM products WHERE id = ?").bind(id).first();
       if (!row) return json(404, { ok: false, error: "Product not found." });
+      if (STATIC_PRODUCT_SLUGS.has(row.slug)) return json(409, { ok: false, error: "This slug belongs to an existing static product page. Change the slug before publishing." });
       const image = text(row.image_url, 1000);
       const validImage = /^https:\/\//i.test(image) || /^\/(?:assets|media)\/[a-z0-9/_\-.]+$/i.test(image);
       if (!validImage) {
@@ -122,6 +125,7 @@ export async function onRequestPatch({ request, env }) {
     seo_description_en: text(data.seo_description_en, 320)
   };
   if (!slugPattern.test(fields.slug) || !fields.title_en) return json(400, { ok: false, error: "A valid slug and English title are required." });
+  if (STATIC_PRODUCT_SLUGS.has(fields.slug)) return json(409, { ok: false, error: "This slug is reserved for an existing static product page." });
   if (fields.image_url && !/^https:\/\//i.test(fields.image_url) && !/^\/(?:assets|media)\//i.test(fields.image_url)) return json(400, { ok: false, error: "Image must use an HTTPS URL or a site /assets/ or /media/ path." });
   const status = data.status === "archived" ? "archived" : "draft";
   let translationsJson = null;
