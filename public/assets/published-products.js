@@ -21,7 +21,7 @@
         if (existing.has(href) || !imageUrl(product.image_url)) return;
         const translated = product.translations?.[languageKey] || {};
         const title = translated.title || product.title_en;
-        const summary = translated.summary || product.summary_en || translated.description || product.description_en || "";
+        const summary = translated.summary || translated.description || product.summary_en || product.description_en || "";
         const card = document.createElement("article");
         card.className = "series-card";
         card.innerHTML = '<div class="series-art"><span class="image-watermark"><img class="series-photo" src="' + esc(product.image_url) + '" alt="' + esc(title) + '" loading="lazy"></span></div><div class="series-copy"><p class="eyebrow">' + esc(labels[0]) + '</p><h3>' + esc(title) + '</h3><p>' + esc(summary) + '</p><a href="' + href + '">' + esc(labels[1]) + ' ↗</a></div>';
