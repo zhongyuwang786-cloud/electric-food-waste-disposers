@@ -2983,3 +2983,16 @@
 - Files: `public/de/products/white-square-top-opening/index.html`; `public/ru/products/white-square-top-opening/index.html`; `public/ar/products/white-square-top-opening/index.html`; `public/zh-cn/products/white-square-top-opening/index.html`.
 - Validation: Source-level replacement review confirms translation of the identified English page sections and FAQ schema wording. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0234 — Correct Portuguese digital-display process label
+- Date: 2026-11-18
+- Page/language: Portuguese digital-display product detail page.
+- Change type: Visible product copy and structured-data text correction.
+- Before: The process label appeared as the misspelled word `Processoo` in the visible hero and technical-information section.
+- After: Corrected the label to `Processo` in both visible locations; the process description remains unchanged.
+- Target query/intent: Portuguese food waste dryer product discovery; localized product information for B2B/OEM/ODM sourcing.
+- Reason: Remove a visible spelling error and keep the Portuguese product-page wording consistent.
+- File: `public/pt/products/digital-display/index.html`.
+- Validation: Source inspection found 2 occurrence(s) of the typo; the corrected file contains no remaining `Processoo` occurrences. No product specifications, claims, or inquiry terms were changed. Source-level validation only; no production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
