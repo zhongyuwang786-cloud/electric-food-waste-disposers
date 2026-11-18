@@ -2996,3 +2996,16 @@
 - File: `public/pt/products/digital-display/index.html`.
 - Validation: Source inspection found 2 occurrence(s) of the typo; the corrected file contains no remaining `Processoo` occurrences. No product specifications, claims, or inquiry terms were changed. Source-level validation only; no production rendering or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0235 — Localize remaining English eyebrow labels on white-front-control pages
+- Date: 2026-11-18
+- Page/language: Japanese, Korean, Spanish, and Portuguese white-front-control product detail pages.
+- Change type: Visible page-language consistency / product copy correction.
+- Before: The hero eyebrow label remained as the English word `PRODUCTS` on all four localized pages. The Portuguese page also displayed the typo `Processoo` in its process label.
+- After: Localized the eyebrow label to `製品`, `제품`, `PRODUCTOS`, and `PRODUTOS` respectively; corrected Portuguese `Processoo` to `Processo`.
+- Target query/intent: Japanese, Korean, Spanish, and Portuguese food waste dryer product discovery; localized product information; B2B/OEM/ODM sourcing.
+- Reason: Remove avoidable English UI residue and a Portuguese spelling error from localized product pages.
+- Files: `public/ja/products/white-front-control/index.html`; `public/ko/products/white-front-control/index.html`; `public/es/products/white-front-control/index.html`; `public/pt/products/white-front-control/index.html`.
+- Validation: Source-level checks confirm the English eyebrow label was replaced in each page and the Portuguese typo was removed. FAQ wording, product facts, unconfirmed technical values, canonical URLs, and Product entity data were not intentionally changed. No production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
