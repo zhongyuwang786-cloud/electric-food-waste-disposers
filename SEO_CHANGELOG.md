@@ -2970,3 +2970,16 @@
 - Files: `public/es/products/white-square-top-opening/index.html`; `public/pt/products/white-square-top-opening/index.html`.
 - Validation: Source-level replacement review confirms translation of the previously identified English page sections and FAQ schema wording. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0233 — Complete German, Russian, Arabic, and Simplified Chinese square top-opening product-page localization
+- Date: 2026-11-18
+- Page/language: German, Russian, Arabic, and Simplified Chinese `white-square-top-opening` product detail pages.
+- Change type: Visible content localization / FAQ structured data localization / localized inquiry UX
+- Before: Each page contained substantial English visible content across the product overview, feature descriptions, technical-information notice, OEM/ODM customization, project terms, FAQ, related-product links, and inquiry calls to action. FAQPage JSON-LD also retained English question names and answers, while navigation and hero eyebrow labels included English.
+- After: Translated the identified page sections, technical notice, OEM/ODM project terms, FAQ content, related-product labels, navigation labels, and inquiry calls to action into German, Russian, Arabic, and Simplified Chinese. Localized FAQPage JSON-LD wording consistently with the visible FAQ. Corrected the product-specific email subject and localized product-page URL in inquiry links; retained the English WhatsApp inquiry opener.
+- Target query/intent: German/Russian/Arabic/Simplified Chinese food waste dryer product discovery; localized kitchen food waste dryer information; B2B product sourcing; OEM/ODM and private-label manufacturer inquiries.
+- Reason: Remove substantial language mismatch so visitors, search engines, and AI retrieval systems can interpret the product and procurement information in the page language.
+- Files: `public/de/products/white-square-top-opening/index.html`; `public/ru/products/white-square-top-opening/index.html`; `public/ar/products/white-square-top-opening/index.html`; `public/zh-cn/products/white-square-top-opening/index.html`.
+- Validation: Source-level replacement review confirms translation of the identified English page sections and FAQ schema wording. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
