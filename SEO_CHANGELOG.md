@@ -2740,7 +2740,7 @@
 - Validation: Meta description and Open Graph description updated; new length 133 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-193 — Meta description change
+### SEO-0193 — Meta description change
 - Date: 2026-11-18
 - Page/language: /ja/factory/
 - Change type: Meta description change
@@ -2752,7 +2752,7 @@
 - Validation: Meta description updated; new length 70 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-194 — Meta description change
+### SEO-0194 — Meta description change
 - Date: 2026-11-18
 - Page/language: /ja/resources/food-waste-dryer-vs-grinder/
 - Change type: Meta description change
@@ -2764,7 +2764,7 @@
 - Validation: Meta description updated; new length 71 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-195 — Meta description change
+### SEO-0195 — Meta description change
 - Date: 2026-11-18
 - Page/language: /ja/resources/how-food-waste-dryer-works/
 - Change type: Meta description change
@@ -2776,7 +2776,7 @@
 - Validation: Meta description updated; new length 81 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-196 — Meta description change
+### SEO-0196 — Meta description change
 - Date: 2026-11-18
 - Page/language: /ko/factory/
 - Change type: Meta description change
@@ -2788,7 +2788,7 @@
 - Validation: Meta description updated; new length 94 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-197 — Meta description change
+### SEO-0197 — Meta description change
 - Date: 2026-11-18
 - Page/language: /ko/resources/food-waste-dryer-vs-grinder/
 - Change type: Meta description change
@@ -2800,7 +2800,7 @@
 - Validation: Meta description updated; new length 94 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-198 — Meta description change
+### SEO-0198 — Meta description change
 - Date: 2026-11-18
 - Page/language: /ko/resources/how-food-waste-dryer-works/
 - Change type: Meta description change
@@ -2812,7 +2812,7 @@
 - Validation: Meta description updated; new length 80 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-199 — Meta description change
+### SEO-0199 — Meta description change
 - Date: 2026-11-18
 - Page/language: /zh-cn/factory/
 - Change type: Meta description change
@@ -2824,7 +2824,7 @@
 - Validation: Meta description updated; new length 79 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-200 — Meta description change
+### SEO-0200 — Meta description change
 - Date: 2026-11-18
 - Page/language: /zh-cn/products/
 - Change type: Meta description change
@@ -2836,7 +2836,7 @@
 - Validation: Meta description updated; new length 79 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-201 — Meta description change
+### SEO-0201 — Meta description change
 - Date: 2026-11-18
 - Page/language: /zh-tw/factory/
 - Change type: Meta description change
@@ -2848,7 +2848,7 @@
 - Validation: Meta description updated; new length 77 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-202 — Meta description change
+### SEO-0202 — Meta description change
 - Date: 2026-11-18
 - Page/language: /zh-tw/products/
 - Change type: Meta description change
@@ -2860,7 +2860,7 @@
 - Validation: Meta description updated; new length 77 characters.
 - Deployment: Pending PR merge and Cloudflare Pages deployment.
 
-### SEO-203 — CMS publication record
+### SEO-0203 — CMS publication record
 - Date: 2026-11-18
 - Page/language: CMS / 8 articles × 10 locales
 - Change type: CMS publication record
