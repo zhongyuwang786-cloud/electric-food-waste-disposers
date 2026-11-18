@@ -3048,3 +3048,16 @@
 - Files: `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/digital-display/index.html`; `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/white-front-control/index.html`; `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/white-top-opening/index.html`.
 - Validation: Source-level edits replaced only the visible navigation labels and preserved the existing localized route hrefs. OEM/ODM abbreviations and product facts were retained. No technical specifications, certifications, or new claims were added. Source-level validation only; no production rendering or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0239 — Add localized BreadcrumbList structured data to product detail pages
+- Date: 2026-11-18
+- Page/language: All four product detail page types (digital-display, white-front-control, white-top-opening, and white-square-top-opening) in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese (36 pages).
+- Change type: Structured data / entity and page-hierarchy clarification.
+- Before: Product detail pages contained Product and FAQPage JSON-LD but did not declare a BreadcrumbList hierarchy.
+- After: Added one localized Schema.org BreadcrumbList to each page with three ordered levels: localized homepage, localized product catalogue, and the current canonical product URL. Each breadcrumb uses a localized label and the exact page canonical URL; the final item name is sourced from that page's existing Product JSON-LD name.
+- Target query/intent: Localized food waste dryer product discovery, product-category navigation, and manufacturer/B2B OEM/ODM sourcing across the supported languages.
+- Reason: Make the relationship between each localized homepage, product catalogue, and product detail page explicit for search engines and other structured-data consumers.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening,white-square-top-opening}/index.html`.
+- Validation: Each added BreadcrumbList contains three ordered ListItem entries; its final URL matches the page canonical URL, and the product label is taken from the existing Product JSON-LD. Existing Product/FAQPage JSON-LD, canonical URLs, hreflang, images, manufacturer entity references, and product facts were retained. Source-level validation only; no live rich-result test or production rendering was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
