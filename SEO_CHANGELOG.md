@@ -2919,3 +2919,16 @@
 - Files: `public/en/index.html`, `public/ja/index.html`, `public/ko/index.html`, `public/es/index.html`, `public/pt/index.html`, `public/de/index.html`, `public/ru/index.html`, `public/ar/index.html`, `public/zh-cn/index.html`, `SEO_CHANGELOG.md`
 - Validation: Source-level checks pending after commit; no live pages or production data were changed or tested.
 - Deployment: Proposed in a new pull request; not merged or deployed.
+
+
+### SEO-0225 — Replace legal company name in localized homepage footer
+- Date: 2026-11-18
+- Page/language: Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic and Simplified Chinese homepages
+- Change type: Public brand identity and footer consistency
+- Before: Localized homepage footers displayed the Chinese legal company name as the copyright holder, despite the approved public brand identity being Electric Food Waste Disposers.
+- After: Replace the legal company name with the public brand name in the eight localized homepage footers. The English homepage already uses the public brand identity. This complements SEO-0224, which removes the legal name from Organization JSON-LD.
+- Target query/intent: consistent manufacturer brand recognition across localized homepage content
+- Reason: Avoid public disclosure of the legal company name and keep visible brand identity consistent with structured data.
+- Files: `public/ja/index.html`, `public/ko/index.html`, `public/es/index.html`, `public/pt/index.html`, `public/de/index.html`, `public/ru/index.html`, `public/ar/index.html`, `public/zh-cn/index.html`, `SEO_CHANGELOG.md`
+- Validation: Source-level checks pending after commit; no live pages were changed or tested.
+- Deployment: Proposed in a new pull request; not merged or deployed.
