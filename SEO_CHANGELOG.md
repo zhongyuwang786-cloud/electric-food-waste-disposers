@@ -2919,3 +2919,16 @@
 - File: `functions/sitemap-products.xml.js`
 - Validation: Source-level inspection confirms each generated URL now includes the English x-default alternate alongside the existing language alternates. Runtime XML response and production deployment remain unverified.
 - Deployment: Pending PR review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0214 — Combine product sitemap translation filtering with x-default
+- Date: 2026-11-18
+- Page/language: Dynamic product XML sitemap
+- Change type: International SEO / hreflang / sitemap indexation
+- Before: The x-default sitemap update still listed all configured language URLs for every published product, including languages without saved translations.
+- After: Each product sitemap entry now includes English, the existing zh-tw route behavior, and only other languages with a saved localized title; hreflang alternates use that same active-language set, and each entry includes the English x-default alternate.
+- Target query/intent: accurate international product URL discovery
+- Reason: Prevent sitemap URLs and hreflang annotations from advertising unavailable language versions while retaining a default-language target.
+- File: `functions/sitemap-products.xml.js`
+- Validation: Source-level inspection confirms translation-aware URL generation, matching filtered alternates, and x-default output. Runtime D1 data and generated XML remain unverified.
+- Deployment: Included in PR #30; pending review/merge and Cloudflare Pages deployment. This consolidates the sitemap scope previously proposed separately in PR #32.
