@@ -7,7 +7,8 @@
 - Brand name as provided (English spelling normalized for presentation): Electric Food Waste Disposers
 - Website: https://electricfoodwaste.com/
 - Business focus: global B2B, OEM/ODM and private-label discussions for dry heat-based kitchen food waste reduction appliances.
-- Contact: add verified sales email and phone before launch.
+- Sales email: zhongyuwang786@gmail.com
+- WhatsApp: +86 15820479535
 
 ## Product scope
 - Product process supplied by company: heating/drying and volume reduction.
@@ -128,3 +129,19 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 - Visual description: white countertop housing, circular top opening and slanted front digital control panel.
 - Verified process: heating/drying and volume reduction.
 - Capacity, rated power, voltage/frequency and processing volume remain unconfirmed. Do not infer values.
+
+
+## Additional published buyer guides (November 2026)
+
+The following eight buyer guides are published in the site's ten language versions. The locale prefix is /en/, /ja/, /ko/, /es/, /pt/, /de/, /ru/, /ar/, /zh-cn/ or /zh-tw/; each translated URL uses the same article slug.
+
+- Evaluate a food waste dryer manufacturer: /resources/how-to-evaluate-food-waste-dryer-manufacturer/
+- OEM vs. ODM for food waste dryers: /resources/food-waste-dryer-oem-vs-odm/
+- Private-label food waste dryers: /resources/private-label-food-waste-dryers/
+- Food waste dryer sample inspection checklist: /resources/food-waste-dryer-sample-inspection-checklist/
+- Food waste dryer customization: /resources/food-waste-dryer-customization/
+- Bulk order preparation checklist: /resources/food-waste-dryer-bulk-order-checklist/
+- International packaging for food waste dryers: /resources/food-waste-dryer-international-packaging/
+- Choosing a food waste dryer supplier: /resources/how-to-choose-food-waste-dryer-supplier/
+
+These articles cover supplier evaluation, OEM/ODM sourcing, private labeling, sample approval, product customization, bulk order preparation, international packaging and supplier selection. The localized CMS page is the source of truth for each translation.
