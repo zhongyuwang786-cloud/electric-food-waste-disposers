@@ -37,19 +37,26 @@ export async function onRequestGet(context) {
   try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
   const translated = translations[locale.key] || {};
   const fallback = lang === "zh-tw";
-  const hasLocalizedContent = lang === "en" || fallback || Boolean(translated.title && (translated.summary || translated.description));
-  const title = String(translated.title || row.title_en || "");
-  const summary = String(translated.summary || (lang === "en" || fallback ? row.summary_en : "") || translated.description || "");
-  const description = String(translated.description || (lang === "en" || fallback ? row.description_en : "") || translated.summary || "");
-  const seoTitle = String(translated.seo_title || (lang === "en" || fallback ? row.seo_title_en : "") || title).trim();
-  const seoDescription = String(translated.seo_description || (lang === "en" || fallback ? row.seo_description_en : "") || summary || description).trim().slice(0, 320);
+  const localizedTitle = String(translated.title || "").trim();
+  const localizedSummary = String(translated.summary || "").trim();
+  const localizedDescription = String(translated.description || "").trim();
+  const hasLocalizedContent = lang === "en" || fallback || Boolean(localizedTitle && (localizedSummary || localizedDescription));
+  const title = localizedTitle || String(row.title_en || "").trim();
+  const summary = localizedSummary || (lang === "en" || fallback ? String(row.summary_en || "").trim() : "") || localizedDescription;
+  const description = localizedDescription || (lang === "en" || fallback ? String(row.description_en || "").trim() : "") || localizedSummary;
+  const seoTitle = String(String(translated.seo_title || "").trim() || (lang === "en" || fallback ? String(row.seo_title_en || "").trim() : "") || title).trim();
+  const seoDescription = String(String(translated.seo_description || "").trim() || (lang === "en" || fallback ? String(row.seo_description_en || "").trim() : "") || summary || description).trim().slice(0, 320);
   const metaDescription = seoDescription ? '<meta name="description" content="' + escapeHtml(seoDescription) + '">' : "";
   const ogDescription = seoDescription ? '<meta property="og:description" content="' + escapeHtml(seoDescription) + '">' : "";
   const image = String(row.image_url || "");
   const imageUrl = image ? (image.startsWith("http") ? image : "https://electricfoodwaste.com" + (image.startsWith("/") ? image : "/" + image)) : "";
   const canonicalLang = hasLocalizedContent ? lang : "en";
   const canonical = "https://electricfoodwaste.com/" + canonicalLang + "/products/" + slug + "/";
-  const alternateLinks = Object.keys(LANGUAGES).filter(code => code === "en" || code === "zh-tw" || Boolean(translations[LANGUAGES[code].key]?.title && (translations[LANGUAGES[code].key]?.summary || translations[LANGUAGES[code].key]?.description))).map(code => '<link rel="alternate" hreflang="' + LANGUAGES[code].code + '" href="https://electricfoodwaste.com/' + code + '/products/' + slug + '/">').join("");
+  const alternateLinks = Object.keys(LANGUAGES).filter(code => {
+    if (code === "en" || code === "zh-tw") return true;
+    const item = translations[LANGUAGES[code].key] || {};
+    return Boolean(String(item.title || "").trim() && (String(item.summary || "").trim() || String(item.description || "").trim()));
+  }).map(code => '<link rel="alternate" hreflang="' + LANGUAGES[code].code + '" href="https://electricfoodwaste.com/' + code + '/products/' + slug + '/">').join("");
   const productSchema = { "@context":"https://schema.org", "@type":"Product", name:title, description:summary || description, brand:{ "@type":"Brand", name:"Electric Food Waste Disposers" }, manufacturer:{ "@type":"Organization", name:"Electric Food Waste Disposers", url:"https://electricfoodwaste.com/" }, url:canonical, inLanguage:locale.code };
   if (imageUrl) productSchema.image = imageUrl;
   const jsonLd = JSON.stringify(productSchema).replace(/</g, "\\u003c");
