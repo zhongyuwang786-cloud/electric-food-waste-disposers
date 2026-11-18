@@ -39,7 +39,7 @@ export async function onRequestGet(context) {
   const translated = translations[locale.key] || {};
   const fallback = lang === "zh-tw";
   const title = String(translated.title || row.title_en || "");
-  const summary = String(translated.summary || row.summary_en || "");
+  const summary = String(translated.summary || translated.description || row.summary_en || "");
   const description = String(translated.description || row.description_en || "");
   const seoTitle = String(translated.seo_title || row.seo_title_en || title);
   const seoDescription = String(translated.seo_description || row.seo_description_en || summary || description).slice(0, 320);
