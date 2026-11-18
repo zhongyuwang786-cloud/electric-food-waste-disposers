@@ -2906,3 +2906,16 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0210 — Resource article language targeting consistency
+- Date: 2026-11-18
+- Page/language: Published resource articles and resource XML sitemap across available language versions
+- Change type: International SEO / structured data
+- Before: Resource article pages and their sitemap alternates did not declare an x-default English URL; Article JSON-LD did not declare the page language.
+- After: Add an x-default alternate pointing to the English article URL on resource detail pages and every corresponding sitemap entry; add the current page language to Article JSON-LD. Sitemap language entries remain limited to English plus translations with both title and content.
+- Target query/intent: multilingual resource discovery and correct language targeting
+- Reason: Keep resource article page metadata and sitemap language annotations aligned while avoiding alternate URLs for unavailable translations.
+- Files: `functions/sitemap-resources.xml.js`; `functions/[lang]/resources/[slug].js`
+- Validation: Source-level checks confirm x-default output and language metadata. Runtime sitemap XML, page rendering, and production deployment remain unverified.
+- Deployment: Pending PR review/merge and Cloudflare Pages deployment.
