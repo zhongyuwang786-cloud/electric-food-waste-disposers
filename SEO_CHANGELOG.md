@@ -3035,3 +3035,16 @@
 - File: `public/pt/products/white-top-opening/index.html`.
 - Validation: Source inspection found 2 typo occurrence(s); the corrected file contains no remaining `Processoo` strings. No specifications or product claims were changed. Source-level validation only; no production rendering or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0238 — Localize product-detail primary navigation labels
+- Date: 2026-11-18
+- Page/language: Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese versions of the digital-display, white-front-control, and white-top-opening product detail pages (24 localized pages).
+- Change type: Visible navigation localization.
+- Before: The primary navigation retained the English `Factory` label on all 24 pages. The white-front-control pages also retained the English `Products` label on all eight localized versions.
+- After: Localized `Factory` to the corresponding page language on all 24 pages and localized `Products` on the eight white-front-control pages. Kept OEM/ODM as standard international industry abbreviations and preserved all navigation destinations.
+- Target query/intent: Localized food waste dryer product and factory information; manufacturer discovery; B2B/OEM/ODM sourcing in Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese.
+- Reason: Make the product-page primary navigation consistent with each page language and remove English UI residue that can reduce clarity for visitors and language-aware retrieval systems.
+- Files: `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/digital-display/index.html`; `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/white-front-control/index.html`; `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/white-top-opening/index.html`.
+- Validation: Source-level edits replaced only the visible navigation labels and preserved the existing localized route hrefs. OEM/ODM abbreviations and product facts were retained. No technical specifications, certifications, or new claims were added. Source-level validation only; no production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
