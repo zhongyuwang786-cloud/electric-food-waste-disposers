@@ -2944,3 +2944,16 @@
 - File: `public/pt/products/digital-display/index.html`; `public/pt/products/white-top-opening/index.html`.
 - Validation: Source inspection confirmed the corrected label in both files. No product specifications or claims were changed. Source-level validation only; no production deployment or live-page check was performed.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0231 — Complete Japanese and Korean square top-opening product-page localization
+- Date: 2026-11-18
+- Page/language: Japanese and Korean `white-square-top-opening` product detail pages.
+- Change type: Visible content localization / FAQ structured data localization / localized inquiry UX
+- Before: Both pages contained substantial English visible content, including product overview, feature descriptions, technical-information notice, OEM/ODM customization, project terms, FAQ, related-product links, and inquiry calls to action. Their FAQPage JSON-LD also retained English question names and answers. The navigation and hero eyebrow included English labels.
+- After: Translated the visible page sections, technical notice, OEM/ODM project terms, FAQs, related-product labels, navigation labels, and inquiry calls to action into Japanese and Korean. Localized the FAQPage JSON-LD question names and answers with the same wording. Corrected the product-specific email subject and localized product-page URL in the inquiry links; retained the English WhatsApp inquiry opener.
+- Target query/intent: Japanese/Korean food waste dryer product discovery; localized kitchen food waste dryer information; B2B product sourcing; OEM/ODM and private-label manufacturer inquiries.
+- Reason: Remove substantial language mismatch on two localized product pages so visitors, search engines, and AI retrieval systems can interpret the product and procurement information in the page language.
+- Files: `public/ja/products/white-square-top-opening/index.html`; `public/ko/products/white-square-top-opening/index.html`.
+- Validation: Source-level replacement review confirms that the previously identified English page sections and FAQ schema text were translated. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
