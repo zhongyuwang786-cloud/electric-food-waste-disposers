@@ -2906,3 +2906,15 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+### SEO-0227 — Multilingual product catalog entity consistency
+- Date: 2026-11-18
+- Page/language: Product catalog pages in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese
+- Change type: CollectionPage structured data / entity linking / language annotation
+- Before: Each catalog page used a CollectionPage schema without a stable page-level `@id`, without `inLanguage`, and without an explicit publisher link to the site's Organization entity. The `about.name` topic remained English on every locale.
+- After: Added a stable locale-specific CollectionPage `@id`, the page's HTML language code as `inLanguage`, a localized food-waste-dryer topic in `about`, and `publisher: {"@id":"https://electricfoodwaste.com/#organization"}` on all nine catalog pages.
+- Target query/intent: electric kitchen food waste dryer products; localized product catalog discovery; food waste dryer manufacturer; OEM/ODM supplier
+- Reason: Connect each localized product catalog directly to the same manufacturer Organization entity used by the homepage, while clarifying page language and product category for search engines and AI retrieval. The category wording describes a heating/drying food-waste appliance, not a sink garbage grinder or composting machine.
+- File: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/index.html`
+- Validation: Source-level JSON-LD parsing and field checks completed for all nine locale pages; canonical URLs, page titles, descriptions, and existing page content were preserved. Homepage Organization entity IDs and brand names were checked and found consistent across all nine locales. The main branch still contains the legal Chinese company name in Organization `alternateName`; its removal is separately proposed in PR #35 and is not included in this change.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment. No production claim is made.
