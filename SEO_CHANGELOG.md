@@ -2906,3 +2906,94 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0205 — Multilingual dynamic product detail interface
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages /en/, /ja/, /ko/, /es/, /pt/, /de/, /ru/, /ar/ and /zh-cn/
+- Change type: Multilingual UX and on-page language consistency
+- Before: Product titles and descriptions could be localized from D1, but key interface labels, process label, OEM/ODM explanation and inquiry CTA remained English.
+- After: Localize the product navigation, contact CTA, process label, overview/customization headings, confirmed OEM/ODM explanation and inquiry CTA for the eight listed languages plus English. Traditional Chinese handling is unchanged.
+- Target query/intent: localized food waste dryer product pages; manufacturer; OEM/ODM; buyer inquiries
+- Reason: Improve page-language consistency and usability for international buyers and make the primary product information easier for crawlers and AI systems to interpret in the page locale.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level replacement check completed. Production language rendering and translated D1 product fields have not been independently tested.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0208 — Dynamic product detail hreflang and breadcrumb markup
+- Date: 2026-11-18
+- Page/language: Published dynamic product detail pages across all configured language routes
+- Change type: International SEO and structured data
+- Before: Product detail pages emitted localized alternate links but had no x-default alternate, no social image alt label and no breadcrumb structured data.
+- After: Add an English x-default alternate, use the localized product title as the Open Graph image alt text, and emit BreadcrumbList JSON-LD with localized product-list label.
+- Target query/intent: localized product detail discovery and navigation
+- Reason: Clarify default language targeting and page hierarchy for search engines and AI crawlers.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level inspection confirms additions are generated from the active language and product slug/title. Runtime rendering and production deployment remain unverified.
+- Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0212 — Prevent empty product image URLs in metadata and Product JSON-LD
+- Date: 2026-11-18
+- Page/language: Dynamic published product detail pages across localized routes
+- Change type: Structured data / Open Graph metadata
+- Before: When a published product had no image URL, Product JSON-LD and Open Graph metadata constructed the site root as if it were a product image.
+- After: Build an absolute image URL only when a product image exists; omit the Product JSON-LD `image`, Open Graph `og:image`, and `og:image:alt` fields when it does not. Add the current page language to Product JSON-LD.
+- Target query/intent: accurate product entity understanding and social preview metadata
+- Reason: Avoid sending crawlers and social platforms a misleading homepage URL as a product image, and declare the page language explicitly.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level checks confirm conditional image output and `inLanguage`. Runtime rendering and structured-data validation remain unverified.
+- Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0213 — Prevent English SEO metadata fallback on untranslated product pages
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages across localized routes
+- Change type: Metadata localization / canonical / indexation / Open Graph
+- Before: Non-English product pages could fall back to English SEO titles and descriptions when localized SEO fields were empty; pages with only a translated title could still be treated as complete localized pages.
+- After: Non-English pages use localized SEO title, summary, and description fields, falling back to the localized product title or localized body text rather than English SEO fields. A language version is indexable only when it has a localized title and at least one localized summary/description (existing zh-tw behavior is preserved). Incomplete language pages remain viewable with fallback content but use the English canonical and `noindex,follow`; empty meta and Open Graph descriptions are omitted.
+- Target query/intent: accurate localized product search snippets and multilingual indexing
+- Reason: Avoid English metadata being presented as localized search content and avoid indexing partially translated product pages as complete language versions.
+- File: `functions/[lang]/products/[slug].js`
+- Validation: Source-level checks confirm localized field preference, no English SEO-field fallback for other locales, canonical/noindex fallback, and omission of empty description tags. Runtime D1 records, rendered HTML, and production deployment remain unverified.
+- Deployment: Included in PR #27; pending review/merge and Cloudflare Pages deployment.
+
+
+### SEO-0218 — Match product detail language eligibility to sitemap trimming rules
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages; English and translated locales
+- Change type: Localized indexability, canonical, hreflang and metadata fallback consistency
+- Before: The product detail route treated whitespace-only translated title, summary or description fields as valid content because it used truthiness checks. This could make a localized page indexable and eligible for hreflang even though the product sitemap rejects the same translation after trimming.
+- After: The detail route trims localized title, summary, description and optional SEO fields before deciding whether localized content exists or selecting translated metadata. Alternate-language links now use the same non-empty title plus summary-or-description rule as the product sitemap. Incomplete localized pages retain the English canonical and noindex,follow behavior already implemented in this branch.
+- Target query/intent: accurate localized product pages; food waste dryer product and OEM/ODM sourcing searches in supported languages
+- Reason: Keep page-level canonical/indexing signals aligned with sitemap inclusion and avoid whitespace-only translations creating thin localized URLs.
+- Files: `functions/[lang]/products/[slug].js`; `SEO_CHANGELOG.md`
+- Validation: Source-level comparison confirms the detail-route eligibility and alternate-link checks use trimmed values, matching the sitemap's title plus summary-or-description condition. No D1 records or live pages were modified or tested.
+- Deployment: Proposed in PR #27; not merged or deployed.
+
+
+### SEO-0221 — Keep dynamic product cards aligned with localized page indexability
+- Date: 2026-11-18
+- Page/language: Dynamic product cards on localized product collection pages
+- Change type: Localized content visibility and internal linking
+- Before: Dynamic product cards fell back to English title and summary for every locale when translations were missing, creating links to localized product URLs that the product detail route marks noindex and canonicalizes to English.
+- After: For translated locales, render a dynamic product card only when its translated title and either translated summary or description contain meaningful text after trimming. Use the localized text on the card. Preserve existing English and zh-tw fallback behavior.
+- Target query/intent: localized food waste dryer product discovery and product detail navigation
+- Reason: Keep product collection cards and internal links consistent with the product detail route and product sitemap language eligibility.
+- Files: `public/assets/published-products.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level checks only; no live product records, page rendering, or production deployment were tested or changed.
+- Deployment: Proposed in PR #27; not merged or deployed.
+
+
+### SEO-0223 — Suppress structured data on incomplete localized product pages
+- Date: 2026-11-18
+- Page/language: Dynamic product detail pages across localized routes
+- Change type: Product and breadcrumb structured data eligibility
+- Before: A translated route with incomplete localized content could be marked noindex and canonicalized to English while still emitting Product JSON-LD with an English fallback name and the target locale's `inLanguage` value. BreadcrumbList could also include the fallback English product title.
+- After: Emit Product JSON-LD and BreadcrumbList JSON-LD only when the current route has complete eligible content (English route, or a translated title plus a non-empty translated summary or description). Incomplete translated routes retain their existing noindex and English canonical behavior but no longer emit language-mismatched structured data.
+- Target query/intent: accurate multilingual product entity interpretation and localized product discovery
+- Reason: Prevent crawlers from interpreting English fallback text as product data written in another language.
+- Files: `functions/[lang]/products/[slug].js`; `SEO_CHANGELOG.md`
+- Validation: Re-read the committed route and confirmed both Product and BreadcrumbList JSON-LD script blocks are conditional on the same `hasLocalizedContent` eligibility check; English and complete localized pages retain schema output, while incomplete translated pages omit both blocks. No live product data or production pages were changed or tested.
+- Deployment: Proposed in PR #27; not merged or deployed.
