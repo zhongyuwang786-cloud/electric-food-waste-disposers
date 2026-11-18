@@ -34,21 +34,22 @@ export async function onRequestGet(context) {
   let translations = {};
   try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
   const translated = translations[locale.key] || {};
-  const fallback = lang === "zh-tw";
+  const hasLocalizedContent = lang === "en" || lang === "zh-tw" || Boolean(translated.title);
   const title = String(translated.title || row.title_en || "");
   const summary = String(translated.summary || row.summary_en || "");
   const description = String(translated.description || row.description_en || "");
   const seoTitle = String(translated.seo_title || row.seo_title_en || title);
   const seoDescription = String(translated.seo_description || row.seo_description_en || summary || description).slice(0, 320);
   const image = String(row.image_url || "");
-  const canonical = "https://electricfoodwaste.com/" + lang + "/products/" + slug + "/";
-  const alternateLinks = Object.keys(LANGUAGES).map(code => '<link rel="alternate" hreflang="' + LANGUAGES[code].code + '" href="https://electricfoodwaste.com/' + code + '/products/' + slug + '/">').join("");
+  const canonicalLang = hasLocalizedContent ? lang : "en";
+  const canonical = "https://electricfoodwaste.com/" + canonicalLang + "/products/" + slug + "/";
+  const alternateLinks = Object.keys(LANGUAGES).filter(code => code === "en" || code === "zh-tw" || Boolean(translations[LANGUAGES[code].key]?.title)).map(code => '<link rel="alternate" hreflang="' + LANGUAGES[code].code + '" href="https://electricfoodwaste.com/' + code + '/products/' + slug + '/">').join("");
   const jsonLd = JSON.stringify({ "@context":"https://schema.org", "@type":"Product", name:title, description:summary || description, image:image.startsWith("http") ? image : "https://electricfoodwaste.com" + image, brand:{ "@type":"Brand", name:"Electric Food Waste Disposers" }, manufacturer:{ "@type":"Organization", name:"Electric Food Waste Disposers", url:"https://electricfoodwaste.com/" }, url:canonical }).replace(/</g, "\\u003c");
   const rtl = lang === "ar" ? ' dir="rtl"' : "";
   const contact = "/" + lang + "/#contact";
   const body = `<!doctype html>
 <html lang="${locale.code}"${rtl}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${escapeHtml(seoTitle)}</title><meta name="description" content="${escapeHtml(seoDescription)}"><meta name="robots" content="index,follow"><link rel="canonical" href="${canonical}">
+<title>${escapeHtml(seoTitle)}</title><meta name="description" content="${escapeHtml(seoDescription)}"><meta name="robots" content="${hasLocalizedContent ? "index,follow" : "noindex,follow"}"><link rel="canonical" href="${canonical}">
 <link rel="stylesheet" href="/styles.css"><meta property="og:type" content="product"><meta property="og:site_name" content="Electric Food Waste Disposers"><meta property="og:title" content="${escapeHtml(seoTitle)}"><meta property="og:description" content="${escapeHtml(seoDescription)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${escapeHtml(image.startsWith("http") ? image : "https://electricfoodwaste.com" + image)}"><meta name="twitter:card" content="summary_large_image">${alternateLinks}<script type="application/ld+json">${jsonLd}</script>
 <style>.published-product{padding:58px 8%;display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center;background:#edf1e9}.published-product h1{font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;margin:0 0 18px}.published-product p{color:#58665f;line-height:1.8}.published-image{background:#fff;border-radius:14px;min-height:360px;display:grid;place-items:center;overflow:hidden}.published-image img{width:100%;height:100%;max-height:560px;object-fit:contain}.published-copy{padding:56px 8%;line-height:1.8}.published-copy h2{font-size:clamp(1.6rem,3vw,2.4rem)}.published-cta{padding:55px 8%;background:#193b33;color:white;text-align:center}.published-cta p{color:#d2ddd7}.published-cta a{display:inline-flex}@media(max-width:760px){.published-product{grid-template-columns:1fr;padding:38px 6%}.published-image{min-height:260px}.published-copy{padding:40px 6%}}</style></head>
 <body><header class="topbar"><a class="brand" href="/${lang}/"><span class="brand-mark">D</span><span>Electric Food Waste Disposers</span></a><nav class="desktop-nav"><a href="/${lang}/products/">${escapeHtml(locale.label)}</a><a href="/${lang}/oem-odm/">OEM / ODM</a><a href="/${lang}/factory/">Factory</a></nav><div class="header-actions"><a class="button button-small" href="${contact}">Contact us</a></div></header>
