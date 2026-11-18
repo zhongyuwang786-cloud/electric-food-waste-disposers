@@ -2920,3 +2920,16 @@
 - File: `functions/api/admin/products.js`
 - Validation: Source-level comparison with the dynamic product route and sitemap conditions completed. No live D1 publish operation was run.
 - Deployment: Proposed in a separate PR; not merged or deployed.
+
+
+### SEO-0217 — Prevent incomplete translations from remaining publicly published
+- Date: 2026-11-18
+- Page/language: Product CMS; eight required translated languages
+- Change type: Multilingual publication-state safeguard
+- Before: Editing English product content clears stale translations in the admin interface, but the update API preserved `published_at`. A previously published product could therefore remain public while its translated pages had been removed or become incomplete.
+- After: When an update supplies translations for a currently published product, the API checks each required language for a non-empty title and at least one non-empty summary or description. If any required translation is incomplete, it clears `published_at` in the same update. Complete translations preserve the existing publication state. The admin interface explicitly explains when this automatic unpublishing occurs.
+- Target query/intent: maintain complete localized product pages for multilingual product discovery and search indexing
+- Reason: Prevent stale or incomplete localized pages from remaining publicly available after English content changes.
+- Files: `functions/api/admin/products.js`; `public/admin/admin.js`; `SEO_CHANGELOG.md`
+- Validation: Source-level control-flow and SQL parameter review only. No live D1 records were changed and no publish/unpublish request was executed.
+- Deployment: Proposed in PR #33; not merged or deployed.
