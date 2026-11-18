@@ -1,4 +1,4 @@
-import { STATIC_PRODUCT_SLUGS } from "../../../_static-product-slugs.js";
+import { STATIC_PRODUCT_SLUGS } from "../../_static-product-slugs.js";
 
 const LANGUAGES = {
   en: { key: "english", label: "English", code: "en" },
