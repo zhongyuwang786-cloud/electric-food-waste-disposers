@@ -101,7 +101,7 @@ export async function onRequestPatch({ request, env }) {
           !String(item.title || "").trim() ||
           !(String(item.summary || "").trim() || String(item.description || "").trim());
       });
-      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题、详情或 SEO 译文，暂不能发布：" + missing.join(", ") });
+      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题以及摘要或详情译文，暂不能发布：" + missing.join(", ") });
       await env.DB.prepare("UPDATE products SET status = 'draft', published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
       return json(200, { ok: true, id, published: true });
     } catch (error) {
