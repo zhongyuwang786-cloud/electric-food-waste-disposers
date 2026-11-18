@@ -2906,3 +2906,235 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+### SEO-0228 — Multilingual product detail manufacturer entity linking
+- Date: 2026-11-18
+- Page/language: 36 product detail pages across English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese
+- Change type: Product structured data / entity identity / language annotation
+- Before: Product JSON-LD repeated a standalone Organization object under `manufacturer` on each product page, rather than explicitly referencing the homepage Organization entity. Product nodes had no stable page-level `@id` and no `inLanguage`.
+- After: Added a canonical-URL-based Product `@id` ending in `#product`, added the correct page language to `inLanguage`, and changed `manufacturer` to reference the shared Organization entity at `https://electricfoodwaste.com/#organization`.
+- Target query/intent: electric food waste dryer product; kitchen food waste dryer manufacturer; localized product model/design discovery; OEM/ODM sourcing
+- Reason: Connect each Product entity to the same manufacturer entity used by the localized homepages and product catalog pages, reducing duplicate manufacturer identities and clarifying the language and canonical identity of each product page.
+- File: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-square-top-opening,white-top-opening}/index.html`
+- Validation: All 36 Product JSON-LD blocks parsed successfully. Verified each page-specific `@id`, correct `inLanguage`, shared manufacturer `@id`, and consistent public brand name. Product names, descriptions, images, FAQ schema, additional properties, and page metadata were preserved. No unconfirmed technical specifications were added. This is source-level validation; no production deployment or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0229 — Multilingual product descriptions and Product properties localization
+- Date: 2026-11-18
+- Page/language: 32 non-English product detail pages across Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese received property localization; all nine `white-square-top-opening` pages (including English) received Product description synchronization.
+- Change type: Localized metadata / Product structured data language consistency
+- Before: The nine `white-square-top-opening` pages had Product JSON-LD descriptions that did not match their page-specific HTML meta descriptions; the eight non-English pages also retained an English description. Across localized product pages, several Product `additionalProperty` names and process descriptions remained in English.
+- After: Synchronized all nine `white-square-top-opening` Product JSON-LD descriptions with their page-specific HTML meta descriptions; localized the remaining English capacity, rated-power, voltage/frequency, processing-volume, and process property labels/values into the corresponding non-English page languages. Existing unconfirmed parameter values remain unconfirmed; no specifications or product claims were added.
+- Target query/intent: localized food waste dryer product discovery; kitchen food waste dryer; localized B2B product sourcing; OEM/ODM manufacturer sourcing
+- Reason: Keep visible page metadata and machine-readable Product descriptions consistent, and make product attributes understandable to search engines and AI retrieval systems in the page language.
+- File: `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-square-top-opening,white-top-opening}/index.html`
+- Validation: Source-level inspection confirmed that all 32 localized pages and the English `white-square-top-opening` page for valid Product JSON-LD and Product description/meta-description consistency; the localized pages have no remaining English property labels/values from the targeted set. Existing localized page titles were retained. This is source-level validation; no production deployment or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0230 — Correct Portuguese Product structured-data property label
+- Date: 2026-11-18
+- Page/language: Portuguese product detail pages — `digital-display` and `white-top-opening`.
+- Change type: Structured data text correction
+- Before: The Product JSON-LD `additionalProperty` label for the processing method contained the typo `Processoo`.
+- After: Corrected the label to `Processo`; the existing process value remains unchanged.
+- Target query/intent: Portuguese food waste dryer product discovery; localized product attribute interpretation for B2B/OEM/ODM sourcing.
+- Reason: Remove a spelling error from machine-readable product attributes so Portuguese-language search and AI systems receive clean, correctly labeled product data.
+- File: `public/pt/products/digital-display/index.html`; `public/pt/products/white-top-opening/index.html`.
+- Validation: Source inspection confirmed the corrected label in both files. No product specifications or claims were changed. Source-level validation only; no production deployment or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0231 — Complete Japanese and Korean square top-opening product-page localization
+- Date: 2026-11-18
+- Page/language: Japanese and Korean `white-square-top-opening` product detail pages.
+- Change type: Visible content localization / FAQ structured data localization / localized inquiry UX
+- Before: Both pages contained substantial English visible content, including product overview, feature descriptions, technical-information notice, OEM/ODM customization, project terms, FAQ, related-product links, and inquiry calls to action. Their FAQPage JSON-LD also retained English question names and answers. The navigation and hero eyebrow included English labels.
+- After: Translated the visible page sections, technical notice, OEM/ODM project terms, FAQs, related-product labels, navigation labels, and inquiry calls to action into Japanese and Korean. Localized the FAQPage JSON-LD question names and answers with the same wording. Corrected the product-specific email subject and localized product-page URL in the inquiry links; retained the English WhatsApp inquiry opener.
+- Target query/intent: Japanese/Korean food waste dryer product discovery; localized kitchen food waste dryer information; B2B product sourcing; OEM/ODM and private-label manufacturer inquiries.
+- Reason: Remove substantial language mismatch on two localized product pages so visitors, search engines, and AI retrieval systems can interpret the product and procurement information in the page language.
+- Files: `public/ja/products/white-square-top-opening/index.html`; `public/ko/products/white-square-top-opening/index.html`.
+- Validation: Source-level replacement review confirms that the previously identified English page sections and FAQ schema text were translated. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0232 — Complete Spanish and Portuguese square top-opening product-page localization
+- Date: 2026-11-18
+- Page/language: Spanish and Portuguese `white-square-top-opening` product detail pages.
+- Change type: Visible content localization / FAQ structured data localization / localized inquiry UX
+- Before: Both pages contained substantial English visible content across product overview, feature descriptions, technical-information notice, OEM/ODM customization, project terms, FAQ, related-product links, and inquiry calls to action. FAQPage JSON-LD also retained English question names and answers; navigation and hero eyebrow labels were English.
+- After: Translated the identified page sections, technical notice, project terms, FAQ content, related-product labels, navigation labels, and inquiry calls to action into Spanish and Portuguese. Localized FAQPage JSON-LD wording consistently with the visible FAQ. Corrected the product-specific email subject and localized product-page URL in inquiry links; retained the English WhatsApp inquiry opener.
+- Target query/intent: Spanish/Portuguese food waste dryer product discovery; localized kitchen food waste dryer information; B2B product sourcing; OEM/ODM and private-label manufacturer inquiries.
+- Reason: Remove substantial language mismatch so visitors, search engines, and AI retrieval systems can interpret the product and procurement information in the page language.
+- Files: `public/es/products/white-square-top-opening/index.html`; `public/pt/products/white-square-top-opening/index.html`.
+- Validation: Source-level replacement review confirms translation of the previously identified English page sections and FAQ schema wording. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0233 — Complete German, Russian, Arabic, and Simplified Chinese square top-opening product-page localization
+- Date: 2026-11-18
+- Page/language: German, Russian, Arabic, and Simplified Chinese `white-square-top-opening` product detail pages.
+- Change type: Visible content localization / FAQ structured data localization / localized inquiry UX
+- Before: Each page contained substantial English visible content across the product overview, feature descriptions, technical-information notice, OEM/ODM customization, project terms, FAQ, related-product links, and inquiry calls to action. FAQPage JSON-LD also retained English question names and answers, while navigation and hero eyebrow labels included English.
+- After: Translated the identified page sections, technical notice, OEM/ODM project terms, FAQ content, related-product labels, navigation labels, and inquiry calls to action into German, Russian, Arabic, and Simplified Chinese. Localized FAQPage JSON-LD wording consistently with the visible FAQ. Corrected the product-specific email subject and localized product-page URL in inquiry links; retained the English WhatsApp inquiry opener.
+- Target query/intent: German/Russian/Arabic/Simplified Chinese food waste dryer product discovery; localized kitchen food waste dryer information; B2B product sourcing; OEM/ODM and private-label manufacturer inquiries.
+- Reason: Remove substantial language mismatch so visitors, search engines, and AI retrieval systems can interpret the product and procurement information in the page language.
+- Files: `public/de/products/white-square-top-opening/index.html`; `public/ru/products/white-square-top-opening/index.html`; `public/ar/products/white-square-top-opening/index.html`; `public/zh-cn/products/white-square-top-opening/index.html`.
+- Validation: Source-level replacement review confirms translation of the identified English page sections and FAQ schema wording. Existing title, meta description, canonical URL, hreflang, Product JSON-LD identity, manufacturer entity reference, language code, images, and unconfirmed technical values were preserved. No new product specifications or claims were added. Production rendering and live-page validation have not been performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0234 — Correct Portuguese digital-display process label
+- Date: 2026-11-18
+- Page/language: Portuguese digital-display product detail page.
+- Change type: Visible product copy and structured-data text correction.
+- Before: The process label appeared as the misspelled word `Processoo` in the visible hero and technical-information section.
+- After: Corrected the label to `Processo` in both visible locations; the process description remains unchanged.
+- Target query/intent: Portuguese food waste dryer product discovery; localized product information for B2B/OEM/ODM sourcing.
+- Reason: Remove a visible spelling error and keep the Portuguese product-page wording consistent.
+- File: `public/pt/products/digital-display/index.html`.
+- Validation: Source inspection found 2 occurrence(s) of the typo; the corrected file contains no remaining `Processoo` occurrences. No product specifications, claims, or inquiry terms were changed. Source-level validation only; no production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0235 — Localize remaining English eyebrow labels on white-front-control pages
+- Date: 2026-11-18
+- Page/language: Japanese, Korean, Spanish, and Portuguese white-front-control product detail pages.
+- Change type: Visible page-language consistency / product copy correction.
+- Before: The hero eyebrow label remained as the English word `PRODUCTS` on all four localized pages. The Portuguese page also displayed the typo `Processoo` in its process label.
+- After: Localized the eyebrow label to `製品`, `제품`, `PRODUCTOS`, and `PRODUTOS` respectively; corrected Portuguese `Processoo` to `Processo`.
+- Target query/intent: Japanese, Korean, Spanish, and Portuguese food waste dryer product discovery; localized product information; B2B/OEM/ODM sourcing.
+- Reason: Remove avoidable English UI residue and a Portuguese spelling error from localized product pages.
+- Files: `public/ja/products/white-front-control/index.html`; `public/ko/products/white-front-control/index.html`; `public/es/products/white-front-control/index.html`; `public/pt/products/white-front-control/index.html`.
+- Validation: Source-level checks confirm the English eyebrow label was replaced in each page and the Portuguese typo was removed. FAQ wording, product facts, unconfirmed technical values, canonical URLs, and Product entity data were not intentionally changed. No production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0236 — Localize remaining English eyebrow labels on white-front-control pages
+- Date: 2026-11-18
+- Page/language: German, Russian, Arabic, and Simplified Chinese white-front-control product detail pages.
+- Change type: Visible page-language consistency.
+- Before: The hero eyebrow label remained as the English word `PRODUCTS` on all four localized pages.
+- After: Localized the label to `PRODUKTE`, `ПРОДУКЦИЯ`, `المنتجات`, and `产品中心` respectively.
+- Target query/intent: German, Russian, Arabic, and Simplified Chinese food waste dryer product discovery; localized product information; B2B/OEM/ODM sourcing.
+- Reason: Remove avoidable English UI residue so the product-page interface consistently follows each page language.
+- Files: `public/de/products/white-front-control/index.html`; `public/ru/products/white-front-control/index.html`; `public/ar/products/white-front-control/index.html`; `public/zh-cn/products/white-front-control/index.html`.
+- Validation: Source-level checks confirm the English eyebrow label was replaced in all four files. OEM/ODM abbreviations and product facts were retained; no technical specifications or claims were added. No production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0237 — Correct Portuguese white-top-opening process label
+- Date: 2026-11-18
+- Page/language: Portuguese white-top-opening product detail page.
+- Change type: Visible product copy correction.
+- Before: The process label contained the misspelling `Processoo` in the hero and technical-information section.
+- After: Corrected both labels to `Processo`; the process description remains unchanged.
+- Target query/intent: Portuguese food waste dryer product discovery; localized product attribute interpretation for B2B/OEM/ODM sourcing.
+- Reason: Remove a repeated spelling error from the Portuguese product page.
+- File: `public/pt/products/white-top-opening/index.html`.
+- Validation: Source inspection found 2 typo occurrence(s); the corrected file contains no remaining `Processoo` strings. No specifications or product claims were changed. Source-level validation only; no production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0238 — Localize product-detail primary navigation labels
+- Date: 2026-11-18
+- Page/language: Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese versions of the digital-display, white-front-control, and white-top-opening product detail pages (24 localized pages).
+- Change type: Visible navigation localization.
+- Before: The primary navigation retained the English `Factory` label on all 24 pages. The white-front-control pages also retained the English `Products` label on all eight localized versions.
+- After: Localized `Factory` to the corresponding page language on all 24 pages and localized `Products` on the eight white-front-control pages. Kept OEM/ODM as standard international industry abbreviations and preserved all navigation destinations.
+- Target query/intent: Localized food waste dryer product and factory information; manufacturer discovery; B2B/OEM/ODM sourcing in Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese.
+- Reason: Make the product-page primary navigation consistent with each page language and remove English UI residue that can reduce clarity for visitors and language-aware retrieval systems.
+- Files: `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/digital-display/index.html`; `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/white-front-control/index.html`; `public/{ja,ko,es,pt,de,ru,ar,zh-cn}/products/white-top-opening/index.html`.
+- Validation: Source-level edits replaced only the visible navigation labels and preserved the existing localized route hrefs. OEM/ODM abbreviations and product facts were retained. No technical specifications, certifications, or new claims were added. Source-level validation only; no production rendering or live-page check was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0239 — Add localized BreadcrumbList structured data to product detail pages
+- Date: 2026-11-18
+- Page/language: All four product detail page types (digital-display, white-front-control, white-top-opening, and white-square-top-opening) in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese (36 pages).
+- Change type: Structured data / entity and page-hierarchy clarification.
+- Before: Product detail pages contained Product and FAQPage JSON-LD but did not declare a BreadcrumbList hierarchy.
+- After: Added one localized Schema.org BreadcrumbList to each page with three ordered levels: localized homepage, localized product catalogue, and the current canonical product URL. Each breadcrumb uses a localized label and the exact page canonical URL; the final item name is sourced from that page's existing Product JSON-LD name.
+- Target query/intent: Localized food waste dryer product discovery, product-category navigation, and manufacturer/B2B OEM/ODM sourcing across the supported languages.
+- Reason: Make the relationship between each localized homepage, product catalogue, and product detail page explicit for search engines and other structured-data consumers.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening,white-square-top-opening}/index.html`.
+- Validation: Each added BreadcrumbList contains three ordered ListItem entries; its final URL matches the page canonical URL, and the product label is taken from the existing Product JSON-LD. Existing Product/FAQPage JSON-LD, canonical URLs, hreflang, images, manufacturer entity references, and product facts were retained. Source-level validation only; no live rich-result test or production rendering was performed.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+
+
+### SEO-0240 — Add inbound related-product links to the square top-opening design
+- Date: 2026-11-18
+- Page/language: English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese product detail pages; 27 pages updated across the three other product designs.
+- Change type: Internal linking / product discovery / localized related-product navigation.
+- Before: The square top-opening product page linked outward to other designs, but none of the other three product detail pages linked back to it from their related-product modules. This left the square design without an inbound related-product link from its sibling product pages.
+- After: Added a localized related-product card linking to the square top-opening product page on each of the other three product detail pages in all nine supported languages. Card titles use the existing localized product-page H1 wording, and CTA labels follow the language-specific related-product CTA already used on each page. Existing related links and catalogue links remain unchanged.
+- Target query/intent: Localized food waste dryer product and design discovery; compare countertop product designs; B2B manufacturer and OEM/ODM sourcing.
+- Reason: Complete the sibling-product discovery path so the square top-opening design is reachable from the related-product modules of the other product detail pages, improving internal crawl paths and topical/product relationships without introducing new product claims.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening}/index.html` (27 files).
+- Validation: Source-level checks confirmed that all 36 localized product pages contain related-product modules and that existing links use their own language routes. The 27 updated pages now include the localized square top-opening target; all target pages exist in the same language-specific product directory. No unrelated links, product specifications, or commercial claims were changed. This is source-level validation only; no production rendering or live crawl test was performed.
+- Deployment: Included in PR #38; pending merge and Cloudflare Pages production deployment.
+
+
+
+### SEO-0241 — Remove unconfirmed placeholder values from Product structured data
+- Date: 2026-11-18
+- Page/language: All four product detail page types (digital-display, white-front-control, white-top-opening, and white-square-top-opening) in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese (36 pages).
+- Change type: Product structured data quality / technical-attribute accuracy.
+- Before: Product JSON-LD included placeholder values such as “To be confirmed”, “確認中”, “확인 필요”, and equivalent localized wording for capacity, rated power, voltage/frequency, and processing volume. These values were not confirmed product specifications.
+- After: Removed unconfirmed placeholder PropertyValue entries from Product JSON-LD across all 36 pages. Retained the confirmed heating/drying and volume-reduction process property, product name, description, image, brand, manufacturer entity reference, canonical-based Product @id, and language metadata. The visible technical-information tables and their transparent pending-confirmation notices remain unchanged.
+- Target query/intent: Food waste dryer product discovery; product technical information; B2B manufacturer, OEM/ODM and private-label sourcing.
+- Reason: Prevent search engines and AI retrieval systems from interpreting placeholder text as meaningful product attributes; keep machine-readable product data limited to confirmed information while preserving visible notices that technical specifications require confirmation.
+- Files: `public/{en,ja,ko,es,pt,de,ru,ar,zh-cn}/products/{digital-display,white-front-control,white-top-opening,white-square-top-opening}/index.html` (36 files).
+- Validation: Post-change source verification covered all 36 pages. Every Product JSON-LD block parsed successfully, contained zero remaining unconfirmed placeholder values, and retained its confirmed heating/drying and volume-reduction process property (Simplified Chinese uses the localized `工作原理` property). Visible technical-information tables and pending-confirmation notices remain present and unchanged. No technical values, certifications, prices, availability, or other unconfirmed claims were introduced. No production rendering or live-page validation was performed.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
+
+
+### SEO-0242 — Complete localized sitemap entries and align AI crawler guidance
+- Date: 2026-11-18
+- Page/language: Product sitemap entries for the white-square-top-opening page in all 10 language directories; site-wide `public/llms.txt`.
+- Change type: XML sitemap discoverability / AI crawler guidance accuracy and public business-information control.
+- Before: The sitemap contained one standalone URL entry for the white-square-top-opening page, with alternate-language links but without separate URL entries for the other nine localized pages. The AI crawler guidance file also exposed the unapproved Chinese legal company name and omitted the fourth product design from its product-page guidance.
+- After: Added a standalone sitemap URL entry for each of the remaining nine language versions, preserving the reciprocal hreflang alternate set. Removed the Chinese legal company name from `llms.txt`, retained the public-facing brand/supplier wording and confirmed contact/cooperation information, and added the fourth product design URL to the product guidance.
+- Target query/intent: Localized food waste dryer product discovery; international B2B sourcing; AI crawler understanding of product range and official website information.
+- Reason: Ensure every localized product URL is independently discoverable through the sitemap, keep alternate-language relationships explicit, and prevent publication of company identity information that was not approved for public display.
+- Files: `public/sitemap.xml`; `public/llms.txt`.
+- Validation: Source-level XML block check confirms 10 standalone URL entries for white-square-top-opening, with 10-language hreflang alternates retained. `llms.txt` no longer contains the Chinese legal company name and lists all four product design pages. No live endpoint, production render, database, or Search Console validation was performed.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
+
+
+### SEO-0243 — Prevent CMS slug collisions with static product pages
+- Date: 2026-11-18
+- Page/language: Product publishing API, dynamic product route and dynamic product sitemap; all 10 supported language routes.
+- Change type: Product URL integrity / sitemap deduplication / publishing validation.
+- Before: CMS product publishing accepted slugs that matched the four existing static product pages. A matching published database record could take precedence in the dynamic route and produce duplicate entries in the separate product sitemap.
+- After: Added one shared list of reserved static product slugs. CMS create/update/publish requests reject those slugs; the dynamic route falls through to the existing static page for reserved slugs; the dynamic product sitemap omits reserved slugs as a safeguard for any pre-existing database rows.
+- Target query/intent: Food waste dryer product pages; localized product discovery; prevent duplicate or conflicting product URLs.
+- Reason: Preserve the existing static product pages as the canonical pages for their slugs and keep CMS-published products in a separate URL namespace.
+- Files: `functions/_static-product-slugs.js`; `functions/api/admin/products.js`; `functions/[lang]/products/[slug].js`; `functions/sitemap-products.xml.js`.
+- Validation: Source-level checks confirm all four known static product slugs are reserved, CMS create/update/publish paths reject collisions, route requests for reserved slugs fall through to static assets, and dynamic sitemap generation skips reserved database rows. No D1 records were read or modified; no production endpoint or live rendering was tested.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
+
+### SEO-0244 — Align CMS translation generation and localized product summaries
+- Date: 2026-11-18
+- Page/language: CMS-published dynamic product pages and product cards in English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese. Traditional Chinese behavior remains unchanged as previously directed.
+- Change type: Multilingual publishing consistency / localized metadata generation / product-card language consistency.
+- Before: The admin translation generator sent blank SEO title or SEO description fields to translation when the corresponding optional English SEO fields were empty. The publish validator nevertheless required non-empty translated SEO fields for all eight translated languages, so a product with a valid English title and description could fail publication until those optional English SEO fields were manually filled. In addition, when a translation omitted its optional summary, product cards and detail-page summaries could prefer the English summary over an available localized description.
+- After: Translation generation now uses the English product title as the SEO-title source when no custom SEO title is supplied, and uses the English summary or description as the SEO-description source when no custom SEO description is supplied. Product cards and dynamic detail pages now prefer the localized description when a localized summary is absent, before falling back to English summary/description. The existing requirement for translated title, description, SEO title, and SEO description in all eight supported translated languages remains unchanged. Traditional Chinese fallback behavior is not modified.
+- Target query/intent: Localized food waste dryer product discovery; multilingual product detail and category-card comprehension; B2B manufacturer and OEM/ODM sourcing.
+- Reason: Make the admin's translation-generation behavior satisfy the existing publish requirements without requiring optional English SEO fields, and avoid unnecessary English summary text on otherwise localized product pages.
+- Files: `public/admin/admin.js`; `public/assets/published-products.js`; `functions/[lang]/products/[slug].js`.
+- Validation: Source-level checks confirm the translation generator supplies non-empty fallback source text for SEO title/description when English optional SEO fields are blank, and both product-card and dynamic-detail summary selection now prefer localized description over English summary. The eight-language publish validator and language-key mapping were not weakened or changed. No D1 records were read or modified; no runtime translation, production rendering, or live endpoint validation was performed.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.
+
+### SEO-0245 — Align dynamic CMS product URLs, canonical and hreflang with available translations
+- Date: 2026-11-18
+- Page/language: Published dynamic CMS product detail pages and dynamic product sitemap.
+- Change type: Multilingual URL eligibility / canonical / hreflang consistency.
+- Before: CMS publication checks require English title and description plus title, description, SEO title and SEO description for Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic and Simplified Chinese. However, after publication the product update endpoint can change translations without rerunning publication validation. The dynamic detail route silently fell back to English for any missing translated language, while the dynamic sitemap continued to emit all ten language URLs and all ten hreflang alternates regardless of translation completeness.
+- After: A shared locale helper determines which language URLs are actually eligible from the current published product data. English is eligible only when its required title and description exist; each of the eight translated languages is eligible only when its required title, description, SEO title and SEO description are present. Traditional Chinese remains eligible through the existing English fallback, as previously directed. The dynamic detail route returns 404 with noindex for an unavailable non-fallback language instead of silently serving English under that language URL. Canonical remains self-referential for each valid locale. Page hreflang and dynamic sitemap entries now use the same eligible-locale set, include reciprocal alternates only for eligible URLs, and add x-default pointing to English.
+- Target query/intent: Multilingual food waste dryer product pages; localized product searches; consistent language targeting for international B2B/OEM buyers.
+- Reason: Prevent missing translations from being represented to search engines as valid localized pages, and keep route output, canonical, hreflang and sitemap eligibility consistent even if translations are edited after publication.
+- Files: `functions/_product-locales.js` (new); `functions/[lang]/products/[slug].js`; `functions/sitemap-products.xml.js`; `public/assets/published-products.js`.
+- Validation: Source-level review confirms the route and sitemap call the same helper, canonical remains locale-specific, missing translated locales return 404/noindex, hreflang alternates are restricted to the same available-locale set, and zh-TW remains English fallback. No D1 records were read or changed; actual published product rows and their translation completeness remain unverified. No production runtime or live URL validation was performed.
+- Deployment: Included in PR #38; pending review/merge and Cloudflare Pages production deployment. Not deployed.

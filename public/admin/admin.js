@@ -233,10 +233,13 @@
     const id=Number($("productId").value);
     if(!id){$("productTranslateNotice").textContent="请先保存英文草稿。";return;}
     const button=$("productTranslate"); button.disabled=true; $("productSave").disabled=true;
+    const title=$("productTitle").value.trim();
+    const summary=$("productSummary").value.trim();
+    const description=$("productDescription").value.trim();
     const fields={
-      title:$("productTitle").value.trim(),summary:$("productSummary").value.trim(),
-      description:$("productDescription").value.trim(),seo_title:$("productSeoTitle").value.trim(),
-      seo_description:$("productSeoDescription").value.trim()
+      title,summary,description,
+      seo_title:$("productSeoTitle").value.trim() || title,
+      seo_description:$("productSeoDescription").value.trim() || summary || description
     };
     if(!fields.title){$("productTranslateNotice").textContent="请先填写英文产品名称。";button.disabled=false;$("productSave").disabled=false;return;}
     const translations={};

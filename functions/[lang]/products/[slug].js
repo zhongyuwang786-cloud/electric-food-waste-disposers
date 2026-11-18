@@ -1,3 +1,6 @@
+import { STATIC_PRODUCT_SLUGS } from "../../_static-product-slugs.js";
+import { getAvailableProductLocales, PRODUCT_LOCALES } from "../../_product-locales.js";
+
 const LANGUAGES = {
   en: { key: "english", label: "English", code: "en" },
   ja: { key: "japanese", label: "日本語", code: "ja" },
@@ -22,6 +25,7 @@ export async function onRequestGet(context) {
   // Keep original static product detail pages working when the slug is not in D1.
   if (!env.DB) return context.next();
   const slug = String(params.slug || "");
+  if (STATIC_PRODUCT_SLUGS.has(slug)) return context.next();
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return response("<!doctype html><title>Not found</title><h1>Not found</h1>", 404);
   let row;
   try {
@@ -33,16 +37,22 @@ export async function onRequestGet(context) {
   if (!row) return context.next();
   let translations = {};
   try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
+  const availableLocales = getAvailableProductLocales(row, translations);
+  if (!availableLocales.includes(lang)) {
+    return response('<!doctype html><html><head><meta name="robots" content="noindex,follow"><title>Not found</title></head><body><h1>Not found</h1></body></html>', 404);
+  }
   const translated = translations[locale.key] || {};
-  const fallback = lang === "zh-tw";
   const title = String(translated.title || row.title_en || "");
-  const summary = String(translated.summary || row.summary_en || "");
+  const summary = String(translated.summary || translated.description || row.summary_en || "");
   const description = String(translated.description || row.description_en || "");
   const seoTitle = String(translated.seo_title || row.seo_title_en || title);
   const seoDescription = String(translated.seo_description || row.seo_description_en || summary || description).slice(0, 320);
   const image = String(row.image_url || "");
   const canonical = "https://electricfoodwaste.com/" + lang + "/products/" + slug + "/";
-  const alternateLinks = Object.keys(LANGUAGES).map(code => '<link rel="alternate" hreflang="' + LANGUAGES[code].code + '" href="https://electricfoodwaste.com/' + code + '/products/' + slug + '/">').join("");
+  const alternateLinks = availableLocales.map(code => {
+    const localeCode = PRODUCT_LOCALES.find(item => item.path === code).hreflang;
+    return '<link rel="alternate" hreflang="' + localeCode + '" href="https://electricfoodwaste.com/' + code + '/products/' + slug + '/">';
+  }).join("") + '<link rel="alternate" hreflang="x-default" href="https://electricfoodwaste.com/en/products/' + slug + '/">';
   const jsonLd = JSON.stringify({ "@context":"https://schema.org", "@type":"Product", name:title, description:summary || description, image:image.startsWith("http") ? image : "https://electricfoodwaste.com" + image, brand:{ "@type":"Brand", name:"Electric Food Waste Disposers" }, manufacturer:{ "@type":"Organization", name:"Electric Food Waste Disposers", url:"https://electricfoodwaste.com/" }, url:canonical }).replace(/</g, "\\u003c");
   const rtl = lang === "ar" ? ' dir="rtl"' : "";
   const contact = "/" + lang + "/#contact";
