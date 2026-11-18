@@ -1,3 +1,5 @@
+import { STATIC_PRODUCT_SLUGS } from "./_static-product-slugs.js";
+
 const langs = ["en","ja","ko","es","pt","de","ru","ar","zh-cn","zh-tw"];
 const hreflang = { en:"en", ja:"ja", ko:"ko", es:"es", pt:"pt", de:"de", ru:"ru", ar:"ar", "zh-cn":"zh-CN", "zh-tw":"zh-TW" };
 
@@ -8,6 +10,7 @@ export async function onRequestGet({ env }) {
     const result = await env.DB.prepare("SELECT slug, published_at FROM products WHERE published_at IS NOT NULL ORDER BY published_at DESC").all();
     const urls = [];
     for (const product of result.results || []) {
+      if (STATIC_PRODUCT_SLUGS.has(product.slug)) continue;
       for (const lang of langs) {
         const loc = "https://electricfoodwaste.com/" + lang + "/products/" + encodeURIComponent(product.slug) + "/";
         const alternates = langs.map(code => '<xhtml:link rel="alternate" hreflang="' + hreflang[code] + '" href="https://electricfoodwaste.com/' + code + '/products/' + encodeURIComponent(product.slug) + '/"/>').join("");
