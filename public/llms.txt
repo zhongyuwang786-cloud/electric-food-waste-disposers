@@ -119,6 +119,7 @@ The OEM/ODM pages answer questions about minimum order quantity (500 units or mo
 ## New product design pages (specifications pending confirmation)
 - White top-opening food waste dryer design: https://electricfoodwaste.com/en/products/white-top-opening/ (localized equivalents under all 10 language directories)
 - Digital-display food waste dryer design: https://electricfoodwaste.com/en/products/digital-display/ (localized equivalents under all 10 language directories)
+- White square top-opening food waste dryer design: https://electricfoodwaste.com/en/products/white-square-top-opening/ (localized equivalents under all 10 language directories)
 - Process confirmed by the company: heating/drying and volume reduction.
 - Capacity, rated power, voltage/frequency, processing volume and other model-specific specifications remain unconfirmed. Do not infer or publish values.
 
