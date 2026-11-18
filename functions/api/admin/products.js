@@ -89,8 +89,9 @@ export async function onRequestPatch({ request, env }) {
       if (!validImage) {
         return json(400, { ok: false, error: "请先填写有效的 HTTPS 图片地址或站内 /assets/ 图片路径。" });
       }
-      if (!text(row.title_en, 180) || !text(row.description_en, 12000)) {
-        return json(400, { ok: false, error: "发布前必须填写英文产品名称和英文详细介绍。" });
+      const hasCopy = (summary, description) => Boolean(text(summary, 500) || text(description, 12000));
+      if (!text(row.title_en, 180) || !hasCopy(row.summary_en, row.description_en)) {
+        return json(400, { ok: false, error: "发布前必须填写英文产品名称，以及英文摘要或详细介绍。" });
       }
       let translations = {};
       try { translations = JSON.parse(row.translations_json || "{}"); } catch {}
@@ -98,12 +99,10 @@ export async function onRequestPatch({ request, env }) {
       const missing = required.filter(language => {
         const item = translations[language];
         return !item || typeof item !== "object" ||
-          !String(item.title || "").trim() ||
-          !String(item.description || "").trim() ||
-          !String(item.seo_title || "").trim() ||
-          !String(item.seo_description || "").trim();
+          !text(item.title, 180) ||
+          !hasCopy(item.summary, item.description);
       });
-      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题、详情或 SEO 译文，暂不能发布：" + missing.join(", ") });
+      if (missing.length) return json(400, { ok: false, error: "以下语言缺少标题，以及摘要或详细介绍，暂不能发布：" + missing.join(", ") });
       await env.DB.prepare("UPDATE products SET status = 'draft', published_at = datetime('now'), updated_at = datetime('now') WHERE id = ?").bind(id).run();
       return json(200, { ok: true, id, published: true });
     } catch (error) {
