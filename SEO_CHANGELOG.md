@@ -2883,3 +2883,16 @@
 - Cloudflare Pages branch preview for source commit `767f1656a467af794eae20d00a5375982581b88d` reported **Deploy successful**; preview URL: `https://seo-geo-entity-and-metadata.electric-food-waste-disposers.pages.dev`.
 - Production custom-domain deployment and live page verification: pending. Do not treat the branch preview deployment as proof that `electricfoodwaste.com` has updated.
 - Next validation after production deployment: check the ten localized homepages, changed factory/OEM-ODM/product/guide metadata, Organization JSON-LD, `/llms.txt`, and sitemap; then run a fresh OpenSEO audit with a crawl limit above 50 to cover more of the site.
+
+
+### SEO-0204 — CMS resource listing visibility fix
+- Date: 2026-11-18
+- Page/language: /api/resources?lang=en and /en/resources/
+- Change type: CMS resource listing / content-discovery fix
+- Before: The English API response mapped only `title_en` and `summary_en`, while the shared completeness check also required `content`; as a result, published English CMS posts were filtered out of the resource listing.
+- After: Map `content_en` to the API's `content` field for English posts, matching the existing completeness check and the translated-language data contract.
+- Target query/intent: English food waste dryer buyer guides; manufacturer sourcing; OEM/ODM; private label; procurement guidance
+- Reason: Make already-published English CMS articles discoverable from the English Knowledge Center without changing article content, slugs, metadata, or publication records.
+- File: `functions/api/resources.js`
+- Validation: Source-level check confirms the English mapping now supplies `content`; production API response must be checked after Cloudflare Pages deployment.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
