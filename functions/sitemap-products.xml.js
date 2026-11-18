@@ -11,7 +11,11 @@ export async function onRequestGet({ env }) {
     for (const product of result.results || []) {
       let translations = {};
       try { translations = JSON.parse(product.translations_json || "{}"); } catch {}
-      const activeLangs = langs.filter(lang => lang === "en" || lang === "zh-tw" || Boolean(translations[translationKeys[lang]]?.title));
+      const activeLangs = langs.filter(lang => {
+        if (lang === "en" || lang === "zh-tw") return true;
+        const translated = translations[translationKeys[lang]] || {};
+        return Boolean(String(translated.title || "").trim() && (String(translated.summary || "").trim() || String(translated.description || "").trim()));
+      });
       for (const lang of activeLangs) {
         const loc = "https://electricfoodwaste.com/" + lang + "/products/" + encodeURIComponent(product.slug) + "/";
         const alternates = activeLangs.map(code => '<xhtml:link rel="alternate" hreflang="' + hreflang[code] + '" href="https://electricfoodwaste.com/' + code + '/products/' + encodeURIComponent(product.slug) + '/"/>').join("");
