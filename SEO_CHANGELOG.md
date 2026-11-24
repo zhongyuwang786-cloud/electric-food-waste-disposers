@@ -2906,3 +2906,30 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+### SEO-0205 — Multilingual comparison guide publication confirmation
+- Date: 2026-11-24
+- Page/language: CMS article `food-waste-dryer-vs-electric-composter`; translated versions published by user.
+- Change type: CMS publication-state record only; no repository page, title, meta description, schema, or URL was changed in this entry.
+- Before: No changelog entry recorded the user's subsequent confirmation that this comparison article had been translated and published.
+- After: Record the user's confirmation that the article and its translated versions are published on the website.
+- Target query/intent: food waste dryer vs electric composter; drying vs biological composting; food waste processing product comparison.
+- Reason: Preserve the publication history and make the comparison topic traceable in the site's buyer-guide content plan.
+- Files/data: Cloudflare D1 CMS; exact locale coverage and stored SEO title/meta values were not independently queried in this task.
+- Pre-change backup: Not applicable to this log-only record; no website content or SEO metadata was modified by this entry.
+- Validation: Publication state is user-confirmed, not independently re-queried. No claim is made here about indexing or AI citations.
+- Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
+
+### SEO-0206 — Multilingual comparison guide publication confirmation
+- Date: 2026-11-24
+- Page/language: CMS article `food-waste-dryer-vs-garbage-disposal`; translated versions published by user.
+- Change type: CMS publication-state record only; no repository page, title, meta description, schema, or URL was changed in this entry.
+- Before: No changelog entry recorded the user's subsequent confirmation that this comparison article had been translated and published.
+- After: Record the user's confirmation that the article and its translated versions are published on the website.
+- Target query/intent: food waste dryer vs garbage disposal; kitchen food waste handling; sink grinder vs drying appliance.
+- Reason: Preserve the publication history and make the comparison topic traceable in the site's buyer-guide content plan.
+- Files/data: Cloudflare D1 CMS; exact locale coverage and stored SEO title/meta values were not independently queried in this task.
+- Pre-change backup: Not applicable to this log-only record; no website content or SEO metadata was modified by this entry.
+- Validation: Publication state is user-confirmed, not independently re-queried. No claim is made here about indexing or AI citations.
+- Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
