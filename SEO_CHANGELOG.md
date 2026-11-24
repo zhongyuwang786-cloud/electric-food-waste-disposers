@@ -2960,3 +2960,32 @@
 - Pre-change backup: `SEO-BACKUPS/2026-11-24/pre-publication-confirmations/SEO_CHANGELOG.md.before-seo-0207-0208` (changelog snapshot; no website content was changed).
 - Validation: Publication state is user-confirmed, not independently re-queried. No claim is made about indexing or AI citations.
 - Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
+
+
+### SEO-0209 — Multilingual comparison guide publication confirmation
+
+- Date: 2026-11-24
+- Page/language: CMS article `compare-food-waste-dryer-suppliers-beyond-price`; translated versions published by user.
+- Change type: CMS publication-state record only; no repository page, title, meta description, schema, or URL was changed in this entry.
+- Before: The changelog contained the article topic as a prepared buyer guide but did not record the user's confirmation that it had been translated and published.
+- After: Record the user's confirmation that the article and its translated versions are published on the website.
+- Target query/intent: compare food waste dryer suppliers beyond price; supplier quotation comparison; total sourcing cost; importer procurement due diligence.
+- Reason: Preserve the confirmed publication history and track a buyer-focused comparison addressing supplier evaluation beyond the quoted unit price.
+- Files/data: Cloudflare D1 CMS; exact locale coverage and stored SEO title/meta values were not independently queried in this task.
+- Pre-change backup: `SEO-BACKUPS/2026-11-24/pre-publication-confirmations/SEO_CHANGELOG.md.before-seo-0209-0210` (changelog snapshot; no website content was changed).
+- Validation: Publication state is user-confirmed, not independently re-queried. No claim is made about indexing or AI citations.
+- Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
+
+### SEO-0210 — Multilingual comparison guide publication confirmation
+
+- Date: 2026-11-24
+- Page/language: CMS article `food-waste-dryer-sample-order-vs-bulk-order`; translated versions published by user.
+- Change type: CMS publication-state record only; no repository page, title, meta description, schema, or URL was changed in this entry.
+- Before: The changelog contained the article topic as a prepared buyer guide but did not record the user's confirmation that it had been translated and published.
+- After: Record the user's confirmation that the article and its translated versions are published on the website.
+- Target query/intent: food waste dryer sample order vs bulk order; sample-to-production consistency; importer bulk purchasing risk; pre-production specification confirmation.
+- Reason: Preserve the confirmed publication history and track a buyer-focused comparison of the checks required before scaling a sample order into bulk production.
+- Files/data: Cloudflare D1 CMS; exact locale coverage and stored SEO title/meta values were not independently queried in this task.
+- Pre-change backup: `SEO-BACKUPS/2026-11-24/pre-publication-confirmations/SEO_CHANGELOG.md.before-seo-0209-0210` (changelog snapshot; no website content was changed).
+- Validation: Publication state is user-confirmed, not independently re-queried. No claim is made about indexing or AI citations.
+- Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
