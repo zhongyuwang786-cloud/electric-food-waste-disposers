@@ -2933,3 +2933,30 @@
 - Pre-change backup: Not applicable to this log-only record; no website content or SEO metadata was modified by this entry.
 - Validation: Publication state is user-confirmed, not independently re-queried. No claim is made here about indexing or AI citations.
 - Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
+
+
+### SEO-0207 — Multilingual comparison guide publication confirmation
+- Date: 2026-11-24
+- Page/language: CMS article `food-waste-dryer-manufacturer-vs-trading-company`; translated versions published by user.
+- Change type: CMS publication-state record only; no repository page, title, meta description, schema, or URL was changed in this entry.
+- Before: The changelog contained the draft topic but did not yet record the user's confirmation that the article had been translated and published.
+- After: Record the user's confirmation that the article and its translated versions are published on the website.
+- Target query/intent: food waste dryer manufacturer vs trading company; importer supplier verification; factory sourcing and purchasing risk comparison.
+- Reason: Preserve the confirmed publication history and track a high-intent supplier-selection comparison for brand owners, importers, and distributors.
+- Files/data: Cloudflare D1 CMS; exact locale coverage and stored SEO title/meta values were not independently queried in this task.
+- Pre-change backup: `SEO-BACKUPS/2026-11-24/pre-publication-confirmations/SEO_CHANGELOG.md.before-seo-0207-0208` (changelog snapshot; no website content was changed).
+- Validation: Publication state is user-confirmed, not independently re-queried. No claim is made about indexing or AI citations.
+- Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
+
+### SEO-0208 — Multilingual comparison guide publication confirmation
+- Date: 2026-11-24
+- Page/language: CMS article `private-label-vs-ready-made-food-waste-dryers`; translated versions published by user.
+- Change type: CMS publication-state record only; no repository page, title, meta description, schema, or URL was changed in this entry.
+- Before: The changelog contained the draft topic but did not yet record the user's confirmation that the article had been translated and published.
+- After: Record the user's confirmation that the article and its translated versions are published on the website.
+- Target query/intent: private label vs ready-made food waste dryers; OEM branding; product customization and importer purchasing decisions.
+- Reason: Preserve the confirmed publication history and track a high-intent comparison for businesses deciding between ready-made products and private-label sourcing.
+- Files/data: Cloudflare D1 CMS; exact locale coverage and stored SEO title/meta values were not independently queried in this task.
+- Pre-change backup: `SEO-BACKUPS/2026-11-24/pre-publication-confirmations/SEO_CHANGELOG.md.before-seo-0207-0208` (changelog snapshot; no website content was changed).
+- Validation: Publication state is user-confirmed, not independently re-queried. No claim is made about indexing or AI citations.
+- Deployment: The article was already published according to the user's confirmation; this changelog update is a repository documentation change only.
