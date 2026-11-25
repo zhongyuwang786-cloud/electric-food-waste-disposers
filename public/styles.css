@@ -584,3 +584,44 @@
  .homepage-carousel .homepage-carousel-controls{right:6%;bottom:13px}
 }
 @media(prefers-reduced-motion:reduce){.homepage-carousel .hero .button{transition:none}}
+
+
+/* Premium English homepage carousel banner with independent CTA hit areas */
+.homepage-carousel .homepage-image-slide{
+  position:relative;
+  flex:0 0 100%;
+  width:100%;
+  min-width:100%;
+  margin:0;
+  padding:0;
+  line-height:0;
+  overflow:hidden;
+  background:#f6f6f3;
+}
+.homepage-image-slide-art{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1672 / 941;
+  object-fit:contain;
+}
+.homepage-image-hotspot{
+  position:absolute;
+  z-index:2;
+  display:block;
+  top:48.05%;
+  height:7.65%;
+  border-radius:999px;
+  background:transparent;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.homepage-image-hotspot-quote{left:3.15%;width:22.2%}
+.homepage-image-hotspot-products{left:26.35%;width:20.15%}
+.homepage-image-hotspot:focus-visible{
+  outline:3px solid #173fda;
+  outline-offset:3px;
+}
+@media(max-width:600px){
+  .homepage-image-hotspot{top:48.05%;height:7.65%}
+}
