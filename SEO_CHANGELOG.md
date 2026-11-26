@@ -2923,3 +2923,18 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0207 — Correct Product JSON-LD for white square top-opening pages
+
+- 日期：2026-11-26
+- 页面/语言：/products/white-square-top-opening/；en、ja、ko、es、pt、de、ru、ar、zh-cn（繁体中文按既定要求跳过）
+- 修改类别：Product JSON-LD accuracy and localization
+- 修改前：九种页面的 Product JSON-LD description 均错误沿用英文“front digital control panel”描述，与方形顶部开口产品实际页面不符；多语言页面的 schema description 也未本地化。结构化数据还将未确认的容量、功率、电压/频率、处理量写成占位值，并将网站名称作为产品品牌及制造商名称。
+- 修改后：Product JSON-LD 的 name 保留页面对应语言；description 改为该语言页面现有 meta description；image 保留与页面主图一致的真实图片；新增 url 指向本页 canonical。删除未确认参数占位项，以及未经确认的产品 brand / manufacturer 字段。页面正文、标题、meta、图片、canonical、hreflang、FAQ schema、产品规格和发布状态均未改动。
+- 目标搜索意图：white square top-opening food waste dryer 产品识别及 B2B OEM/ODM 采购；本次只修正机器可读产品信息的一致性。
+- 涉及文件：九种语言的 white-square-top-opening/index.html。
+- 修改前备份：SEO-BACKUPS/2026-11-26/pre-product-jsonld-cleanup/white-square-top-opening-pages.json（包含九个原始 HTML 文件的完整内容）。
+- 验证：修改脚本读取每页原始 Product JSON-LD、meta description 与 canonical 后生成 schema；每个页面保留本地化 name、匹配页面 meta 的 description、原始 image 和 canonical url。代码合并后仍需生产环境抽查。
+- 部署状态：工作分支 seo/product-jsonld-cleanup-2026-11-26；待 PR review/merge 和 Cloudflare Pages 部署。
+- 备注：未添加价格、库存、评分、SKU、型号、认证或其他未经确认的信息。
