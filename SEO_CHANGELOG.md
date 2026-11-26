@@ -3033,3 +3033,14 @@
   - 所有语言页面继续保留“支持样品订单”的准确说明。
   - 两份修改前备份均为有效 JSON，各包含十个对应页面的完整 HTML。
 - 部署状态：PR #45 工作分支；未合并、未部署。
+
+
+### SEO-0216 — Unify multilingual product entity identity and x-default alternates
+- Date: 2026-11-27
+- Page/language: 36 static product detail pages across English, Japanese, Korean, Spanish, Portuguese, German, Russian, Arabic, and Simplified Chinese; Traditional Chinese intentionally excluded from edits.
+- Change type: Product structured data / entity identity / hreflang fallback
+- Before: Product JSON-LD nodes had no stable page-specific `@id` or `inLanguage`, and did not reference the shared homepage Organization entity. The Digital Display and White Top-Opening product page groups lacked `x-default` hreflang declarations.
+- After: Each Product node now has an `@id` based on its canonical URL ending in `#product`, the page's matching language code, and a `manufacturer` reference to `https://electricfoodwaste.com/#organization`. All 36 product pages now declare `x-default` pointing to the corresponding English product URL. Existing localized Product names, descriptions, images, canonical URLs, FAQ data, and confirmed product information were preserved.
+- Pre-change backups: `SEO-BACKUPS/2026-11-27/pre-product-entity-hreflang/{en,ja,ko,es,pt,de,ru,ar,zh-cn}-product-pages.json`; changelog backup: `SEO-BACKUPS/2026-11-27/pre-product-entity-hreflang/SEO_CHANGELOG.md.before-SEO-0216`.
+- Validation: All 36 pages were updated from their pre-change versions; each update required a valid canonical URL and a parseable Product JSON-LD block. Product entity identifiers and language codes are derived from each page's canonical URL and locale. No new technical specifications, certifications, pricing, inventory, or unsupported claims were added. Source-level validation only; production deployment and live HTTP/GSC verification remain pending.
+- Deployment: Included in the consolidated product SEO pull request; not merged or deployed.
