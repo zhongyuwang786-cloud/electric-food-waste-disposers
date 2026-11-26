@@ -2987,3 +2987,17 @@
 - 涉及文件：32 个 `public/{locale}/products/{slug}/index.html` 文件；修改前完整备份按语言保存在 `SEO-BACKUPS/2026-11-26/pre-product-faq-localization/{locale}-pages.json`。
 - 验证结果：32 页全部通过；每页 5 组可见 FAQ 与 FAQPage JSON-LD 的问题及答案逐项完全一致；Product JSON-LD 名称/描述/URL、Canonical、邮件与 WhatsApp 询盘链接均保持正确。8 份语言备份均可读取，逐页比对确认 FAQ 以外的 HTML 内容未发生变化。
 - 部署状态：PR #45 工作分支；尚未合并，生产部署待审批。
+
+
+## SEO-0213 — Remove unconfirmed commercial terms from llms.txt
+
+- 日期：2026-11-26
+- 文件：`public/llms.txt`
+- 修改类别：GEO / AI crawler reference content / 商业信息准确性
+- 修改前：文件声称样品开发/打样费用适用，并在英文买家 FAQ、OEM/ODM 指南及简繁中文说明中提及样品费用；另列出未获确认的付款方式和付款条款。
+- 修改后：仅说明支持样品订单，并邀请买家联系沟通样品需求；删除“样品费用适用”“项目样品费用”及未确认付款方式/条款表述。简繁中文段落同步改为仅提示按项目确认样品安排，不再声称样品收费或付款条件。
+- 信息依据：已确认支持样品订单；样品费/打样费金额及是否收费尚未确认，不应由 AI 参考文件推断；付款条款未获确认。
+- 影响：降低 AI 搜索与问答系统从 llms.txt 抽取错误商业条件的风险，保持机器可读信息与网站实际确认范围一致。
+- 修改前备份：`SEO-BACKUPS/2026-11-26/pre-llms-commercial-terms-correction/public-llms.txt`。
+- 验证：逐项替换六处不准确表述；复查文件中不再出现 fee、费用、付款安排或 payment methods 等未确认商业条款描述。
+- 部署状态：PR #45 工作分支；未合并、未部署。
