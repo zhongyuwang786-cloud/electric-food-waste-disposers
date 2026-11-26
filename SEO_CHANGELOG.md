@@ -3001,3 +3001,16 @@
 - 修改前备份：`SEO-BACKUPS/2026-11-26/pre-llms-commercial-terms-correction/public-llms.txt`。
 - 验证：逐项替换六处不准确表述；复查文件中不再出现 fee、费用、付款安排或 payment methods 等未确认商业条款描述。
 - 部署状态：PR #45 工作分支；未合并、未部署。
+
+
+## SEO-0214 — Add the fourth verified product design to llms.txt
+
+- 日期：2026-11-26
+- 文件：`public/llms.txt`
+- 修改类别：GEO / AI-readable product catalog completeness
+- 修改前：AI 参考文件仅列出白色顶部开口款、数显款和前置控制款三种产品设计，遗漏了已存在的方形顶部开口款详情页。
+- 修改后：新增 White Square Top-Opening Food Waste Dryer 产品链接，并仅采用页面已确认的外观描述（白色方形台面设计、圆形顶部开口）及处理原理（加热干燥、减量处理）；明确容量、额定功率、电压/频率和处理量仍待确认。
+- 修改原因：确保 AI 可读产品目录覆盖网站现有四款产品页面，减少 AI 对产品系列的遗漏，同时避免补入未确认参数。
+- 修改前备份：`SEO-BACKUPS/2026-11-26/pre-llms-square-product-reference/public-llms.txt`。
+- 验证：已对照英文产品详情页的 H1、Meta Description、首屏介绍、图片 alt 和 canonical 核实新增描述及链接。
+- 部署状态：PR #45 工作分支；未合并、未部署。
