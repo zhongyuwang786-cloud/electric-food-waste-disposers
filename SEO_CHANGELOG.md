@@ -2906,3 +2906,20 @@
 - Code change: English CMS resource API now maps `content_en` to `content`, so published English posts pass the same title/content completeness check as translated posts.
 - Scope: no D1 records, article translations, slugs, article URLs, SEO titles, or meta descriptions changed.
 - Cloudflare Pages production deployment and live API/front-end verification: pending user confirmation.
+
+
+
+### SEO-0205 — Redirect legacy CMS test slug to the published private-label article
+
+- Date: 2026-11-26
+- Page/language: `/{en,ja,ko,es,pt,de,ru,ar,zh-cn,zh-tw}/resources/cms-test-draft-20261112/`
+- Change type: Legacy URL migration / index cleanup
+- Before: Google URL Inspection found the old test slug still indexed for Portuguese, Russian and Simplified Chinese. Japanese, Spanish and German were crawled as alternate URLs canonicalized to the homepage; English, Korean and Arabic were unknown to Google. The live CMS now uses the formal slug `private-label-food-waste-dryers`. The static sitemap did not contain the old or new CMS slug; published CMS URLs are supplied by the dynamic `sitemap-resources.xml` endpoint.
+- After: The localized resource route checks the published `private-label-food-waste-dryers` CMS record before handling the legacy slug. It returns a 301 to the same-language formal article only when that language has both a translated title and content. If no published article or translation exists, it returns 410 rather than creating a broken redirect or duplicate page. A temporary database error returns 503 and does not falsely remove the URL.
+- Target query/intent: private label food waste dryer; OEM/ODM sourcing; buyer guidance
+- Reason: Preserve the value of the old indexed URLs while consolidating them into the formal published article and ensuring unsupported locale variants do not redirect to 404 pages.
+- Files: `functions/[lang]/resources/[slug].js`; pre-change backup: `SEO-BACKUPS/2026-11-26/pre-legacy-cms-article-redirect/functions-lang-resources-slug.js`.
+- Sitemap/internal links: The legacy slug was absent from `public/sitemap.xml`; the dynamic resource sitemap derives URLs from currently published D1 slugs, so no static sitemap edit was needed. The public resource listing also derives article links from the current published CMS records.
+- Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
+- Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
+- Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
