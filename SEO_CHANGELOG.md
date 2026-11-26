@@ -3014,3 +3014,22 @@
 - 修改前备份：`SEO-BACKUPS/2026-11-26/pre-llms-square-product-reference/public-llms.txt`。
 - 验证：已对照英文产品详情页的 H1、Meta Description、首屏介绍、图片 alt 和 canonical 核实新增描述及链接。
 - 部署状态：PR #45 工作分支；未合并、未部署。
+
+
+## SEO-0215 — Remove unconfirmed sample-fee and payment claims from OEM/ODM pages
+
+- 日期：2026-11-26
+- 页面/语言：十种语言（en、ja、ko、es、pt、de、ru、ar、zh-cn、zh-tw）的 OEM/ODM 页面与 OEM/ODM 买家指南，共 20 页。
+- 修改类别：商业信息准确性 / 多语言正文与 FAQPage 结构化数据 / GEO
+- 修改前：页面多处声称样品开发或打样费用适用，或可能收取费用并按项目确认；OEM/ODM 页面和买家指南还列出未获确认的付款方式、付款条件或付款安排。
+- 修改后：统一只说明支持样品订单，并邀请买家联系沟通样品需求；删除所有样品费/打样费适用或可能收费的说法，以及未确认的付款方式、付款条件和付款安排内容。保留已确认的 MOQ 500+、OEM/ODM 定制范围、样品订单支持、客户工厂验货/检查、出口包装及按订单确认交期。
+- 结构化数据：同步更新十种语言 OEM/ODM 页面与买家指南的 FAQPage JSON-LD；另修正英文买家指南中 FAQPage 与可见 FAQ 原有的四组答案不一致，使六组问题/答案逐项匹配。
+- 修改前备份：
+  - `SEO-BACKUPS/2026-11-26/pre-sample-fee-payment-claims/public-oem-odm-pages.json`（十个语言页面）
+  - `SEO-BACKUPS/2026-11-26/pre-sample-fee-payment-claims/resource-buyer-guides.json`（十个语言页面）
+- 验证结果：
+  - 十种语言 OEM/ODM 页面：10/10 的四组可见 FAQ 与 FAQPage JSON-LD 一致；未发现样品费用或付款方式/条件表述。
+  - 十种语言 OEM/ODM 买家指南：10/10 的可见 FAQ 与 FAQPage JSON-LD 一致；未发现样品费用或付款方式/条件表述。
+  - 所有语言页面继续保留“支持样品订单”的准确说明。
+  - 两份修改前备份均为有效 JSON，各包含十个对应页面的完整 HTML。
+- 部署状态：PR #45 工作分支；未合并、未部署。
