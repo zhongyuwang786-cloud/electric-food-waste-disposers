@@ -2923,3 +2923,17 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0208 — Standardize Product JSON-LD across remaining product pages
+
+- 日期：2026-11-26
+- 页面/语言：white-top-opening、digital-display、white-front-control；en、ja、ko、es、pt、de、ru、ar、zh-cn。
+- 修改类别：Product structured data accuracy and localization。
+- 修改前：Product JSON-LD 中包含未确认的容量、额定功率、电压/频率、处理量占位值；部分语言的属性名称/值混用英文；brand 和 manufacturer 均使用未经确认的网站名称。各页 schema description 与本页 Meta Description 相符，但品牌身份字段不准确。
+- 修改后：统一为最小且可核实的 Product schema：@context、@type、页面本地化 name、与页面 Meta Description 一致的 description、原有真实 image、对应页面 canonical url。移除全部未确认 additionalProperty、未经确认的 brand 和 manufacturer。
+- 页面可见文案、title、meta、图片、Canonical、hreflang、FAQ schema、产品规格、联系入口、D1 数据和发布状态均未修改。
+- 修改前备份：SEO-BACKUPS/2026-11-26/pre-product-jsonld-cleanup/white-top-opening-pages.json；digital-display-pages.json；white-front-control-pages.json。每个文件均包含九种语言页面的完整原始 HTML。
+- 目标：确保搜索引擎及 AI 抓取时读取的产品实体信息准确，不把待确认参数或网站名称误当作产品品牌/法定制造商。
+- 验证：源码生成基于原始页面的本地化 name、Meta Description、原始主图和 self-canonical；不增加价格、库存、SKU、GTIN、评分、型号或未经确认的规格。
+- 分支：seo/product-jsonld-all-locales-2026-11-26。待 PR 审查、合并和生产部署。
