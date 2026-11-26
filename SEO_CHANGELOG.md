@@ -2947,3 +2947,17 @@
 - 修改：四个产品系列的 en、ja、ko、es、pt、de、ru、ar、zh-cn 共 36 页，FAQ 可见内容及 FAQPage JSON-LD 中的样品回答统一为“支持样品订单，请联系沟通样品需求”；删除“样品开发/打样费用另行沟通并单独报价”这一未经确认的商业条款。其他 FAQ、MOQ、交期、定制内容和技术参数不变。
 - 备份：四个产品系列修改前的完整 HTML 均保存在 SEO-BACKUPS/2026-11-26/pre-product-jsonld-cleanup/ 对应 pages.json 文件中。
 - 验证：每个页面原回答在 HTML 中出现三次，三处均替换；Product JSON-LD 同步保留修正后的最小准确字段。
+
+
+## SEO-0210 — Correct square product inquiry CTA product mapping
+
+- 日期：2026-11-26
+- 页面/语言：`/en/products/white-square-top-opening/`、`/ja/products/white-square-top-opening/`、`/ko/products/white-square-top-opening/`、`/es/products/white-square-top-opening/`、`/pt/products/white-square-top-opening/`、`/de/products/white-square-top-opening/`、`/ru/products/white-square-top-opening/`、`/ar/products/white-square-top-opening/`、`/zh-cn/products/white-square-top-opening/`
+- 修改类别：询盘入口链接修复（邮件与 WhatsApp）
+- 修改前：九个语言页面的邮件主题/正文均错误显示 White Front-Control Food Waste Dryer，WhatsApp 预填文案也错误显示该产品名称，并且所有语言的 WhatsApp 产品页链接均指向英文页面。
+- 修改后：邮件主题和正文改为对应语言页面 H1 的产品名称；WhatsApp 使用正确的 White Square Top-Opening Food Waste Dryer 名称，并指向当前语言对应的方形顶部开口产品页。邮件地址保持 `zhongyuwang786@gmail.com`，WhatsApp 号码保持 `+86 15820479535`。
+- 目标关键词/搜索意图：white square top-opening food waste dryer; product inquiry; OEM/ODM sourcing
+- 修改原因：避免客户从方形顶部开口产品页发起询盘时，被错误归类为前置控制款；确保语言版本和询盘产品 URL 对应。
+- 涉及文件：九种语言的 `public/{locale}/products/white-square-top-opening/index.html`；修改前完整备份位于 `SEO-BACKUPS/2026-11-26/pre-square-product-inquiry-fix/`。
+- 验证方式与结果：九页已完成源文件修改；待提交后逐页回读验证邮件收件地址、WhatsApp 号码、产品名称及本地化 URL。
+- 部署状态：PR #45 工作分支；未合并、未部署。
