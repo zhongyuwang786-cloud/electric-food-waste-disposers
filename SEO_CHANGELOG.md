@@ -2974,3 +2974,16 @@
 - 涉及文件：`public/sitemap.xml`；修改前完整备份：`SEO-BACKUPS/2026-11-26/pre-static-resource-hreflang/public-sitemap.xml`。
 - 验证：已确认三篇文章的十种语言 HTML 文件均存在；更新后将逐项核对 30 个 URL 的 loc、十种语言 alternate 和 x-default。
 - 部署状态：PR #45 工作分支；未合并、未部署。
+
+
+## SEO-0212 — Localize product FAQs across eight language versions
+
+- 日期：2026-11-26
+- 页面/语言：四个产品系列（`white-top-opening`、`digital-display`、`white-front-control`、`white-square-top-opening`）的 ja、ko、es、pt、de、ru、ar、zh-cn 页面，共 32 页。
+- 修改类别：多语言页面内容与 FAQPage 结构化数据本地化
+- 修改前：非英文产品页的五组 FAQ 问题标题和大部分答案仍为英文；FAQPage JSON-LD 与页面内容虽然基本一致，但语言本地化不足。
+- 修改后：将最低起订量、样品订单、OEM/ODM 定制范围、交期确认、技术参数确认五组 FAQ 的问题和答案分别翻译为对应页面语言；同步更新页面可见 FAQ 与 FAQPage JSON-LD，确保每一组 Question.name 和 acceptedAnswer.text 与可见 FAQ 完全一致。
+- 商业信息边界：仅使用已确认的 MOQ 500+、支持样品订单、已确认的 OEM/ODM 定制范围及按订单确认交期；未增加样品费用、交期天数、参数保证或其他未确认承诺。
+- 涉及文件：32 个 `public/{locale}/products/{slug}/index.html` 文件；修改前完整备份按语言保存在 `SEO-BACKUPS/2026-11-26/pre-product-faq-localization/{locale}-pages.json`。
+- 验证：修改后逐页核对 FAQ 项目数量、可见标题/答案与 FAQPage JSON-LD 的一致性，并复查各页 Product JSON-LD、Canonical 与询盘链接。
+- 部署状态：PR #45 工作分支；尚未合并，生产部署待审批。
