@@ -3044,3 +3044,14 @@
 - Pre-change backups: `SEO-BACKUPS/2026-11-27/pre-product-entity-hreflang/{en,ja,ko,es,pt,de,ru,ar,zh-cn}-product-pages.json`; changelog backup: `SEO-BACKUPS/2026-11-27/pre-product-entity-hreflang/SEO_CHANGELOG.md.before-SEO-0216`.
 - Validation: All 36 pages were updated from their pre-change versions; each update required a valid canonical URL and a parseable Product JSON-LD block. Product entity identifiers and language codes are derived from each page's canonical URL and locale. No new technical specifications, certifications, pricing, inventory, or unsupported claims were added. Source-level validation only; production deployment and live HTTP/GSC verification remain pending.
 - Deployment: Included in the consolidated product SEO pull request; not merged or deployed.
+
+
+### SEO-0217 — Align llms.txt commercial terms with confirmed buyer information
+- Date: 2026-11-27
+- Page: `/llms.txt` (source file: `public/llms.txt`)
+- Change type: AI-readable business facts / content consistency
+- Before: The product-scope caution incorrectly grouped MOQ and delivery lead time with unverified technical claims, while the buyer-cooperation section correctly stated MOQ 500+ units and order-confirmed lead time. This created contradictory instructions for AI crawlers and retrieval systems.
+- After: Kept unverified technical and performance claims restricted, while explicitly identifying confirmed commercial terms: MOQ 500+ units; sample/proofing fees apply and are confirmed per project; delivery lead time is confirmed according to the order.
+- Pre-change backup: `SEO-BACKUPS/2026-11-27/pre-llms-commercial-facts/public-llms.txt`.
+- Validation: The replacement was applied only to the exact contradictory sentence. No product specifications, certifications, production capacity, or additional commercial commitments were added.
+- Deployment: Included in PR #45 preview branch; production deployment pending merge.
