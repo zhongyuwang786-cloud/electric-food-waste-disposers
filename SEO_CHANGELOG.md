@@ -2961,3 +2961,16 @@
 - 涉及文件：九种语言的 `public/{locale}/products/white-square-top-opening/index.html`；修改前完整备份位于 `SEO-BACKUPS/2026-11-26/pre-square-product-inquiry-fix/`。
 - 验证方式与结果：九页已完成源文件修改；待提交后逐页回读验证邮件收件地址、WhatsApp 号码、产品名称及本地化 URL。
 - 部署状态：PR #45 工作分支；未合并、未部署。
+
+
+## SEO-0211 — Complete hreflang clusters for static resource guides
+
+- 日期：2026-11-26
+- 页面/语言：三篇静态知识文章 `how-food-waste-dryer-works`、`food-waste-dryer-vs-grinder`、`oem-odm-food-waste-dryer-buyers-guide`，各十种语言，共 30 个 sitemap URL 项。
+- 修改类别：Sitemap / hreflang 国际化关联修复
+- 修改前：三篇文章的 sitemap URL 均存在十种语言版本，但不同语言条目互相引用不完整；英文、日文、韩文、西班牙文、葡萄牙文条目缺少德文与简体中文 alternates，德文、俄文、阿拉伯文条目缺少简体中文 alternate。
+- 修改后：30 个 URL 项统一包含 en、ja、ko、es、pt、de、ru、ar、zh-CN、zh-TW 十种语言 alternate，并统一使用英文页面作为 x-default。
+- 修改原因：让每个语言页面声明同一组真实存在的语言版本，保持 hreflang 集群双向一致，减少搜索引擎对多语言对应关系的歧义。
+- 涉及文件：`public/sitemap.xml`；修改前完整备份：`SEO-BACKUPS/2026-11-26/pre-static-resource-hreflang/public-sitemap.xml`。
+- 验证：已确认三篇文章的十种语言 HTML 文件均存在；更新后将逐项核对 30 个 URL 的 loc、十种语言 alternate 和 x-default。
+- 部署状态：PR #45 工作分支；未合并、未部署。
