@@ -2923,3 +2923,18 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0206 — Complete localized sitemap entries for white square top-opening product
+
+- 日期：2026-11-26
+- 页面/语言：/products/white-square-top-opening/；en、ja、ko、es、pt、de、ru、ar、zh-cn、zh-tw
+- 修改类别：XML sitemap URL coverage；hreflang alternate entries
+- 修改前：静态产品 sitemap 仅包含英文 white-square-top-opening URL；该英文 URL 的 hreflang 已引用其余九种语言，但九个对应 URL 未作为独立 sitemap <loc> 收录。仓库中九个本地化页面文件均存在。
+- 修改后：为 ja、ko、es、pt、de、ru、ar、zh-cn、zh-tw 添加独立 <url>/<loc> 项，并保留同一组互相对应的 hreflang 与 x-default。
+- 目标关键词/搜索意图：各语言的 countertop food waste dryer 产品设计与产品采购意图；本次仅修复 URL 发现/多语言 sitemap 覆盖，不改变页面文案或关键词。
+- 修改原因：避免已存在的本地化静态产品详情页未被静态 sitemap 单独列出。
+- 涉及文件：public/sitemap.xml；备份：SEO-BACKUPS/2026-11-26/pre-square-product-sitemap/public-sitemap.xml
+- 验证方式与结果：源码校验目标产品共 10 个唯一 locale URL；部署后 HTTP 与 GSC 重新抓取仍待验证。
+- 部署状态：已提交至工作分支 seo/fix-square-product-sitemap-2026-11-26；未合并、未部署。
+- 备注：本次未检查或改写繁体中文页面内容；仅按已存在页面路径补齐 sitemap URL。
