@@ -2923,3 +2923,27 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+
+## SEO-0206 — Complete square product sitemap locale entries
+- 日期：2026-11-26
+- 修改：为 white-square-top-opening 补齐 ja、ko、es、pt、de、ru、ar、zh-cn、zh-tw 九种语言的 sitemap URL，保留完整 hreflang 与 x-default。
+- 备份：SEO-BACKUPS/2026-11-26/pre-square-product-sitemap/public-sitemap.xml。
+- 验证：该产品 sitemap 共十个语言 URL。未改动页面内容或产品发布状态。
+
+## SEO-0207 — Correct square product Product JSON-LD
+- 日期：2026-11-26
+- 修改：white-square-top-opening 的 en、ja、ko、es、pt、de、ru、ar、zh-cn 九个页面，修正错误沿用前置数显款描述的问题；Product schema 使用本地化名称、对应页面 Meta Description、原真实图片和 self-canonical URL；删除未确认规格占位值及未经确认的 brand/manufacturer 字段。
+- 备份：SEO-BACKUPS/2026-11-26/pre-product-jsonld-cleanup/white-square-top-opening-pages.json。
+
+## SEO-0208 — Standardize Product JSON-LD on remaining product pages
+- 日期：2026-11-26
+- 修改：white-top-opening、digital-display、white-front-control 的 en、ja、ko、es、pt、de、ru、ar、zh-cn 共 27 页，统一 Product schema 为本地化名称、对应页面 Meta Description、真实图片及 self-canonical URL；移除未确认规格占位值及未经确认的 brand/manufacturer 字段。
+- 备份：SEO-BACKUPS/2026-11-26/pre-product-jsonld-cleanup/white-top-opening-pages.json、digital-display-pages.json、white-front-control-pages.json。
+
+## SEO-0209 — Remove unconfirmed sample/proofing fee statements
+- 日期：2026-11-26
+- 修改：四个产品系列的 en、ja、ko、es、pt、de、ru、ar、zh-cn 共 36 页，FAQ 可见内容及 FAQPage JSON-LD 中的样品回答统一为“支持样品订单，请联系沟通样品需求”；删除“样品开发/打样费用另行沟通并单独报价”这一未经确认的商业条款。其他 FAQ、MOQ、交期、定制内容和技术参数不变。
+- 备份：四个产品系列修改前的完整 HTML 均保存在 SEO-BACKUPS/2026-11-26/pre-product-jsonld-cleanup/ 对应 pages.json 文件中。
+- 验证：每个页面原回答在 HTML 中出现三次，三处均替换；Product JSON-LD 同步保留修正后的最小准确字段。
