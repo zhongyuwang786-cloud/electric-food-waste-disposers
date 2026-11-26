@@ -2985,5 +2985,5 @@
 - 修改后：将最低起订量、样品订单、OEM/ODM 定制范围、交期确认、技术参数确认五组 FAQ 的问题和答案分别翻译为对应页面语言；同步更新页面可见 FAQ 与 FAQPage JSON-LD，确保每一组 Question.name 和 acceptedAnswer.text 与可见 FAQ 完全一致。
 - 商业信息边界：仅使用已确认的 MOQ 500+、支持样品订单、已确认的 OEM/ODM 定制范围及按订单确认交期；未增加样品费用、交期天数、参数保证或其他未确认承诺。
 - 涉及文件：32 个 `public/{locale}/products/{slug}/index.html` 文件；修改前完整备份按语言保存在 `SEO-BACKUPS/2026-11-26/pre-product-faq-localization/{locale}-pages.json`。
-- 验证：修改后逐页核对 FAQ 项目数量、可见标题/答案与 FAQPage JSON-LD 的一致性，并复查各页 Product JSON-LD、Canonical 与询盘链接。
+- 验证结果：32 页全部通过；每页 5 组可见 FAQ 与 FAQPage JSON-LD 的问题及答案逐项完全一致；Product JSON-LD 名称/描述/URL、Canonical、邮件与 WhatsApp 询盘链接均保持正确。8 份语言备份均可读取，逐页比对确认 FAQ 以外的 HTML 内容未发生变化。
 - 部署状态：PR #45 工作分支；尚未合并，生产部署待审批。
