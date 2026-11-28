@@ -2955,3 +2955,11 @@
 - 部署状态：独立分支 `seo/homepage-manufacturer-intent-en`，待 PR 审查；未合并、未部署。
 
 - Follow-up wording clarification (2026-11-28): homepage meta description and Open Graph description now both say “sample orders supported” rather than “sample terms confirmed per project”, avoiding any implication of unconfirmed sample pricing or fees. Pre-change backups: `SEO-BACKUPS/2026-11-28/pre-homepage-sample-order-wording-clarification.json` and `SEO-BACKUPS/2026-11-28/pre-homepage-og-sample-order-wording-alignment.json`.
+
+
+## SEO-0228 — 2026-11-28 — Keep public homepage Organization entity brand-only
+- Removed the unconfirmed Chinese legal-company-name value from the `alternateName` property in Organization JSON-LD across all ten localized homepage files (en, ja, ko, es, pt, de, ru, ar, zh-cn and zh-tw).
+- The public Organization entity retains the established brand name, website URL, B2B manufacturer description, verified product/process knowledge and sales contact details.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-homepage-organization-legal-name-removal.json`.
+- No legal company name, product specification, certification or commercial term was added to public homepage content. Traditional Chinese was changed only for this shared entity cleanup; no zh-tw content audit was performed.
+- Production deployment remains pending PR review/merge.
