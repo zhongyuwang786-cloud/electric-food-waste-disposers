@@ -12,7 +12,7 @@
 
 ## Product scope
 - Product process supplied by company: heating/drying and volume reduction.
-- Do not claim grinding, composting, sterilization, odor elimination, processing time, capacity, energy use, noise level or certifications unless the company verifies and publishes the data. Confirmed commercial terms: MOQ is 500 units or more; sample development or proofing fees apply and the amount is confirmed per project; delivery lead time is confirmed according to the order.
+- Do not claim grinding, composting, sterilization, odor elimination, processing time, capacity, energy use, noise level or certifications unless the company verifies and publishes the data. Confirmed commercial terms: MOQ is 500 units or more; sample orders are supported; delivery lead time is confirmed according to the order.
 
 ## Languages
 Simplified Chinese (zh-CN), Traditional Chinese (zh-TW), English (en), Japanese (ja), Korean (ko), Spanish (es), Portuguese (pt), German (de), Russian (ru), Arabic (ar).
