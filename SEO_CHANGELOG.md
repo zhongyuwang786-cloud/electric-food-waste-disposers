@@ -2963,3 +2963,10 @@
 - Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-homepage-organization-legal-name-removal.json`.
 - No legal company name, product specification, certification or commercial term was added to public homepage content. Traditional Chinese was changed only for this shared entity cleanup; no zh-tw content audit was performed.
 - Production deployment remains pending PR review/merge.
+
+
+## SEO-0229 — 2026-11-28 — Use public brand name in Simplified Chinese homepage footer
+- Replaced the legal company name in the Simplified Chinese homepage footer with the public brand name “Electric Food Waste Disposers”. The footer is shared by desktop and mobile layouts.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-zh-cn-homepage-footer-brand-name.json`.
+- No other localized footer was changed in this item; no product or commercial claims were added.
+- Production deployment remains pending PR review/merge.
