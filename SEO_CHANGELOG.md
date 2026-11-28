@@ -2974,3 +2974,10 @@
 - Removed the unconfirmed top-opening claim. The descriptions now retain only the confirmed white countertop design and front digital control panel.
 - Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-front-control-metadata-opening-claim.json`.
 - No product specifications, certifications, prices, delivery promises or additional commercial terms were introduced. No production deployment performed.
+
+
+## SEO-0225 — 2026-11-28 — Remove remaining unsupported opening claims from White Front-Control feature headings
+- Corrected the remaining feature-tile headings on the White Front-Control product pages in ja/ko/es/pt/de/ar/zh-cn. The headings previously mentioned an upper opening even though this product is only confirmed as a white countertop design with a front digital control panel.
+- Russian and other related-product links that correctly describe the separate White Top-Opening product were not changed.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-front-control-heading-cleanup.json`.
+- No specifications, certifications or commercial terms were added. No production deployment performed.
