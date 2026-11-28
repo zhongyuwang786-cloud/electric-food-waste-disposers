@@ -2939,3 +2939,15 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0218 — 补齐第四款产品的多语言询盘映射（2026-11-28）
+
+- 修改范围：十种语言首页询盘表单（en、ja、ko、es、pt、de、ru、ar、zh-cn、zh-tw）及 `functions/api/inquiry.js`。
+- 修改前：十种语言表单仅列出三款产品；后端产品白名单也仅识别三款。白色方形顶部开口产品从产品页传入询盘时无法预选，直接提交该产品 slug 会被接口拒绝。
+- 修改后：十种语言表单均增加 `white-square-top-opening` 选项，并使用对应语言名称；后端映射新增 `White Square Top-Opening Food Waste Dryer`。
+- SEO/GEO 影响：修复产品页到询盘表单的产品实体传递一致性；未修改 Title、Meta Description、H1、Canonical、hreflang、Schema 或索引指令。
+- 商业事实：未新增产品参数、认证、价格、交期或其他商业承诺。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-fourth-product-inquiry-mapping/homepages-en-ja-ko-es-pt.json`；`SEO-BACKUPS/2026-11-28/pre-fourth-product-inquiry-mapping/homepages-de-ru-ar-zh-cn-zh-tw-and-api-changelog.json`。
+- 验证：源码检查确认十种语言的产品选择框均包含该 slug，后端白名单包含同一 slug；未提交真实询盘，未调用邮件或 WhatsApp 发送功能。生产环境验证待 PR 审查、合并和部署后进行。
+- 部署状态：仅提交至独立分支 `fix/fourth-product-inquiry-mapping`；未合并、未部署。
