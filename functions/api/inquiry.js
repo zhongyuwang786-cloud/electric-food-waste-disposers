@@ -32,7 +32,8 @@ export async function onRequestPost({ request, env }) {
     ["", "Not specified"],
     ["white-top-opening", "White Top-Opening Food Waste Dryer"],
     ["digital-display", "Digital Display Food Waste Dryer"],
-    ["white-front-control", "White Front-Control Food Waste Dryer"]
+    ["white-front-control", "White Front-Control Food Waste Dryer"],
+    ["white-square-top-opening", "White Square Top-Opening Food Waste Dryer"]
   ]);
   if (!productNames.has(product)) return json(400, { ok: false, error: "Please select a valid product" });
   const productName = productNames.get(product);
