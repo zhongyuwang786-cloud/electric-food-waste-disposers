@@ -2967,3 +2967,10 @@
 - Retained confirmed commercial facts: MOQ 500+ units and delivery lead time confirmed according to the order.
 - Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-llms-sample-fee-claim-correction.json`.
 - No pricing, payment terms or sample-fee assumptions were added. No production deployment performed.
+
+
+## SEO-0224 — 2026-11-28 — Remove unconfirmed top-opening claim from White Front-Control metadata
+- Corrected the SEO meta description, Open Graph description and Product JSON-LD description for the White Front-Control product page in en/ja/ko/es/pt/de/ru/ar/zh-cn.
+- Removed the unconfirmed top-opening claim. The descriptions now retain only the confirmed white countertop design and front digital control panel.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-front-control-metadata-opening-claim.json`.
+- No product specifications, certifications, prices, delivery promises or additional commercial terms were introduced. No production deployment performed.
