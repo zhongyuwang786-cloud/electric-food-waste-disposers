@@ -2988,3 +2988,10 @@
 - Replaced the text with localized descriptions limited to the confirmed white square countertop housing and circular top opening. Control details are explicitly left configuration-dependent rather than assumed.
 - Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-square-slanted-panel-claim-cleanup.json`.
 - No specifications, certifications or commercial terms were added. No production deployment performed.
+
+
+## SEO-0227 — 2026-11-28 — Remove legal company name from public AI-readable index
+- Removed the unconfirmed public legal-company-name disclosure from `public/llms.txt`; retained the public brand name Electric Food Waste Disposers and verified B2B product/OEM-ODM facts.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-public-llms-legal-name-removal.json`.
+- No product, certification, technical specification or commercial terms were changed.
+- Production deployment remains pending PR merge.
