@@ -3066,3 +3066,14 @@
 - 修改前备份：`SEO-BACKUPS/2026-11-28/pre-shl24-accuracy-on-consolidated-pr45.json`。
 - 验证：检查产品页不再出现将 SHL-24 与前置数码控制面板绑定的表述；Title、Meta、canonical、hreflang、结构化数据未修改。
 - 部署状态：修改纳入 PR #45 分支 `seo/consolidated-product-seo-2026-11-26`；仍待审查、合并和部署。
+
+
+## SEO-0221 — SHL-25 与 SHL-25A 产品外观描述校准（2026-11-28）
+
+- 页面：`/en/products/digital-display/`（SHL-25）与 `/en/products/white-front-control/`（SHL-25A）。
+- SHL-25：将“warm metallic finish”改为“dark-finish”，保留已确认的深色外观与前置数字显示特征。
+- SHL-25A：将外观描述收敛为“white countertop design with a front digital control panel”，移除未经单独确认的倾斜面板和圆形顶部开口细节。
+- 未修改产品型号、容量、功率、电压、频率、处理量、认证或商业条款。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-shl25-25a-visual-accuracy.json`。
+- 验证：两页仅保留已确认的颜色/控制显示特征；Title、Meta、canonical、hreflang 和结构化数据未修改。
+- 部署状态：修改纳入 PR #45 分支 `seo/consolidated-product-seo-2026-11-26`；仍待审查、合并和部署。
