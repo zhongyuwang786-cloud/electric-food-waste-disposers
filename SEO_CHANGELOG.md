@@ -2995,3 +2995,32 @@
 - Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-public-llms-legal-name-removal.json`.
 - No product, certification, technical specification or commercial terms were changed.
 - Production deployment remains pending PR merge.
+
+## SEO-0219 — 英文首页制造商搜索意图优化（2026-11-28）
+
+- 页面：`/en/`。
+- 修改前 Title：`Dry Food Waste Processor Manufacturer | OEM / ODM`。
+- 修改后 Title：`Food Waste Dryer Manufacturer | OEM & ODM Factory`。
+- Meta description 更新为：`Food waste dryer manufacturer for global brands and importers. Heating and drying for waste reduction. OEM/ODM, MOQ 500+; sample orders supported.`。Open Graph description 与 Meta Description 保持一致。
+- 补充唯一 H1：`Food Waste Dryer Manufacturer for Global Brands`，使用现有 `banner-visually-hidden` 样式，未改变首页轮播视觉布局。
+- 修改依据：Google Search Console 最近 28 天（2026-10-29 至 2026-11-25）中，查询 `food waste dryer manufacturer` 在英文首页有 6 次展示、平均排名 56.8、0 次点击；该页面此前缺少 H1，Title 使用 processor 而非 GSC 已出现的 dryer 词组。
+- 商业事实：保留 MOQ 500+ 和支持样品订单；不暗示未确认的样品费用或付款条件；未新增交期、参数、认证或未确认的定制承诺。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-homepage-manufacturer-intent-en.json`。
+- 验证：修改后需复核 Title、Meta Description、H1、canonical、hreflang、OG 元数据和结构化数据；生产排名变化需等待重新抓取，不作即时排名承诺。
+- 部署状态：独立分支 `seo/homepage-manufacturer-intent-en`，待 PR 审查；未合并、未部署。
+
+- Follow-up wording clarification (2026-11-28): homepage meta description and Open Graph description now both say “sample orders supported” rather than “sample terms confirmed per project”, avoiding any implication of unconfirmed sample pricing or fees. Pre-change backups: `SEO-BACKUPS/2026-11-28/pre-homepage-sample-order-wording-clarification.json` and `SEO-BACKUPS/2026-11-28/pre-homepage-og-sample-order-wording-alignment.json`.
+
+## SEO-0228 — 2026-11-28 — Keep public homepage Organization entity brand-only
+- Removed the unconfirmed Chinese legal-company-name value from the `alternateName` property in Organization JSON-LD across all ten localized homepage files (en, ja, ko, es, pt, de, ru, ar, zh-cn and zh-tw).
+- The public Organization entity retains the established brand name, website URL, B2B manufacturer description, verified product/process knowledge and sales contact details.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-homepage-organization-legal-name-removal.json`.
+- No legal company name, product specification, certification or commercial term was added to public homepage content. Traditional Chinese was changed only for this shared entity cleanup; no zh-tw content audit was performed.
+- Production deployment remains pending PR review/merge.
+
+## SEO-0229 — 2026-11-28 — Use public brand name in Simplified Chinese homepage footer
+- Replaced the legal company name in the Simplified Chinese homepage footer with the public brand name “Electric Food Waste Disposers”. The footer is shared by desktop and mobile layouts.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-zh-cn-homepage-footer-brand-name.json`.
+- No other localized footer was changed in this item; no product or commercial claims were added.
+- Production deployment remains pending PR review/merge.
+- Follow-up wording clarification (2026-11-28): homepage meta description and Open Graph description now both say “sample orders supported” rather than “sample terms confirmed per project”, avoiding any implication of unconfirmed sample pricing or fees. Pre-change backups: `SEO-BACKUPS/2026-11-28/pre-homepage-sample-order-wording-clarification.json` and `SEO-BACKUPS/2026-11-28/pre-homepage-og-sample-order-wording-alignment.json`.
