@@ -3077,3 +3077,13 @@
 - 修改前备份：`SEO-BACKUPS/2026-11-28/pre-shl25-25a-visual-accuracy.json`。
 - 验证：两页仅保留已确认的颜色/控制显示特征；Title、Meta、canonical、hreflang 和结构化数据未修改。
 - 部署状态：修改纳入 PR #45 分支 `seo/consolidated-product-seo-2026-11-26`；仍待审查、合并和部署。
+
+
+## SEO-0222 — 2026-11-28 — Multilingual product visual accuracy corrections
+- Scope: Product pages for White Front-Control, Digital Display, and White Square Top-Opening across en/ja/ko/es/pt/de/ru/ar/zh-cn. Traditional Chinese (zh-tw) intentionally excluded from this pass.
+- White Front-Control: removed unverified claims about a slanted panel and circular top opening from ja, ko, es, pt, de, ru, ar, and zh-cn. Retained only the confirmed white countertop design and front digital control panel. English source page was already corrected in this PR.
+- Digital Display: replaced unsupported warm metallic / metallic-color and square-body claims in ja, ko, es, pt, de, ru, ar, and zh-cn with the confirmed dark finish and front digital display. English source page was already corrected in this PR.
+- White Square Top-Opening: corrected zh-cn product overview to describe only the white square countertop housing and circular top opening; removed an unsupported front digital control panel claim.
+- Pre-change backups: SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-white-front-control-1.json; SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-white-front-control-2.json; SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-digital-display-1.json; SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-digital-display-2.json; SEO-BACKUPS/2026-11-28/pre-zh-cn-white-square-product-accuracy.json.
+- No product specifications, certifications, pricing, lead times, or additional commercial commitments were introduced. No titles, meta descriptions, canonicals, hreflang, indexing directives, or schema were changed in this pass.
+- Changes are committed to the existing PR #45 branch only; no merge or production deployment performed.
