@@ -2939,3 +2939,14 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0220 — SHL-24 产品页外观描述准确性修正（2026-11-28）
+
+- 页面：`/en/products/white-square-top-opening/`。
+- 修改原因：原页面将 SHL-24 描述为带有“slanted front digital control panel”的产品，但现有已确认资料只足以确认其为白色方形顶部开口外观，不能证明该款具有前置数码控制面板。
+- 修改内容：将模块标题调整为 `White square top-opening design`；描述仅保留白色方形机身与圆形顶部开口，并说明具体控制配置按选定配置确认。
+- 未更改产品型号、容量、功率、电压、频率、处理量、认证或商业条款；未推断其他外观细节。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-shl24-product-description-accuracy.json`。
+- 验证：检查产品页不再出现将 SHL-24 与前置数码控制面板绑定的表述；Title、Meta、canonical、hreflang、结构化数据未修改。
+- 部署状态：独立分支 `fix/shl24-product-description-accuracy`，待 Draft PR 审查；未合并、未部署。
