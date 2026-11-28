@@ -2939,3 +2939,59 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0220 — 2026-11-28 — Correct SHL-24 product visual description
+- Corrected the English White Square Top-Opening / SHL-24 product page. Removed the unsupported reference to a slanted front digital control panel.
+- Retained the confirmed visual description: white square countertop housing with a circular top opening. Product-specific control details remain subject to configuration confirmation.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-shl24-accuracy-on-consolidated-pr45.json`.
+- No product specifications, certifications or commercial terms were added.
+
+## SEO-0221 — 2026-11-28 — Correct SHL-25 and SHL-25A product visual descriptions
+- SHL-25: replaced the inaccurate warm-metallic finish description with the confirmed dark finish and front digital display.
+- SHL-25A: removed unsupported claims about a slanted panel and circular top opening. Retained only the confirmed white countertop design with a front digital control panel.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-shl25-25a-visual-accuracy.json`.
+- No product specifications, certifications or commercial terms were added.
+
+## SEO-0222 — 2026-11-28 — Multilingual product visual accuracy corrections
+- Scope: Product pages for White Front-Control, Digital Display, and White Square Top-Opening across en/ja/ko/es/pt/de/ru/ar/zh-cn. Traditional Chinese (zh-tw) intentionally excluded from this pass.
+- White Front-Control: removed unverified claims about a slanted panel and circular top opening from ja, ko, es, pt, de, ru, ar, and zh-cn. Retained only the confirmed white countertop design and front digital control panel. English source page had already been corrected in this PR.
+- Digital Display: replaced unsupported warm metallic / metallic-color and square-body claims in ja, ko, es, pt, de, ru, ar, and zh-cn with the confirmed dark finish and front digital display. English source page had already been corrected in this PR.
+- White Square Top-Opening: corrected the zh-cn product overview to describe only the white square countertop housing and circular top opening; removed an unsupported front digital control panel claim.
+- Pre-change backups: `SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-white-front-control-1.json`; `SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-white-front-control-2.json`; `SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-digital-display-1.json`; `SEO-BACKUPS/2026-11-28/pre-multilingual-product-visual-accuracy-digital-display-2.json`; `SEO-BACKUPS/2026-11-28/pre-zh-cn-white-square-product-accuracy.json`.
+- Follow-up verification removed residual unsupported front-control shape claims from feature-card copy in ja, ko, es, pt, de, and ru. Additional backups: `SEO-BACKUPS/2026-11-28/pre-white-front-control-feature-copy-1.json` and `SEO-BACKUPS/2026-11-28/pre-white-front-control-feature-copy-2.json`.
+- No product specifications, certifications, pricing, lead times or additional commercial commitments were introduced.
+
+## SEO-0223 — 2026-11-28 — Remove unconfirmed sample-fee claim from AI-readable reference
+- Corrected `public/llms.txt`: removed the statement that sample development/proofing fees apply and are confirmed per project. The public fact now states only that sample orders are supported and buyers should contact the company to discuss sample requirements.
+- Retained confirmed commercial facts: MOQ 500+ units and delivery lead time confirmed according to the order.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-llms-sample-fee-claim-correction.json`.
+- No pricing, payment terms or sample-fee assumptions were added. No production deployment performed.
+
+
+## SEO-0224 — 2026-11-28 — Remove unconfirmed top-opening claim from White Front-Control metadata
+- Corrected the SEO meta description, Open Graph description and Product JSON-LD description for the White Front-Control product page in en/ja/ko/es/pt/de/ru/ar/zh-cn.
+- Removed the unconfirmed top-opening claim. The descriptions now retain only the confirmed white countertop design and front digital control panel.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-front-control-metadata-opening-claim.json`.
+- No product specifications, certifications, prices, delivery promises or additional commercial terms were introduced. No production deployment performed.
+
+
+## SEO-0225 — 2026-11-28 — Remove remaining unsupported opening claims from White Front-Control feature headings
+- Corrected the remaining feature-tile headings on the White Front-Control product pages in ja/ko/es/pt/de/ar/zh-cn. The headings previously mentioned an upper opening even though this product is only confirmed as a white countertop design with a front digital control panel.
+- Russian and other related-product links that correctly describe the separate White Top-Opening product were not changed.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-front-control-heading-cleanup.json`.
+- No specifications, certifications or commercial terms were added. No production deployment performed.
+
+
+## SEO-0226 — 2026-11-28 — Correct White Square Top-Opening localized feature copy
+- Corrected ja/ko/es/pt/de/ru/ar product detail tiles that incorrectly described a slanted front digital control panel. These localized pages had inherited English copy that did not match the confirmed product appearance.
+- Replaced the text with localized descriptions limited to the confirmed white square countertop housing and circular top opening. Control details are explicitly left configuration-dependent rather than assumed.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-square-slanted-panel-claim-cleanup.json`.
+- No specifications, certifications or commercial terms were added. No production deployment performed.
+
+
+## SEO-0227 — 2026-11-28 — Remove legal company name from public AI-readable index
+- Removed the unconfirmed public legal-company-name disclosure from `public/llms.txt`; retained the public brand name Electric Food Waste Disposers and verified B2B product/OEM-ODM facts.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-public-llms-legal-name-removal.json`.
+- No product, certification, technical specification or commercial terms were changed.
+- Production deployment remains pending PR merge.
