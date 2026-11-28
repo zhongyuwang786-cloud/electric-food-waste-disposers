@@ -2981,3 +2981,10 @@
 - Russian and other related-product links that correctly describe the separate White Top-Opening product were not changed.
 - Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-front-control-heading-cleanup.json`.
 - No specifications, certifications or commercial terms were added. No production deployment performed.
+
+
+## SEO-0226 — 2026-11-28 — Correct White Square Top-Opening localized feature copy
+- Corrected ja/ko/es/pt/de/ru/ar product detail tiles that incorrectly described a slanted front digital control panel. These localized pages had inherited English copy that did not match the confirmed product appearance.
+- Replaced the text with localized descriptions limited to the confirmed white square countertop housing and circular top opening. Control details are explicitly left configuration-dependent rather than assumed.
+- Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-white-square-slanted-panel-claim-cleanup.json`.
+- No specifications, certifications or commercial terms were added. No production deployment performed.
