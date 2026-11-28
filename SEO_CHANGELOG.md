@@ -3055,3 +3055,14 @@
 - Pre-change backup: `SEO-BACKUPS/2026-11-27/pre-llms-commercial-facts/public-llms.txt`.
 - Validation: The replacement was applied only to the exact contradictory sentence. No product specifications, certifications, production capacity, or additional commercial commitments were added.
 - Deployment: Included in PR #45 preview branch; production deployment pending merge.
+
+
+## SEO-0220 — SHL-24 产品页外观描述准确性修正（2026-11-28）
+
+- 页面：`/en/products/white-square-top-opening/`。
+- 修改原因：原页面将 SHL-24 描述为带有“slanted front digital control panel”的产品，但现有已确认资料只足以确认其为白色方形顶部开口外观，不能证明该款具有前置数码控制面板。
+- 修改内容：将模块标题调整为 `White square top-opening design`；描述仅保留白色方形机身与圆形顶部开口，并说明具体控制配置按选定配置确认。
+- 未更改产品型号、容量、功率、电压、频率、处理量、认证或商业条款；未推断其他外观细节。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-shl24-accuracy-on-consolidated-pr45.json`。
+- 验证：检查产品页不再出现将 SHL-24 与前置数码控制面板绑定的表述；Title、Meta、canonical、hreflang、结构化数据未修改。
+- 部署状态：修改纳入 PR #45 分支 `seo/consolidated-product-seo-2026-11-26`；仍待审查、合并和部署。
