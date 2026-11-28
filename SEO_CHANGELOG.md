@@ -1,3 +1,19 @@
+## SITE-2026-11-28 — 在全站 Footer 增加 YouTube 频道入口
+
+- 日期：2026-11-28
+- 页面/语言：共享 Footer；覆盖加载 `/site-ui.js` 的页面及 en、ja、ko、es、pt、de、ru、ar、zh-cn、zh-tw 十种语言。
+- 修改类别：全站导航 / 社交媒体入口（非 SEO 元数据修改）。
+- 修改前：Footer 没有 YouTube 频道入口。
+- 修改后：通过共享脚本在 Footer 中加入 YouTube 图标及链接 `https://www.youtube.com/@ElectricFoodWasteDisposers`；新标签页打开，设置 `rel="noopener noreferrer"`；样式兼容桌面端与手机端。
+- 原因：为访客提供直达官方 YouTube 频道的入口。
+- 涉及文件：`public/site-ui.js`、`public/styles.css`。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-youtube-footer-site-ui.js`、`SEO-BACKUPS/2026-11-28/pre-youtube-footer-styles.css`。
+- SEO 影响：未修改 Title、Meta Description、Canonical、hreflang、Schema、Sitemap、robots.txt、产品内容或文章内容。
+- 验证：源代码检查确认十种语言主页及抽查的产品、工厂、OEM/ODM 页面均加载共享 `/site-ui.js`；上线后的实际显示仍待生产部署后核验。
+- 部署状态：代码已提交至 `main`；Cloudflare Pages 生产部署状态待确认。
+
+---
+
 # SEO 变更日志（SEO_CHANGELOG）
 
 > 规则：凡涉及搜索引擎、SEO、GEO、AI 搜索可见性、页面标题/描述/结构、关键词、索引、链接、站点地图、robots、canonical、hreflang、Schema 等，必须逐项追加记录。不得只在批次结束时补记。
