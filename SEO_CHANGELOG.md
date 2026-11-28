@@ -2953,3 +2953,5 @@
 - 修改前备份：`SEO-BACKUPS/2026-11-28/pre-homepage-manufacturer-intent-en.json`。
 - 验证：修改后需复核 Title、Meta Description、H1、canonical、hreflang、OG 元数据和结构化数据；生产排名变化需等待重新抓取，不作即时排名承诺。
 - 部署状态：独立分支 `seo/homepage-manufacturer-intent-en`，待 PR 审查；未合并、未部署。
+
+- Follow-up wording clarification (2026-11-28): homepage meta description now says “sample orders supported” rather than “sample terms confirmed per project”, avoiding any implication of unconfirmed sample pricing or fees. Pre-change backup: `SEO-BACKUPS/2026-11-28/pre-homepage-sample-order-wording-clarification.json`.
