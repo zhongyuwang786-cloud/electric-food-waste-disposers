@@ -2939,3 +2939,17 @@
 - Validation: Google URL Inspection confirms the formal target is indexed with a matching canonical in en, ja, pt, ru and zh-cn. The target URL is currently unknown to Google in ko, es, de and ar; the redirect handler checks translation title/content before issuing a 301. Traditional Chinese was intentionally not inspected. Source-level redirect logic committed on a working branch; production redirect response and post-deployment GSC recrawl remain pending.
 - Deployment: Pending PR review/merge and Cloudflare Pages production deployment.
 - Notes: No article content, translations, SEO titles, meta descriptions or D1 records were changed. This change only migrates the legacy URL.
+
+
+## SEO-0219 — 英文首页制造商搜索意图优化（2026-11-28）
+
+- 页面：`/en/`。
+- 修改前 Title：`Dry Food Waste Processor Manufacturer | OEM / ODM`。
+- 修改后 Title：`Food Waste Dryer Manufacturer | OEM & ODM Factory`。
+- Meta description 更新为：`Food waste dryer manufacturer for global brands and importers. Heating and drying for waste reduction. OEM/ODM, MOQ 500+; sample terms confirmed per project.`（157 个字符）。
+- 补充唯一 H1：`Food Waste Dryer Manufacturer for Global Brands`，使用现有 `banner-visually-hidden` 样式，未改变首页轮播视觉布局。
+- 修改依据：Google Search Console 最近 28 天（2026-10-29 至 2026-11-25）中，查询 `food waste dryer manufacturer` 在英文首页有 6 次展示、平均排名 56.8、0 次点击；该页面此前缺少 H1，Title 使用 processor 而非 GSC 已出现的 dryer 词组。
+- 商业事实：保留 MOQ 500+；样品条款按项目确认；未新增交期、参数、认证或未确认的定制承诺。
+- 修改前备份：`SEO-BACKUPS/2026-11-28/pre-homepage-manufacturer-intent-en.json`。
+- 验证：修改后需复核 Title、Meta Description、H1、canonical、hreflang、OG 元数据和结构化数据；生产排名变化需等待重新抓取，不作即时排名承诺。
+- 部署状态：独立分支 `seo/homepage-manufacturer-intent-en`，待 PR 审查；未合并、未部署。
